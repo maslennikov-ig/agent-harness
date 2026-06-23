@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "components": [
+    {
+      "name": "private-codex-agents",
+      "type": "copy_tree",
+      "source": "${HARNESS_REPO}/private/codex/agents",
+      "target": "${CODEX_HOME}/agents"
+    },
+    {
+      "name": "private-claude-agents",
+      "type": "copy_tree",
+      "source": "${HARNESS_REPO}/private/claude/agents",
+      "target": "${CLAUDE_HOME}/agents"
+    }
+  ]
+}
+

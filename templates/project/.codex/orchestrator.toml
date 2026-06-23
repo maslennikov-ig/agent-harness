@@ -1,0 +1,10 @@
+[project]
+baseline = "agent-harness"
+
+[delivery]
+mode = "manual"
+pr_required = false
+
+[knowledge_graph]
+enabled = false
+

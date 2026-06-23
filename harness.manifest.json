@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "components": [
+    {
+      "name": "orchestration-console",
+      "type": "git",
+      "source": "https://github.com/maslennikov-ig/codex-orchestration-console.git",
+      "target": "${HARNESS_HOME}/components/orchestration-console",
+      "install": [["./scripts/install.sh"]],
+      "doctor": [
+        {"type": "path_exists", "path": "${HARNESS_HOME}/components/orchestration-console/scripts/start_console.sh"}
+      ]
+    },
+    {
+      "name": "codex-public-skills",
+      "type": "copy_tree",
+      "source": "${HARNESS_REPO}/assets/codex/skills",
+      "target": "${AGENTS_HOME}/skills",
+      "doctor": [
+        {"type": "path_exists", "path": "${AGENTS_HOME}/skills/harness-bootstrap/SKILL.md"}
+      ]
+    },
+    {
+      "name": "codex-public-agents",
+      "type": "copy_tree",
+      "source": "${HARNESS_REPO}/assets/codex/agents",
+      "target": "${CODEX_HOME}/agents",
+      "doctor": [
+        {"type": "path_exists", "path": "${CODEX_HOME}/agents/harness-tooling-engineer.toml"}
+      ]
+    },
+    {
+      "name": "mcp-public-templates",
+      "type": "copy_tree",
+      "source": "${HARNESS_REPO}/assets/mcp/templates",
+      "target": "${HARNESS_HOME}/mcp/templates",
+      "doctor": [
+        {"type": "path_exists", "path": "${HARNESS_HOME}/mcp/templates/codex.mcp.json"}
+      ]
+    },
+    {
+      "name": "bd",
+      "type": "binary",
+      "target": "bd",
+      "doctor": [{"type": "command", "command": ["bd", "--version"]}]
+    },
+    {
+      "name": "graphify",
+      "type": "binary",
+      "target": "graphify",
+      "doctor": [{"type": "command", "command": ["graphify", "--version"]}]
+    },
+    {
+      "name": "age",
+      "type": "binary",
+      "target": "age",
+      "doctor": [{"type": "command", "command": ["age", "--version"]}]
+    }
+  ]
+}
+
