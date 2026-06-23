@@ -20,4 +20,14 @@ Create encrypted secrets:
 harness secrets init --file secrets.enc.json --set OPENAI_API_KEY='<value>'
 ```
 
+Refresh this overlay from the current machine:
+
+```bash
+scripts/update-from-local.sh
+git diff
+git add private overlay.manifest.json
+git commit -m "Update private harness overlay"
+git push
+```
+
 Do not commit plaintext secret files.

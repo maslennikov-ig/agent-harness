@@ -1,0 +1,16 @@
+# Encrypted secrets are intended to be committed.
+!secrets.enc.json
+
+# Never commit plaintext secrets or temporary decrypted payloads.
+.env
+.env.*
+!.env.example
+*.plain.json
+*.plaintext.json
+*.decrypted.json
+.decrypted/
+
+# Local harness/runtime state.
+.harness/
+.cache/
+__pycache__/

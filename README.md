@@ -11,6 +11,9 @@ The harness is split into two GitHub layers:
 - **Private overlay**: your private repo. It can contain personal agents,
   personal prompts, preferences, and encrypted secrets.
 
+If you want another agent to install or update the whole harness, copy the
+prompt from [`docs/prompts/bootstrap-agent.md`](docs/prompts/bootstrap-agent.md).
+
 ## Install Or Update
 
 Fresh machine:
@@ -44,6 +47,7 @@ harness update --yes
 harness doctor
 harness rollback --lock ~/.agent-harness/state/locks/latest-lock.json
 harness init-project /path/to/repo
+harness export-local --scope private --target /path/to/agent-harness-private --yes
 harness secrets init --file secrets.enc.json --set OPENAI_API_KEY='<value>'
 harness secrets check --file secrets.enc.json
 ```
@@ -65,6 +69,23 @@ The default manifest manages:
 
 The installer preserves unmanaged local files in those target directories.
 
+## Updating From Local Changes
+
+Local agents and skills change over time. Use `export-local` from the source
+machine to refresh the repo layer you want to preserve:
+
+```bash
+# Personal/private assets only.
+harness export-local --scope private --target /path/to/agent-harness-private --yes
+
+# Conservative public allowlist, currently harness-owned public skill/agent.
+harness export-local --scope public --target /path/to/agent-harness --yes
+```
+
+`export-local` scans text files for obvious token/key patterns before writing.
+If it finds secret-like content, it stops before copying. Always inspect
+`git diff` in the target repo before committing.
+
 ## Private Overlay And Secrets
 
 Use a separate private repo for personal assets:
@@ -74,6 +95,7 @@ private/
   codex/agents/
   codex/skills/
   claude/agents/
+  claude/settings.templates/
 overlay.manifest.json
 secrets.enc.json
 ```

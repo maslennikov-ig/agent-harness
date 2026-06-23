@@ -11,6 +11,7 @@ import tempfile
 from pathlib import Path
 from typing import Any
 
+from .export_local import ExportLocalError, export_local
 from .lockfile import LockSnapshot
 from .managed import ManagedInstaller
 from .manifest import Component, Manifest
@@ -43,6 +44,11 @@ def main(argv: list[str] | None = None) -> int:
     init_project.add_argument("repo_path")
     init_project.add_argument("--template", default=str(DEFAULT_TEMPLATE))
     init_project.add_argument("--yes", action="store_true")
+    export = subparsers.add_parser("export-local", help="Export selected local harness assets into a repo.")
+    export.add_argument("--scope", choices=["private", "public"], default="private")
+    export.add_argument("--target", required=True)
+    export.add_argument("--yes", action="store_true")
+    export.add_argument("--json", action="store_true")
     secrets = subparsers.add_parser("secrets", help="Manage encrypted private overlay secrets.")
     secrets_sub = secrets.add_subparsers(dest="secrets_command", required=True)
     secrets_init = secrets_sub.add_parser("init")
@@ -65,9 +71,11 @@ def main(argv: list[str] | None = None) -> int:
             return command_rollback(args)
         if args.command == "init-project":
             return command_init_project(args)
+        if args.command == "export-local":
+            return command_export_local(args)
         if args.command == "secrets":
             return command_secrets(args)
-    except (OSError, ValueError, SecretVaultError, subprocess.CalledProcessError) as error:
+    except (OSError, ValueError, SecretVaultError, ExportLocalError, subprocess.CalledProcessError) as error:
         print(f"error: {error}", file=sys.stderr)
         return 1
     return 1
@@ -311,6 +319,17 @@ def command_init_project(args: argparse.Namespace) -> int:
     installer = ManagedInstaller(repo / ".harness")
     installer.install_tree(template, repo, "project-baseline")
     print(f"Initialized project baseline: {repo}")
+    return 0
+
+
+def command_export_local(args: argparse.Namespace) -> int:
+    result = export_local(scope=args.scope, target=args.target, yes=args.yes)
+    if args.json:
+        print(json.dumps(result.as_dict(), indent=2, sort_keys=True))
+    else:
+        skipped = ", ".join(result.skipped_sources) if result.skipped_sources else "none"
+        print(f"Exported {result.copied} files to {result.target}")
+        print(f"Skipped missing sources: {skipped}")
     return 0
 
 

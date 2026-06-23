@@ -8,6 +8,12 @@
       "target": "${CODEX_HOME}/agents"
     },
     {
+      "name": "private-codex-skills",
+      "type": "copy_tree",
+      "source": "${HARNESS_REPO}/private/codex/skills",
+      "target": "${AGENTS_HOME}/skills"
+    },
+    {
       "name": "private-claude-agents",
       "type": "copy_tree",
       "source": "${HARNESS_REPO}/private/claude/agents",
@@ -15,4 +21,3 @@
     }
   ]
 }
-
