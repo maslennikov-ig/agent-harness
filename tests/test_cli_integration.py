@@ -1,4 +1,5 @@
 import json
+import os
 import subprocess
 import sys
 import tempfile
@@ -55,6 +56,40 @@ class CliIntegrationTests(unittest.TestCase):
             doctor = self.run_cli("doctor", "--manifest", str(manifest), "--json")
             self.assertEqual(doctor.returncode, 0, doctor.stderr)
             self.assertEqual(json.loads(doctor.stdout)["components"][0]["status"], "ok")
+            self.assertEqual(json.loads(lock.read_text(encoding="utf-8"))["components"][0]["status"], "ok")
+
+    def test_bootstrap_runs_install_command_for_missing_binary_component(self):
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            bin_dir = root / "bin"
+            tool = bin_dir / "demo-tool"
+            manifest = root / "manifest.json"
+            lock = root / "lock.json"
+            installer = (
+                "from pathlib import Path; "
+                f"path = Path({str(tool)!r}); "
+                "path.parent.mkdir(parents=True, exist_ok=True); "
+                "path.write_text('#!/usr/bin/env sh\\necho demo-tool 1.2.3\\n', encoding='utf-8'); "
+                "path.chmod(0o755)"
+            )
+            manifest.write_text(json.dumps({
+                "schema_version": 1,
+                "components": [
+                    {
+                        "name": "demo-tool",
+                        "type": "binary",
+                        "target": "demo-tool",
+                        "install": [[sys.executable, "-c", installer]],
+                        "doctor": [{"type": "command", "command": ["demo-tool", "--version"]}],
+                    }
+                ],
+            }), encoding="utf-8")
+            env = {**os.environ, "PATH": f"{bin_dir}{os.pathsep}{os.environ.get('PATH', '')}"}
+
+            result = self.run_cli("bootstrap", "--manifest", str(manifest), "--lock", str(lock), "--yes", env=env)
+
+            self.assertEqual(result.returncode, 0, result.stderr)
+            self.assertTrue(tool.exists())
             self.assertEqual(json.loads(lock.read_text(encoding="utf-8"))["components"][0]["status"], "ok")
 
     def test_init_project_writes_baseline_without_global_mutation(self):

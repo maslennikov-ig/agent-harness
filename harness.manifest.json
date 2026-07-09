@@ -6,9 +6,10 @@
       "type": "git",
       "source": "https://github.com/maslennikov-ig/codex-orchestration-console.git",
       "target": "${HARNESS_HOME}/components/orchestration-console",
-      "install": [["./scripts/install.sh"]],
+      "install": [["./scripts/install.sh"], ["./scripts/install_claude_plugin.sh"]],
       "doctor": [
-        {"type": "path_exists", "path": "${HARNESS_HOME}/components/orchestration-console/scripts/start_console.sh"}
+        {"type": "path_exists", "path": "${HARNESS_HOME}/components/orchestration-console/scripts/start_console.sh"},
+        {"type": "path_exists", "path": "${CLAUDE_HOME}/skills/orchestration-bridge/.claude-plugin/plugin.json"}
       ]
     },
     {
@@ -39,23 +40,46 @@
       ]
     },
     {
+      "name": "node",
+      "type": "binary",
+      "target": "node",
+      "install": [["sh", "-lc", "if command -v brew >/dev/null 2>&1; then brew install node; elif command -v apt-get >/dev/null 2>&1; then sudo apt-get update && sudo apt-get install -y nodejs npm; else echo 'Install Node.js >= 18 manually for MCP npx servers' >&2; exit 1; fi"]],
+      "doctor": [{"type": "command", "command": ["node", "--version"]}]
+    },
+    {
+      "name": "npx",
+      "type": "binary",
+      "target": "npx",
+      "install": [["sh", "-lc", "if command -v npm >/dev/null 2>&1; then npm install -g npm; elif command -v brew >/dev/null 2>&1; then brew install node; elif command -v apt-get >/dev/null 2>&1; then sudo apt-get update && sudo apt-get install -y nodejs npm; else echo 'Install npm/npx manually for MCP servers' >&2; exit 1; fi"]],
+      "doctor": [{"type": "command", "command": ["npx", "--version"]}]
+    },
+    {
+      "name": "context",
+      "type": "binary",
+      "target": "context",
+      "install": [["sh", "-lc", "npm install -g @neuledge/context"]],
+      "doctor": [{"type": "command", "command": ["context", "--version"]}]
+    },
+    {
       "name": "bd",
       "type": "binary",
       "target": "bd",
+      "install": [["sh", "-lc", "curl -fsSL https://raw.githubusercontent.com/gastownhall/beads/main/scripts/install.sh | bash"]],
       "doctor": [{"type": "command", "command": ["bd", "--version"]}]
     },
     {
       "name": "graphify",
       "type": "binary",
       "target": "graphify",
+      "install": [["sh", "-lc", "if command -v uv >/dev/null 2>&1; then uv tool install graphifyy; elif command -v pipx >/dev/null 2>&1; then pipx install graphifyy; else python3 -m pip install --user graphifyy; fi"]],
       "doctor": [{"type": "command", "command": ["graphify", "--version"]}]
     },
     {
       "name": "age",
       "type": "binary",
       "target": "age",
+      "install": [["sh", "-lc", "if command -v brew >/dev/null 2>&1; then brew install age; elif command -v apt-get >/dev/null 2>&1; then sudo apt-get update && sudo apt-get install -y age; else echo 'Install age manually for encrypted private overlay workflows' >&2; exit 1; fi"]],
       "doctor": [{"type": "command", "command": ["age", "--version"]}]
     }
   ]
 }
-

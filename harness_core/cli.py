@@ -240,11 +240,15 @@ def install_component(component: Component, installer: ManagedInstaller) -> dict
             "version": git_revision(component.target),
         }
     if component.type == "binary":
+        binary_name = str(component.target or component.name)
+        if not shutil.which(binary_name) and component.install:
+            for command in component.install:
+                subprocess.run(command, check=True)
         return {
             "name": component.name,
             "type": component.type,
-            "target": str(component.target or component.name),
-            "version": command_version(str(component.target or component.name)),
+            "target": binary_name,
+            "version": command_version(binary_name),
         }
     return {"name": component.name, "type": component.type, "target": str(component.target or ""), "version": ""}
 

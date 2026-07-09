@@ -29,6 +29,7 @@ class SecretsMcpTests(unittest.TestCase):
         }
         template = {
             "mcpServers": {
+                "context": {"command": "context", "args": ["serve"]},
                 "context7": {"command": "context7", "args": ["mcp"]},
                 "playwright": {"command": "npx", "args": ["@playwright/mcp"]},
             }
@@ -37,6 +38,7 @@ class SecretsMcpTests(unittest.TestCase):
         merged = merge_mcp_config(existing, template)
 
         self.assertEqual(merged["mcpServers"]["custom"], existing["mcpServers"]["custom"])
+        self.assertEqual(merged["mcpServers"]["context"], template["mcpServers"]["context"])
         self.assertEqual(merged["mcpServers"]["context7"], existing["mcpServers"]["context7"])
         self.assertEqual(merged["mcpServers"]["playwright"], template["mcpServers"]["playwright"])
         self.assertTrue(merged["otherSetting"])

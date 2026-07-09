@@ -1,8 +1,8 @@
 # Agent Harness
 
 Portable bootstrap for a Codex + Claude agent workflow: orchestration console,
-generic skills and agents, MCP templates, Beads, Graphify, and private encrypted
-overlays.
+generic skills and agents, Docs L1/L2 routing, MCP templates, Beads, Graphify,
+and private encrypted overlays.
 
 The harness is split into two GitHub layers:
 
@@ -61,11 +61,33 @@ backs it up under `~/.agent-harness/state/managed/backups/` before replacing it.
 The default manifest manages:
 
 - `orchestration-console`: cloned from `codex-orchestration-console`, then
-  installed through its own `scripts/install.sh`.
+  installed through its own `scripts/install.sh`; the Claude Code
+  `orchestration-bridge` plugin is also synced into `$CLAUDE_HOME/skills`.
 - `codex-public-skills`: copied into `$AGENTS_HOME/skills`.
 - `codex-public-agents`: copied into `$CODEX_HOME/agents`.
 - `mcp-public-templates`: copied into `$HARNESS_HOME/mcp/templates`.
-- `bd`, `graphify`, and `age`: checked by doctor as machine prerequisites.
+- `context`: the local Docs L1 MCP server from `@neuledge/context`.
+- `context7` and `playwright`: npx-backed MCP templates for fallback docs and
+  browser automation.
+- `bd`, `graphify`, `age`, `node`, and `npx`: installed or checked as machine
+  prerequisites.
+
+Docs lookup is two-tiered: agents should use `orch-prompts docs-resolve` first,
+which routes by lockfile package/version over local `@neuledge/context` L1
+packages. Context7 MCP or first-party docs are fallback only when L1 is missing,
+stale, or insufficient.
+
+Register MCP servers when the client is installed:
+
+```bash
+codex mcp get context >/dev/null 2>&1 || codex mcp add context -- context serve
+codex mcp get context7 >/dev/null 2>&1 || codex mcp add context7 -- npx -y @upstash/context7-mcp
+codex mcp get playwright >/dev/null 2>&1 || codex mcp add playwright -- npx -y @playwright/mcp
+
+claude mcp get context >/dev/null 2>&1 || claude mcp add --scope user context -- context serve
+claude mcp get context7 >/dev/null 2>&1 || claude mcp add --scope user context7 -- npx -y @upstash/context7-mcp
+claude mcp get playwright >/dev/null 2>&1 || claude mcp add --scope user playwright -- npx -y @playwright/mcp
+```
 
 The installer preserves unmanaged local files in those target directories.
 
