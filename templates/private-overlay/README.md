@@ -9,6 +9,7 @@ private/
   codex/agents/
   codex/skills/
   claude/agents/
+  claude/skills/
   claude/settings.templates/
 overlay.manifest.json
 secrets.enc.json

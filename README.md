@@ -106,7 +106,9 @@ harness export-local --scope public --target /path/to/agent-harness --yes
 
 `export-local` scans text files for obvious token/key patterns before writing.
 If it finds secret-like content, it stops before copying. Always inspect
-`git diff` in the target repo before committing.
+`git diff` in the target repo before committing. Personal Claude skills are
+exported from `$CLAUDE_HOME/skills`; the Harness-managed
+`orchestration-bridge` plugin is excluded because the public console owns it.
 
 ## Private Overlay And Secrets
 
@@ -117,6 +119,7 @@ private/
   codex/agents/
   codex/skills/
   claude/agents/
+  claude/skills/
   claude/settings.templates/
 overlay.manifest.json
 secrets.enc.json

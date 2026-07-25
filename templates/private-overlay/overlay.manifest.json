@@ -18,6 +18,12 @@
       "type": "copy_tree",
       "source": "${HARNESS_REPO}/private/claude/agents",
       "target": "${CLAUDE_HOME}/agents"
+    },
+    {
+      "name": "private-claude-skills",
+      "type": "copy_tree",
+      "source": "${HARNESS_REPO}/private/claude/skills",
+      "target": "${CLAUDE_HOME}/skills"
     }
   ]
 }

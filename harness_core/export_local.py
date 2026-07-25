@@ -17,6 +17,7 @@ class ExportSource:
     name: str
     source: Path
     target: Path
+    excluded_top_level_names: frozenset[str] = frozenset()
 
 
 @dataclass(frozen=True)
@@ -78,6 +79,12 @@ PRIVATE_OVERLAY_MANIFEST = {
             "source": "${HARNESS_REPO}/private/claude/agents",
             "target": "${CLAUDE_HOME}/agents",
         },
+        {
+            "name": "private-claude-skills",
+            "type": "copy_tree",
+            "source": "${HARNESS_REPO}/private/claude/skills",
+            "target": "${CLAUDE_HOME}/skills",
+        },
     ],
 }
 
@@ -102,6 +109,12 @@ def export_private(target: Path, env: dict[str, str]) -> ExportResult:
         ExportSource("codex agents", codex_home / "agents", target / "private" / "codex" / "agents"),
         ExportSource("codex skills", agents_home / "skills", target / "private" / "codex" / "skills"),
         ExportSource("claude agents", claude_home / "agents", target / "private" / "claude" / "agents"),
+        ExportSource(
+            "claude skills",
+            claude_home / "skills",
+            target / "private" / "claude" / "skills",
+            frozenset({"orchestration-bridge"}),
+        ),
     ]
     result = write_export(scope="private", target=target, sources=sources)
     ensure_private_overlay_manifest(target)
@@ -133,7 +146,7 @@ def write_export(scope: str, target: Path, sources: list[ExportSource]) -> Expor
         if not item.source.exists():
             skipped.append(item.name)
             continue
-        plans.extend(collect_files(item.source, item.target))
+        plans.extend(collect_files(item.source, item.target, item.excluded_top_level_names))
     for src, _dst in plans:
         assert_no_secret_like_content(src)
     copied = 0
@@ -146,12 +159,19 @@ def write_export(scope: str, target: Path, sources: list[ExportSource]) -> Expor
     return ExportResult(scope=scope, target=target, copied=copied, skipped_sources=skipped)
 
 
-def collect_files(source: Path, target: Path) -> list[tuple[Path, Path]]:
+def collect_files(
+    source: Path,
+    target: Path,
+    excluded_top_level_names: frozenset[str] = frozenset(),
+) -> list[tuple[Path, Path]]:
     if source.is_file():
         return [(source, target)]
     files = []
     for src in sorted(source.rglob("*")):
         if not src.is_file():
+            continue
+        relative = src.relative_to(source)
+        if relative.parts and relative.parts[0] in excluded_top_level_names:
             continue
         if should_skip(src, source):
             continue
@@ -179,6 +199,32 @@ def assert_no_secret_like_content(path: Path) -> None:
 def ensure_private_overlay_manifest(target: Path) -> None:
     manifest = target / "overlay.manifest.json"
     if manifest.exists():
+        try:
+            current = json.loads(manifest.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError) as exc:
+            raise ExportLocalError(f"cannot upgrade existing overlay manifest {manifest}: {exc}") from exc
+        components = current.get("components") if isinstance(current, dict) else None
+        if not isinstance(components, list):
+            raise ExportLocalError(f"cannot upgrade existing overlay manifest {manifest}: components must be a list")
+        component_name = "private-claude-skills"
+        desired = next(
+            component
+            for component in PRIVATE_OVERLAY_MANIFEST["components"]
+            if component["name"] == component_name
+        )
+        matching = [
+            component
+            for component in components
+            if isinstance(component, dict) and component.get("name") == component_name
+        ]
+        if matching:
+            if len(matching) != 1 or matching[0] != desired:
+                raise ExportLocalError(
+                    f"conflicting managed component {component_name} in existing overlay manifest {manifest}"
+                )
+            return
+        components.append(dict(desired))
+        manifest.write_text(json.dumps(current, indent=2) + "\n", encoding="utf-8")
         return
     target.mkdir(parents=True, exist_ok=True)
     manifest.write_text(json.dumps(PRIVATE_OVERLAY_MANIFEST, indent=2) + "\n", encoding="utf-8")
