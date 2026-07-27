@@ -3,7 +3,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from harness_core.manifest import Manifest
+from harness_core.manifest import Manifest, ManifestError
 from harness_core.lockfile import LockSnapshot
 
 
@@ -32,6 +32,46 @@ class ManifestLockTests(unittest.TestCase):
             self.assertEqual(manifest.components[0].name, "console")
             self.assertEqual(manifest.components[0].target, root / "components" / "console")
             self.assertEqual(manifest.components[0].install, [["./scripts/install.sh"]])
+
+    def test_manifest_expands_managed_block_paths_and_markers(self):
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            manifest_path = root / "overlay.manifest.json"
+            manifest_path.write_text(json.dumps({
+                "schema_version": 1,
+                "components": [
+                    {
+                        "name": "codex-global",
+                        "type": "managed_block",
+                        "source": "${HARNESS_REPO}/fragment.md",
+                        "target": "${CODEX_HOME}/AGENTS.md",
+                        "installer": "${HARNESS_REPO}/install.py",
+                        "markers": ["<!-- BEGIN -->", "<!-- END -->"],
+                    }
+                ],
+            }), encoding="utf-8")
+
+            manifest = Manifest.load(
+                manifest_path,
+                env={"HARNESS_REPO": str(root), "CODEX_HOME": str(root / "codex")},
+            )
+            component = manifest.components[0]
+
+            self.assertEqual(component.source, root / "fragment.md")
+            self.assertEqual(component.target, root / "codex" / "AGENTS.md")
+            self.assertEqual(component.installer, root / "install.py")
+            self.assertEqual(component.markers, ("<!-- BEGIN -->", "<!-- END -->"))
+
+    def test_manifest_rejects_unknown_component_type(self):
+        with tempfile.TemporaryDirectory() as raw:
+            manifest_path = Path(raw) / "manifest.json"
+            manifest_path.write_text(json.dumps({
+                "schema_version": 1,
+                "components": [{"name": "mystery", "type": "silently-skipped"}],
+            }), encoding="utf-8")
+
+            with self.assertRaisesRegex(ManifestError, "unsupported component type"):
+                Manifest.load(manifest_path)
 
     def test_lock_snapshot_records_installed_versions(self):
         snapshot = LockSnapshot.create([

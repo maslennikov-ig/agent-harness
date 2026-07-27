@@ -11,6 +11,9 @@ class ManifestError(ValueError):
     pass
 
 
+SUPPORTED_COMPONENT_TYPES = frozenset({"binary", "copy_tree", "git", "managed_block"})
+
+
 def _expand(value: str, env: dict[str, str]) -> str:
     expanded = value
     for key, replacement in env.items():
@@ -43,6 +46,8 @@ class Component:
     ref: str = "latest"
     install: list[list[str]] = field(default_factory=list)
     doctor: list[dict[str, Any]] = field(default_factory=list)
+    installer: Path | None = None
+    markers: tuple[str, str] | None = None
     raw: dict[str, Any] = field(default_factory=dict)
 
 
@@ -70,19 +75,66 @@ class Manifest:
             component_type = item.get("type")
             if not name or not component_type:
                 raise ManifestError("component entries need name and type")
+            component_type = str(component_type)
+            if component_type not in SUPPORTED_COMPONENT_TYPES:
+                raise ManifestError(
+                    f"{name}: unsupported component type {component_type!r}"
+                )
             target = item.get("target")
             source = item.get("source")
-            source_path = Path(_expand(source, env_map)) if isinstance(source, str) and component_type in {"copy_tree", "git"} else source
+            source_path = (
+                Path(_expand(source, env_map))
+                if isinstance(source, str)
+                and component_type in {"copy_tree", "managed_block"}
+                else source
+            )
             if isinstance(source_path, Path) and not source_path.is_absolute():
                 source_path = base_dir / source_path
+            installer = item.get("installer")
+            installer_path = (
+                Path(_expand(installer, env_map))
+                if isinstance(installer, str)
+                else None
+            )
+            if installer_path is not None and not installer_path.is_absolute():
+                installer_path = base_dir / installer_path
+            raw_markers = item.get("markers")
+            markers: tuple[str, str] | None = None
+            if raw_markers is not None:
+                if (
+                    not isinstance(raw_markers, list)
+                    or len(raw_markers) != 2
+                    or not all(isinstance(marker, str) and marker for marker in raw_markers)
+                    or raw_markers[0] == raw_markers[1]
+                ):
+                    raise ManifestError(
+                        f"{name}: markers must contain two distinct non-empty strings"
+                    )
+                markers = (raw_markers[0], raw_markers[1])
+            target_path = (
+                Path(_expand(target, env_map))
+                if isinstance(target, str) and component_type != "binary"
+                else target
+            )
+            if component_type == "managed_block":
+                if not isinstance(source_path, Path):
+                    raise ManifestError(f"{name}: managed_block requires source")
+                if not isinstance(target_path, Path):
+                    raise ManifestError(f"{name}: managed_block requires target")
+                if installer_path is None:
+                    raise ManifestError(f"{name}: managed_block requires installer")
+                if markers is None:
+                    raise ManifestError(f"{name}: managed_block requires markers")
             components.append(Component(
                 name=str(name),
-                type=str(component_type),
-                target=Path(_expand(target, env_map)) if isinstance(target, str) and component_type != "binary" else target,
+                type=component_type,
+                target=target_path,
                 source=source_path,
                 ref=str(item.get("ref", "latest")),
                 install=_command_list(item.get("install")),
                 doctor=list(item.get("doctor") or []),
+                installer=installer_path,
+                markers=markers,
                 raw=item,
             ))
         return cls(schema_version=schema_version, components=components, path=manifest_path)

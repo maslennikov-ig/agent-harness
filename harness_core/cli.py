@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import getpass
+import hashlib
 import json
 import os
 import shutil
@@ -111,7 +112,9 @@ def component_action(component: Component) -> str:
         return "update" if isinstance(component.target, Path) and (component.target / ".git").exists() else "install"
     if component.type == "binary":
         return "check" if shutil.which(str(component.target or component.name)) else "install"
-    return "check"
+    if component.type == "managed_block":
+        return "update" if managed_block_is_installed(component) else "install"
+    raise ValueError(f"{component.name}: unsupported component type {component.type!r}")
 
 
 def command_plan(args: argparse.Namespace) -> int:
@@ -250,7 +253,41 @@ def install_component(component: Component, installer: ManagedInstaller) -> dict
             "target": binary_name,
             "version": command_version(binary_name),
         }
-    return {"name": component.name, "type": component.type, "target": str(component.target or ""), "version": ""}
+    if component.type == "managed_block":
+        if (
+            not isinstance(component.source, Path)
+            or not isinstance(component.target, Path)
+            or not isinstance(component.installer, Path)
+            or component.markers is None
+        ):
+            raise ValueError(
+                f"{component.name}: managed_block requires source, target, "
+                "installer, and markers"
+            )
+        if not component.source.is_file():
+            raise ValueError(
+                f"{component.name}: managed_block source is missing: "
+                f"{component.source}"
+            )
+        if not component.installer.is_file():
+            raise ValueError(
+                f"{component.name}: managed_block installer is missing: "
+                f"{component.installer}"
+            )
+        command = [str(component.installer)]
+        if component.installer.suffix == ".py":
+            command.insert(0, sys.executable)
+        subprocess.run(
+            [*command, str(component.source), str(component.target)],
+            check=True,
+        )
+        return {
+            "name": component.name,
+            "type": component.type,
+            "target": str(component.target),
+            "version": file_version(component.source),
+        }
+    raise ValueError(f"{component.name}: unsupported component type {component.type!r}")
 
 
 def update_git_repo(source: str, target: Path) -> None:
@@ -279,7 +316,7 @@ def doctor_records(manifest: Manifest) -> list[dict[str, Any]]:
 
 def doctor_component(component: Component) -> dict[str, Any]:
     checks = component.doctor or []
-    failures = []
+    failures = managed_block_failures(component) if component.type == "managed_block" else []
     for check in checks:
         check_type = check.get("type")
         if check_type == "path_exists" and not Path(str(check.get("path"))).exists():
@@ -409,6 +446,46 @@ def command_version(command: str) -> str:
     return (result.stdout or result.stderr).splitlines()[0] if (result.stdout or result.stderr) else "installed"
 
 
+def file_version(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def managed_block_is_installed(component: Component) -> bool:
+    return not managed_block_failures(component)
+
+
+def managed_block_failures(component: Component) -> list[str]:
+    failures: list[str] = []
+    if not isinstance(component.source, Path) or not component.source.is_file():
+        failures.append(f"missing managed source {component.source}")
+    if not isinstance(component.installer, Path) or not component.installer.is_file():
+        failures.append(f"missing managed installer {component.installer}")
+    if not isinstance(component.target, Path) or not component.target.is_file():
+        failures.append(f"missing managed target {component.target}")
+        return failures
+    if component.markers is None:
+        failures.append("missing managed marker declaration")
+        return failures
+    begin, end = component.markers
+    content = component.target.read_text(encoding="utf-8")
+    if begin not in content or end not in content:
+        failures.append(f"missing managed markers in {component.target}")
+    elif (
+        content.count(begin) != 1
+        or content.count(end) != 1
+        or content.index(begin) >= content.index(end)
+    ):
+        failures.append(f"invalid managed marker layout in {component.target}")
+    elif isinstance(component.source, Path) and component.source.is_file():
+        installed = content.split(begin, 1)[1].split(end, 1)[0].strip()
+        expected = component.source.read_text(encoding="utf-8").strip()
+        if installed != expected:
+            failures.append(
+                f"managed block differs from source in {component.target}"
+            )
+    return failures
+
+
 def component_version(component: Component) -> str:
     if component.type == "git" and isinstance(component.target, Path) and component.target.exists():
         return git_revision(component.target)
@@ -416,6 +493,8 @@ def component_version(component: Component) -> str:
         return tree_version(component.source)
     if component.type == "binary":
         return command_version(str(component.target or component.name))
+    if component.type == "managed_block" and isinstance(component.source, Path):
+        return file_version(component.source) if component.source.is_file() else "missing"
     return ""
 
 
