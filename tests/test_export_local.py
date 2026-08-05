@@ -54,6 +54,8 @@ class ExportLocalTests(unittest.TestCase):
                 "CODEX_HOME": str(codex_home),
                 "AGENTS_HOME": str(agents_home),
                 "CLAUDE_HOME": str(claude_home),
+                "HARNESS_EXPORT_CODEX_SKILLS": "custom-skill",
+                "HARNESS_EXPORT_CLAUDE_SKILLS": "personal-skill",
             }
 
             result = self.run_cli("export-local", "--scope", "private", "--target", str(target), "--yes", "--json", env=env)
@@ -78,6 +80,45 @@ class ExportLocalTests(unittest.TestCase):
                     "source": "${HARNESS_REPO}/private/claude/skills",
                     "target": "${CLAUDE_HOME}/skills",
                 },
+            )
+
+    def test_export_local_does_not_reverse_sync_canonical_orchestration_skills(self):
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            agents_home = root / "agents"
+            target = root / "overlay"
+            (agents_home / "skills" / "custom-skill").mkdir(parents=True)
+            (agents_home / "skills" / "orchestrator-stage").mkdir(parents=True)
+            (agents_home / "skills" / "custom-skill" / "SKILL.md").write_text(
+                "# Custom\n", encoding="utf-8"
+            )
+            (agents_home / "skills" / "orchestrator-stage" / "SKILL.md").write_text(
+                "# Runtime mirror\n", encoding="utf-8"
+            )
+            env = {
+                **os.environ,
+                "CODEX_HOME": str(root / "codex"),
+                "AGENTS_HOME": str(agents_home),
+                "CLAUDE_HOME": str(root / "claude"),
+                "HARNESS_EXPORT_CODEX_SKILLS": "custom-skill",
+            }
+
+            result = self.run_cli(
+                "export-local",
+                "--scope",
+                "private",
+                "--target",
+                str(target),
+                "--yes",
+                env=env,
+            )
+
+            self.assertEqual(result.returncode, 0, result.stderr)
+            self.assertTrue(
+                (target / "private/codex/skills/custom-skill/SKILL.md").exists()
+            )
+            self.assertFalse(
+                (target / "private/codex/skills/orchestrator-stage").exists()
             )
 
     def test_private_overlay_template_includes_claude_skills(self):
@@ -189,6 +230,7 @@ class ExportLocalTests(unittest.TestCase):
                 "CODEX_HOME": str(codex_home),
                 "AGENTS_HOME": str(agents_home),
                 "CLAUDE_HOME": str(claude_home),
+                "HARNESS_EXPORT_CODEX_SKILLS": "leaky",
             }
 
             result = self.run_cli("export-local", "--scope", "private", "--target", str(target), "--yes", env=env)

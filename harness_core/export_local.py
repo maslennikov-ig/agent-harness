@@ -18,6 +18,7 @@ class ExportSource:
     source: Path
     target: Path
     excluded_top_level_names: frozenset[str] = frozenset()
+    included_top_level_names: frozenset[str] | None = None
 
 
 @dataclass(frozen=True)
@@ -105,15 +106,31 @@ def export_private(target: Path, env: dict[str, str]) -> ExportResult:
     codex_home = Path(env.get("CODEX_HOME", str(Path.home() / ".codex")))
     agents_home = Path(env.get("AGENTS_HOME", str(Path.home() / ".agents")))
     claude_home = Path(env.get("CLAUDE_HOME", env.get("CLAUDE_CONFIG_DIR", str(Path.home() / ".claude"))))
+    codex_skill_allowlist = frozenset(
+        item.strip()
+        for item in env.get("HARNESS_EXPORT_CODEX_SKILLS", "").split(",")
+        if item.strip()
+    )
+    claude_skill_allowlist = frozenset(
+        item.strip()
+        for item in env.get("HARNESS_EXPORT_CLAUDE_SKILLS", "").split(",")
+        if item.strip()
+    )
     sources = [
         ExportSource("codex agents", codex_home / "agents", target / "private" / "codex" / "agents"),
-        ExportSource("codex skills", agents_home / "skills", target / "private" / "codex" / "skills"),
+        ExportSource(
+            "codex skills",
+            agents_home / "skills",
+            target / "private" / "codex" / "skills",
+            included_top_level_names=codex_skill_allowlist,
+        ),
         ExportSource("claude agents", claude_home / "agents", target / "private" / "claude" / "agents"),
         ExportSource(
             "claude skills",
             claude_home / "skills",
             target / "private" / "claude" / "skills",
             frozenset({"orchestration-bridge"}),
+            claude_skill_allowlist,
         ),
     ]
     result = write_export(scope="private", target=target, sources=sources)
@@ -146,7 +163,14 @@ def write_export(scope: str, target: Path, sources: list[ExportSource]) -> Expor
         if not item.source.exists():
             skipped.append(item.name)
             continue
-        plans.extend(collect_files(item.source, item.target, item.excluded_top_level_names))
+        plans.extend(
+            collect_files(
+                item.source,
+                item.target,
+                item.excluded_top_level_names,
+                item.included_top_level_names,
+            )
+        )
     for src, _dst in plans:
         assert_no_secret_like_content(src)
     copied = 0
@@ -163,6 +187,7 @@ def collect_files(
     source: Path,
     target: Path,
     excluded_top_level_names: frozenset[str] = frozenset(),
+    included_top_level_names: frozenset[str] | None = None,
 ) -> list[tuple[Path, Path]]:
     if source.is_file():
         return [(source, target)]
@@ -171,6 +196,12 @@ def collect_files(
         if not src.is_file():
             continue
         relative = src.relative_to(source)
+        if (
+            included_top_level_names is not None
+            and relative.parts
+            and relative.parts[0] not in included_top_level_names
+        ):
+            continue
         if relative.parts and relative.parts[0] in excluded_top_level_names:
             continue
         if should_skip(src, source):

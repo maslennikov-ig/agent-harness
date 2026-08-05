@@ -93,12 +93,16 @@ The installer preserves unmanaged local files in those target directories.
 
 ## Updating From Local Changes
 
-Local agents and skills change over time. Use `export-local` from the source
-machine to refresh the repo layer you want to preserve:
+Local agents and explicitly selected personal skills change over time. Shared
+orchestration skills flow one way from the private overlay into runtime and are
+never reverse-synced implicitly. Use comma-separated allowlists when importing
+personal skills:
 
 ```bash
-# Personal/private assets only.
-harness export-local --scope private --target /path/to/agent-harness-private --yes
+# Personal/private agents plus selected personal skills.
+HARNESS_EXPORT_CODEX_SKILLS=my-skill,other-skill \
+HARNESS_EXPORT_CLAUDE_SKILLS=my-claude-skill \
+  harness export-local --scope private --target /path/to/agent-harness-private --yes
 
 # Conservative public allowlist, currently harness-owned public skill/agent.
 harness export-local --scope public --target /path/to/agent-harness --yes
@@ -106,9 +110,9 @@ harness export-local --scope public --target /path/to/agent-harness --yes
 
 `export-local` scans text files for obvious token/key patterns before writing.
 If it finds secret-like content, it stops before copying. Always inspect
-`git diff` in the target repo before committing. Personal Claude skills are
-exported from `$CLAUDE_HOME/skills`; the Harness-managed
-`orchestration-bridge` plugin is excluded because the public console owns it.
+`git diff` in the target repo before committing. Without an allowlist no skills
+are imported. The Harness-managed `orchestration-bridge` plugin remains
+excluded because the public console owns it.
 
 ## Private Overlay And Secrets
 
