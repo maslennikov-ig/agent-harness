@@ -1,0 +1,18 @@
+{
+  "name": "orchestration-bridge",
+  "description": "Claude Code CLI bridge for the shared orchestration workflow: VS Code/WSL runtime guidance, Docs L1/L2 routing, bounded subagents, Beads, Graphify, and closeout.",
+  "version": "0.7.0",
+  "commands": "./commands/",
+  "author": {
+    "name": "maslennikov-ig"
+  },
+  "license": "MIT",
+  "keywords": [
+    "orchestration",
+    "claude-code",
+    "vscode",
+    "wsl",
+    "docs-context",
+    "beads"
+  ]
+}

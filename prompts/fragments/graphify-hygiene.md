@@ -1,0 +1,3 @@
+- Do not commit large generated `graphify-out/` artifacts unless the repo contract explicitly wants shared graph outputs.
+- Never paste `graphify-out/graph.json` into chat.
+- Use Beads before file-changing setup when Beads is available.

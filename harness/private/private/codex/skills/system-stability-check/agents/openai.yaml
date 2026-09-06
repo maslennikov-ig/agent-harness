@@ -1,0 +1,4 @@
+interface:
+  display_name: "System Stability Check"
+  short_description: "Check Codex, MCP, and harness latency"
+  default_prompt: "Use $system-stability-check to check Codex, MCP pressure, system health, and the shared orchestration harness latency benchmark."

@@ -1,0 +1,14 @@
+# Dependencies and generated console files
+.venv/
+node_modules/
+web/dist/
+__pycache__/
+*.py[cod]
+
+# Local user state and credentials
+/state/
+/.beads/
+/.codex/
+/.env
+/.env.*
+*.log

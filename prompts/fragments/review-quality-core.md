@@ -1,0 +1,1 @@
+Map requirements→evidence. Review correctness/completeness, regressions, normal/failure/edge test gaps, reuse, architecture, and project two-level docs. For touched external/versioned behavior, run fresh `docs-resolve` L1/L2; compare implementation before verdict. Report severity/confidence/file:line/evidence/impact/fix, coverage, residual risk, verdict.

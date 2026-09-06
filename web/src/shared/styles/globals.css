@@ -1,0 +1,319 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@config "../../../../tailwind.config.js";
+
+:root {
+  --bg: #07111f;
+  --surface: #0c1726;
+  --surface-low: #111e2f;
+  --surface-mid: #17263a;
+  --surface-high: #1f3550;
+  --border: #315579;
+  --border-soft: #1c3147;
+  --text: #e8f3ff;
+  --muted: #98adbf;
+  --primary: #8cc8ff;
+  --primary-strong: #2f9cff;
+  --secondary: #5ee0b0;
+  --runtime-accent: #8cc8ff;
+  --runtime-accent-strong: #2f9cff;
+  --runtime-accent-soft: rgba(140, 200, 255, 0.18);
+  --runtime-ink: #061a2d;
+  --copy-accent: #5ee0b0;
+  --copy-accent-soft: rgba(94, 224, 176, 0.18);
+  --copy-ink: #062215;
+  --nav-ink: #061a2d;
+  --rail-bg: #081421;
+  --topbar-bg: rgba(7, 17, 31, 0.9);
+  --expanded-bg: #091423;
+  --code-bg: #050b13;
+  --code-fg: #d9edff;
+  --disabled-bg: #142234;
+  --toast-bg: rgba(12, 23, 38, 0.9);
+  --warning: #ffb95f;
+  --danger: #ffb4ab;
+  --mono: "JetBrains Mono", "Cascadia Mono", Consolas, monospace;
+  --sans: Inter, "Segoe UI", system-ui, sans-serif;
+}
+
+body[data-runtime="codex"][data-theme="dark"] {
+  --bg: #07111f;
+  --surface: #0c1726;
+  --surface-low: #111e2f;
+  --surface-mid: #17263a;
+  --surface-high: #1f3550;
+  --border: #315579;
+  --border-soft: #1c3147;
+  --text: #e8f3ff;
+  --muted: #98adbf;
+  --primary: #8cc8ff;
+  --primary-strong: #2f9cff;
+  --secondary: #5ee0b0;
+  --runtime-accent: #8cc8ff;
+  --runtime-accent-strong: #2f9cff;
+  --runtime-accent-soft: rgba(140, 200, 255, 0.18);
+  --runtime-ink: #061a2d;
+  --copy-accent: #5ee0b0;
+  --copy-accent-soft: rgba(94, 224, 176, 0.18);
+  --copy-ink: #062215;
+  --nav-ink: #061a2d;
+  --rail-bg: #081421;
+  --topbar-bg: rgba(7, 17, 31, 0.9);
+  --expanded-bg: #091423;
+  --code-bg: #050b13;
+  --code-fg: #d9edff;
+  --disabled-bg: #142234;
+  --toast-bg: rgba(12, 23, 38, 0.9);
+  --warning: #ffb95f;
+  --danger: #ffb4ab;
+}
+
+body[data-runtime="codex"][data-theme="light"] {
+  --bg: #f4faff;
+  --surface: #ffffff;
+  --surface-low: #eaf5ff;
+  --surface-mid: #dceeff;
+  --surface-high: #cfe7ff;
+  --border: #9ac8ef;
+  --border-soft: #c8dfef;
+  --text: #0d1d2d;
+  --muted: #53697d;
+  --primary: #096fd6;
+  --primary-strong: #0052b3;
+  --secondary: #12735a;
+  --runtime-accent: #096fd6;
+  --runtime-accent-strong: #0052b3;
+  --runtime-accent-soft: rgba(9, 111, 214, 0.12);
+  --runtime-ink: #ffffff;
+  --copy-accent: #12735a;
+  --copy-accent-soft: rgba(18, 115, 90, 0.14);
+  --copy-ink: #ffffff;
+  --nav-ink: #ffffff;
+  --rail-bg: #eaf5ff;
+  --topbar-bg: rgba(244, 250, 255, 0.92);
+  --expanded-bg: #f9fcff;
+  --code-bg: #ffffff;
+  --code-fg: #102840;
+  --disabled-bg: #e0edf8;
+  --toast-bg: rgba(255, 255, 255, 0.92);
+  --warning: #8a5300;
+  --danger: #b3261e;
+}
+
+body[data-runtime="claude"][data-theme="dark"] {
+  --bg: #15100c;
+  --surface: #1c140f;
+  --surface-low: #261a12;
+  --surface-mid: #302116;
+  --surface-high: #3a2a1f;
+  --border: #5b412f;
+  --border-soft: #3a2b21;
+  --text: #f2e7dc;
+  --muted: #b6a79a;
+  --primary: #f0a15f;
+  --primary-strong: #df7a34;
+  --secondary: #e6c27a;
+  --runtime-accent: #f0a15f;
+  --runtime-accent-strong: #df7a34;
+  --runtime-accent-soft: rgba(240, 161, 95, 0.18);
+  --runtime-ink: #211006;
+  --copy-accent: #e6c27a;
+  --copy-accent-soft: rgba(230, 194, 122, 0.18);
+  --copy-ink: #201409;
+  --nav-ink: #211006;
+  --rail-bg: #1b130d;
+  --topbar-bg: rgba(21, 16, 12, 0.9);
+  --expanded-bg: #1d140e;
+  --code-bg: #0f0a07;
+  --code-fg: #f4dfc6;
+  --disabled-bg: #2b1f16;
+  --toast-bg: rgba(28, 20, 15, 0.9);
+  --warning: #ffb95f;
+  --danger: #ffb4ab;
+}
+
+body[data-runtime="claude"][data-theme="light"] {
+  --bg: #fff8ef;
+  --surface: #fffdf8;
+  --surface-low: #f7eadc;
+  --surface-mid: #efdcc8;
+  --surface-high: #e7cbb2;
+  --border: #c9926c;
+  --border-soft: #e5cbb6;
+  --text: #24180f;
+  --muted: #715946;
+  --primary: #b25226;
+  --primary-strong: #8f3d18;
+  --secondary: #8a5b16;
+  --runtime-accent: #b25226;
+  --runtime-accent-strong: #8f3d18;
+  --runtime-accent-soft: rgba(178, 82, 38, 0.13);
+  --runtime-ink: #ffffff;
+  --copy-accent: #8a5b16;
+  --copy-accent-soft: rgba(138, 91, 22, 0.14);
+  --copy-ink: #ffffff;
+  --nav-ink: #ffffff;
+  --rail-bg: #f7eadc;
+  --topbar-bg: rgba(255, 248, 239, 0.92);
+  --expanded-bg: #fffaf4;
+  --code-bg: #fffdf8;
+  --code-fg: #2c1a0e;
+  --disabled-bg: #f1dec9;
+  --toast-bg: rgba(255, 253, 248, 0.92);
+  --warning: #8a5300;
+  --danger: #b3261e;
+}
+
+:root {
+  --radius: 0.5rem;
+}
+
+/*
+ * Derived aliases are declared on `body`, not on `:root`. A custom property is
+ * substituted where it is declared, so a `:root` alias would freeze the dark
+ * palette from the first `:root` block and inherit that value into the light
+ * theme. The runtime/theme palettes above live on `body`, so the aliases do too.
+ */
+body {
+  --card-foreground: var(--text);
+  --popover: var(--surface-high);
+  --popover-foreground: var(--text);
+  --primary-foreground: var(--runtime-ink);
+  --secondary-foreground: var(--copy-ink);
+  --muted-foreground: var(--muted);
+  --accent: var(--surface-mid);
+  --accent-foreground: var(--text);
+  --destructive-foreground: var(--bg);
+  --input: var(--border);
+  --ring: var(--runtime-accent);
+  --sidebar: var(--rail-bg);
+  --sidebar-foreground: var(--text);
+  --sidebar-primary: var(--runtime-accent);
+  --sidebar-primary-foreground: var(--runtime-ink);
+  --sidebar-accent: var(--surface-mid);
+  --sidebar-accent-foreground: var(--text);
+  --sidebar-border: var(--border-soft);
+  --sidebar-ring: var(--runtime-accent);
+}
+
+/*
+ * Geometry tokens. `--spacing-control` is the one control height every
+ * interactive control in `shared/ui` uses (`h-control`, `min-h-control`), so no
+ * screen has to retype a control height of its own.
+ */
+@theme {
+  --spacing-control: 2.25rem;
+  --shadow-panel: 0 8px 8px rgba(0, 0, 0, 0.14);
+}
+
+@theme inline {
+  --color-background: var(--bg);
+  --color-foreground: var(--text);
+  --color-card: var(--surface);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-border-soft: var(--border-soft);
+  --color-surface-low: var(--surface-low);
+  --color-surface-mid: var(--surface-mid);
+  --color-surface-high: var(--surface-high);
+  --color-code-bg: var(--code-bg);
+  --color-code-fg: var(--code-fg);
+  --color-topbar-bg: var(--topbar-bg);
+  --color-disabled-bg: var(--disabled-bg);
+  --color-runtime-accent-soft: var(--runtime-accent-soft);
+  --color-copy-accent-soft: var(--copy-accent-soft);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-destructive: var(--danger);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-warning: var(--warning);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --font-sans: var(--sans);
+  --font-mono: var(--mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+}
+
+@keyframes console-shimmer {
+  from {
+    background-position: calc(-1 * var(--console-shimmer-spread)) 0;
+  }
+  to {
+    background-position: calc(100% + var(--console-shimmer-spread)) 0;
+  }
+}
+
+.console-shimmer {
+  color: transparent;
+  background: linear-gradient(
+    90deg,
+    var(--muted) 35%,
+    var(--text) 50%,
+    var(--muted) 65%
+  );
+  background-clip: text;
+  background-size: 200% 100%;
+  animation: console-shimmer 1.4s linear infinite;
+}
+
+/*
+ * Reduced motion covers every animation and transition, not just the shimmer:
+ * Radix dialog/sheet/tabs and `tw-animate-css` add their own keyframes, and a
+ * rule scoped to one class leaves those running.
+ */
+@media (prefers-reduced-motion: reduce) {
+  /* biome-ignore-start lint/complexity/noImportantStyles: a universal selector
+   * has lower specificity than every utility class it must override, so the
+   * user's reduced-motion preference only wins with `!important`. */
+  *,
+  *::before,
+  *::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-delay: 0ms !important;
+    transition-duration: 1ms !important;
+  }
+
+  .console-shimmer {
+    color: var(--muted);
+    animation: none !important;
+  }
+  /* biome-ignore-end lint/complexity/noImportantStyles: see above */
+}

@@ -1,0 +1,2874 @@
+{
+  "files": [
+    {
+      "mode": "0644",
+      "path": ".gitignore",
+      "sha256": "dad66b79797207b398050fb851ab96643cd65293d1d706e118c690319b766252",
+      "source": "harness/distribution/gitignore"
+    },
+    {
+      "mode": "0644",
+      "path": "LICENSE",
+      "sha256": "20c22c381e700d2d7563335364a1fa1b995f0f68626f6cca08be24b736402aa9",
+      "source": "LICENSE"
+    },
+    {
+      "mode": "0644",
+      "path": "README.md",
+      "sha256": "5581b13b623db88edcb809b7356662d83dca93451a3633648045f7a941dbcfa3",
+      "source": "harness/distribution/README.md"
+    },
+    {
+      "mode": "0755",
+      "path": "bin/harness",
+      "sha256": "2757fa731c1fda31c79791c313f51d51c359a9d9f853e4afcc3919210a7aea7c",
+      "source": "harness/distribution/bin/harness"
+    },
+    {
+      "mode": "0644",
+      "path": "biome.json",
+      "sha256": "f1a88c62e59adc1b32ba5931b0fd61d8a7f67fc5951a3a95afe0231cc6f2f3da",
+      "source": "biome.json"
+    },
+    {
+      "mode": "0644",
+      "path": "claude-plugin/orchestration-bridge/.claude-plugin/plugin.json",
+      "sha256": "7d51d0f2f35c5ae5159101b7caf74cb94387974cbbee21f56022fcd0478c9dfa",
+      "source": "claude-plugin/orchestration-bridge/.claude-plugin/plugin.json"
+    },
+    {
+      "mode": "0644",
+      "path": "claude-plugin/orchestration-bridge/README.md",
+      "sha256": "ddaaca1ddb4f8613988c1c0517f617f2ebea2d7c12ec045dff444f3a81c17eba",
+      "source": "claude-plugin/orchestration-bridge/README.md"
+    },
+    {
+      "mode": "0644",
+      "path": "claude-plugin/orchestration-bridge/agents/complex-worker.md",
+      "sha256": "7f13ab8e46aa53f43aefb1be99347f37fb0b5fb102c02c1027822a535e4c502f",
+      "source": "claude-plugin/orchestration-bridge/agents/complex-worker.md"
+    },
+    {
+      "mode": "0644",
+      "path": "claude-plugin/orchestration-bridge/agents/correctness-reviewer.md",
+      "sha256": "28dd13cc1483e4f1b1095021912f4db3092534d8507da14222093e5688a9ea9b",
+      "source": "claude-plugin/orchestration-bridge/agents/correctness-reviewer.md"
+    },
+    {
+      "mode": "0644",
+      "path": "claude-plugin/orchestration-bridge/agents/docs-researcher.md",
+      "sha256": "9fab3a21594c2e5b9a91be85d1bcca2c192aea92713e59bb51378c25828fa464",
+      "source": "claude-plugin/orchestration-bridge/agents/docs-researcher.md"
+    },
+    {
+      "mode": "0644",
+      "path": "claude-plugin/orchestration-bridge/agents/docs-reviewer.md",
+      "sha256": "43b9a15b5e0b09c039f5cf5ee3cd7450f1a4d01201acd200bd143ae99aaead47",
+      "source": "claude-plugin/orchestration-bridge/agents/docs-reviewer.md"
+    },
+    {
+      "mode": "0644",
+      "path": "claude-plugin/orchestration-bridge/agents/frontend-specialist.md",
+      "sha256": "ccc450ec94750f05f84ed5e0c15e545082ee34029f6bbf256d1711ffd1e7f232",
+      "source": "claude-plugin/orchestration-bridge/agents/frontend-specialist.md"
+    },
+    {
+      "mode": "0644",
+      "path": "claude-plugin/orchestration-bridge/agents/improvement-reviewer.md",
+      "sha256": "e180c790834cbb31e11756ad38dce1559d753a3dede608b038abab252250a113",
+      "source": "claude-plugin/orchestration-bridge/agents/improvement-reviewer.md"
+    },
+    {
+      "mode": "0644",
+      "path": "claude-plugin/orchestration-bridge/agents/mechanical-worker.md",
+      "sha256": "e11ba561ad7a270be43ac95aae9ba03d1b0a074be2184de9c99631d540498085",
+      "source": "claude-plugin/orchestration-bridge/agents/mechanical-worker.md"
+    },
+    {
+      "mode": "0644",
+      "path": "claude-plugin/orchestration-bridge/agents/worker.md",
+      "sha256": "fec64f132cc0e3ee11968ff07690fdde26cb7c9c7efbeb99f72ec13bfaa5ffd5",
+      "source": "claude-plugin/orchestration-bridge/agents/worker.md"
+    },
+    {
+      "mode": "0644",
+      "path": "claude-plugin/orchestration-bridge/commands/stage.md",
+      "sha256": "79739db4a96e23f7afb4e7031724aeaa3cd05db3785d5f2cc62c22a9e7637a7f",
+      "source": "claude-plugin/orchestration-bridge/commands/stage.md"
+    },
+    {
+      "mode": "0644",
+      "path": "claude-plugin/orchestration-bridge/scripts/beads_context.py",
+      "sha256": "34c5c828374fd87bed2be417f11a0feb7dc92aea62fdae90441ea7c54f5e5182",
+      "source": "claude-plugin/orchestration-bridge/scripts/beads_context.py"
+    },
+    {
+      "mode": "0644",
+      "path": "claude-plugin/orchestration-bridge/skills/cleanup-audit/SKILL.md",
+      "sha256": "fdaf8cc54278a8ac853ef0506711b31859cf7bb5287d788268e32b8dad12990b",
+      "source": "claude-plugin/orchestration-bridge/skills/cleanup-audit/SKILL.md"
+    },
+    {
+      "mode": "0644",
+      "path": "claude-plugin/orchestration-bridge/skills/closeout/SKILL.md",
+      "sha256": "ac89af214db8f0ffd8a8c7a129e99f33c58c0b2d2d8eaf5f5da73fb2d8ae73ed",
+      "source": "claude-plugin/orchestration-bridge/skills/closeout/SKILL.md"
+    },
+    {
+      "mode": "0644",
+      "path": "claude-plugin/orchestration-bridge/skills/dependency-docs-upgrade/SKILL.md",
+      "sha256": "a44c9b715c0a8e66ebd594e6f93837e5b243940ac3739f2b0710320bef3f4a60",
+      "source": "claude-plugin/orchestration-bridge/skills/dependency-docs-upgrade/SKILL.md"
+    },
+    {
+      "mode": "0644",
+      "path": "claude-plugin/orchestration-bridge/skills/docs-context/SKILL.md",
+      "sha256": "8cea1c6a2d8bc83d50b4c4973b037cdb63e661bc46ad1a64df8bfffe5e9dee76",
+      "source": "claude-plugin/orchestration-bridge/skills/docs-context/SKILL.md"
+    },
+    {
+      "mode": "0644",
+      "path": "claude-plugin/orchestration-bridge/skills/graphify-project/SKILL.md",
+      "sha256": "ecec73ffb6f147a70729a60f2377f3a01b10e8e582c53a1b1faea6770b514670",
+      "source": "claude-plugin/orchestration-bridge/skills/graphify-project/SKILL.md"
+    },
+    {
+      "mode": "0644",
+      "path": "claude-plugin/orchestration-bridge/skills/orchestrator-stage/SKILL.md",
+      "sha256": "49bfd88fdda6c0299293a86b429e97128739c14fb1a2ded20ac0e4b09db5b82e",
+      "source": "claude-plugin/orchestration-bridge/skills/orchestrator-stage/SKILL.md"
+    },
+    {
+      "mode": "0644",
+      "path": "claude-plugin/orchestration-bridge/skills/orchestrator-stage/references/acceptance-evidence.md",
+      "sha256": "9fce5f06f9880b2cb331c5fcbd6ee6830edcdb21b2b381c91b500190926693c4",
+      "source": "claude-plugin/orchestration-bridge/skills/orchestrator-stage/references/acceptance-evidence.md"
+    },
+    {
+      "mode": "0644",
+      "path": "claude-plugin/orchestration-bridge/skills/orchestrator-stage/references/autonomy-and-approvals.md",
+      "sha256": "ae3d2311cbc71d5866a75abb3842185173e7d22e16b59a071f2bb0c7b7204e22",
+      "source": "claude-plugin/orchestration-bridge/skills/orchestrator-stage/references/autonomy-and-approvals.md"
+    },
+    {
+      "mode": "0644",
+      "path": "claude-plugin/orchestration-bridge/skills/orchestrator-stage/references/closeout-and-delivery.md",
+      "sha256": "b8373eb4c238fa210f25301fa644db262f8ae8a70067e97ac33bf6f302def00e",
+      "source": "claude-plugin/orchestration-bridge/skills/orchestrator-stage/references/closeout-and-delivery.md"
+    },
+    {
+      "mode": "0644",
+      "path": "claude-plugin/orchestration-bridge/skills/orchestrator-stage/references/delegation-and-isolation.md",
+      "sha256": "e25bbacc75344b89acffc84aab8f75fbf574874f08f2ed6c377ad65b91cefb62",
+      "source": "claude-plugin/orchestration-bridge/skills/orchestrator-stage/references/delegation-and-isolation.md"
+    },
+    {
+      "mode": "0644",
+      "path": "claude-plugin/orchestration-bridge/skills/orchestrator-stage/references/docs-and-graphify.md",
+      "sha256": "6b0eb5e2632d720834117e0989ee5454ef19b895f96b42ef567648fc3d8e365d",
+      "source": "claude-plugin/orchestration-bridge/skills/orchestrator-stage/references/docs-and-graphify.md"
+    },
+    {
+      "mode": "0644",
+      "path": "claude-plugin/orchestration-bridge/skills/orchestrator-stage/references/scope-and-beads.md",
+      "sha256": "1e35a4b6ff5aca1087299aea189c998e96eb97f0a38be3e92654e17e38f21212",
+      "source": "claude-plugin/orchestration-bridge/skills/orchestrator-stage/references/scope-and-beads.md"
+    },
+    {
+      "mode": "0644",
+      "path": "claude-plugin/orchestration-bridge/skills/orchestrator-stage/references/stage-lifecycle-and-sizing.md",
+      "sha256": "e0b28c71d7939a0ade9e1de9bf580d29b76298e21ae59f27c821040c3635a0d0",
+      "source": "claude-plugin/orchestration-bridge/skills/orchestrator-stage/references/stage-lifecycle-and-sizing.md"
+    },
+    {
+      "mode": "0644",
+      "path": "claude-plugin/orchestration-bridge/skills/orchestrator-stage/references/verification-routing.md",
+      "sha256": "e5bf8269faeb6e71402c52577b568d919ed2c9285b0f4d39c52434ba1d825e12",
+      "source": "claude-plugin/orchestration-bridge/skills/orchestrator-stage/references/verification-routing.md"
+    },
+    {
+      "mode": "0644",
+      "path": "claude-plugin/orchestration-bridge/skills/prompt-authoring/SKILL.md",
+      "sha256": "d45313bdc52d78579a2eca60cf06abadb578b00be79243174da9e15196bafdaf",
+      "source": "claude-plugin/orchestration-bridge/skills/prompt-authoring/SKILL.md"
+    },
+    {
+      "mode": "0644",
+      "path": "claude-plugin/orchestration-bridge/skills/system-stability/SKILL.md",
+      "sha256": "9d1c1cb06e75af9af75a0a96f84e0b2db99f1a7afc3bcb044acee6ada7f9f46d",
+      "source": "claude-plugin/orchestration-bridge/skills/system-stability/SKILL.md"
+    },
+    {
+      "mode": "0644",
+      "path": "claude-plugin/orchestration-bridge/skills/test-pass/SKILL.md",
+      "sha256": "e98066c290b317f3257733aa55249c3d211fac0ad86042cadaec10b6faab5b2e",
+      "source": "claude-plugin/orchestration-bridge/skills/test-pass/SKILL.md"
+    },
+    {
+      "mode": "0644",
+      "path": "claude-plugin/orchestration-bridge/templates/global/CLAUDE.md",
+      "sha256": "70aeab7ada089fcae5e9c0d97d3487124f1923ce1d393182eb060ecba6d3fd92",
+      "source": "claude-plugin/orchestration-bridge/templates/global/CLAUDE.md"
+    },
+    {
+      "mode": "0644",
+      "path": "components.json",
+      "sha256": "7e69af8ce9191f80c0c3c99c7583a77bacfcd80c406b5354d471b63d75d7ff66",
+      "source": "components.json"
+    },
+    {
+      "mode": "0644",
+      "path": "docs/vendored-from-buzz.md",
+      "sha256": "56a63dadb9c7ead4de2583308fa690f0a07364ce7348049557230673703b55cf",
+      "source": "docs/vendored-from-buzz.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/core/assets/codex/skills/harness-bootstrap/SKILL.md",
+      "sha256": "ade52756b8d6c21c4f9a9367f9b5f24ddf32677bad94001300545482ba22d154",
+      "source": "harness/core/assets/codex/skills/harness-bootstrap/SKILL.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/core/templates/project/.codex/orchestrator.toml",
+      "sha256": "1d1750dbc42e0d2fbc4e24a691d9f9d17d445467a06903742c9a18aff72778c5",
+      "source": "harness/core/templates/project/.codex/orchestrator.toml"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/core/templates/project/AGENTS.md",
+      "sha256": "09b5b385136ea9f0498d9905e242658c6322c1fb6754bbb5275da73fa0799fd4",
+      "source": "harness/core/templates/project/AGENTS.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/PORTABILITY.md",
+      "sha256": "be7d6f279059b533ca35698222d885b818fea5452decf2a57647d3b23f16feb4",
+      "source": "harness/distribution/PORTABILITY.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/THIRD_PARTY_NOTICES.md",
+      "sha256": "eba0ba49cfb983d38e012e4453b56897ed264398bd0f29cf8bc7522b95f7bc12",
+      "source": "harness/distribution/THIRD_PARTY_NOTICES.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/installer.py",
+      "sha256": "4b77c0480d633c7bef38120e6c0229529925b33c8f63e4d39eca7496e6aa8a47",
+      "source": "harness/distribution/installer.py"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/licenses/buzz-Apache-2.0.txt",
+      "sha256": "108cb15997e51b75a8d18b0c1e2c52bd3879d051ab02118973387df1e4aab584",
+      "source": "harness/distribution/licenses/buzz-Apache-2.0.txt"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/licenses/voltagent-codex-subagents-MIT.txt",
+      "sha256": "6d4bdc9a9cf30e7beb593475fdcdbf29f981ea6bd7923f202866145409f87b44",
+      "source": "harness/distribution/licenses/voltagent-codex-subagents-MIT.txt"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/tests/test_console_inventory.py",
+      "sha256": "c591cc88047218d8c8bc83b63027704abd309f37257ba475b549fb02d530927a",
+      "source": "harness/distribution/tests/test_console_inventory.py"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/tests/test_installer.py",
+      "sha256": "c888f02b76c80896823580b578117089c9269a367f976c0aedcb5f1b56d589e2",
+      "source": "harness/distribution/tests/test_installer.py"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/.claude-plugin/plugin.json",
+      "sha256": "d0d56f9f3a6adbf341d5d49850f63def17bfb7e9a39704b517745b2c554498c3",
+      "source": "harness/distribution/vendor/superpowers/.claude-plugin/plugin.json"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/LICENSE",
+      "sha256": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400",
+      "source": "harness/distribution/vendor/superpowers/LICENSE"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/PROVENANCE.json",
+      "sha256": "0a3b4a891e1321a5ffe99dbca844c7c11b38c6c2f6716bed68273c089465bf5f",
+      "source": "harness/distribution/vendor/superpowers/PROVENANCE.json"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/skills/brainstorming/SKILL.md",
+      "sha256": "97d1b907f25afb0d157c16fa36cf74773eb44ba96e4093f70cb961dc052b04e6",
+      "source": "harness/distribution/vendor/superpowers/skills/brainstorming/SKILL.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/skills/brainstorming/scripts/frame-template.html",
+      "sha256": "6a8a4e58bd6a44b904e2e3c57de774481d909204597e1498de53f1b2fecc4c4e",
+      "source": "harness/distribution/vendor/superpowers/skills/brainstorming/scripts/frame-template.html"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/skills/brainstorming/scripts/helper.js",
+      "sha256": "43c6d69954a46ec34a2a262bcc62a9a7e83e839c739f199cb72646d397c686e3",
+      "source": "harness/distribution/vendor/superpowers/skills/brainstorming/scripts/helper.js"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/skills/brainstorming/scripts/server.cjs",
+      "sha256": "2d2961ea8d11f56c5f4c3a1a68d22709efa5d7601a2246d8c880774e7e9e8412",
+      "source": "harness/distribution/vendor/superpowers/skills/brainstorming/scripts/server.cjs"
+    },
+    {
+      "mode": "0755",
+      "path": "harness/distribution/vendor/superpowers/skills/brainstorming/scripts/start-server.sh",
+      "sha256": "a4e5ae84275bcaacd2f84345afeabe59cf7b00ba080e123da7cc1fb226f12847",
+      "source": "harness/distribution/vendor/superpowers/skills/brainstorming/scripts/start-server.sh"
+    },
+    {
+      "mode": "0755",
+      "path": "harness/distribution/vendor/superpowers/skills/brainstorming/scripts/stop-server.sh",
+      "sha256": "0b5ccbbd57f62d3ed88993f7940b5ee0e5c0fc9b21c550c623da4f6292e47daf",
+      "source": "harness/distribution/vendor/superpowers/skills/brainstorming/scripts/stop-server.sh"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/skills/brainstorming/spec-document-reviewer-prompt.md",
+      "sha256": "95a0a195de9d984be2fffa95bab16fc8c563bc296a9cfc5e9c29cb3ece0d7457",
+      "source": "harness/distribution/vendor/superpowers/skills/brainstorming/spec-document-reviewer-prompt.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/skills/brainstorming/visual-companion.md",
+      "sha256": "77eb44a4ec3408bb3dafb872288ecd94beb8cf21da4f2bafa54fd08255d7808b",
+      "source": "harness/distribution/vendor/superpowers/skills/brainstorming/visual-companion.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/skills/dispatching-parallel-agents/SKILL.md",
+      "sha256": "cabaf887e62ce93a6f152e2d666c949329c33585448c908b6814417986b234f9",
+      "source": "harness/distribution/vendor/superpowers/skills/dispatching-parallel-agents/SKILL.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/skills/executing-plans/SKILL.md",
+      "sha256": "8d50249583f1347946215b72fbd8e8747f2156329d8d1492d68bb71fbe3fe578",
+      "source": "harness/distribution/vendor/superpowers/skills/executing-plans/SKILL.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/skills/finishing-a-development-branch/SKILL.md",
+      "sha256": "5fcee0e3dec7af654d207f98a09d87dd338c99bd7d1698f666b17b3010bcf310",
+      "source": "harness/distribution/vendor/superpowers/skills/finishing-a-development-branch/SKILL.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/skills/receiving-code-review/SKILL.md",
+      "sha256": "091df1629510af1b92fc4abd6f96732ebedb4cb2c0f3457e8f2740b0504a2438",
+      "source": "harness/distribution/vendor/superpowers/skills/receiving-code-review/SKILL.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/skills/requesting-code-review/SKILL.md",
+      "sha256": "ef89741491232869f27087b999c5bd7165d0e222cdafa517100ef514732b2c7e",
+      "source": "harness/distribution/vendor/superpowers/skills/requesting-code-review/SKILL.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/skills/requesting-code-review/code-reviewer.md",
+      "sha256": "5eca5fcfd48a50e0a526ce5ffd64bf625d6b81bb46d11795274dae451fe6ffd4",
+      "source": "harness/distribution/vendor/superpowers/skills/requesting-code-review/code-reviewer.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/skills/subagent-driven-development/SKILL.md",
+      "sha256": "9177b3c19991bdc6abe2533e9dce979edd558ad32647d5b4aee1f85341670fa0",
+      "source": "harness/distribution/vendor/superpowers/skills/subagent-driven-development/SKILL.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/skills/subagent-driven-development/implementer-prompt.md",
+      "sha256": "70e0b49fc221e1a95bc0ea3defd60b92d86fdd0c68535af7b6cf148a94479adb",
+      "source": "harness/distribution/vendor/superpowers/skills/subagent-driven-development/implementer-prompt.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/skills/subagent-driven-development/re-review-prompt.md",
+      "sha256": "3b47aac1e2fa009d1b93f5350b3e7986644c71f393177d170ab170bca5906317",
+      "source": "harness/distribution/vendor/superpowers/skills/subagent-driven-development/re-review-prompt.md"
+    },
+    {
+      "mode": "0755",
+      "path": "harness/distribution/vendor/superpowers/skills/subagent-driven-development/scripts/review-package",
+      "sha256": "fac3d4bd7f94369e8037b9ead2a8a502dca6ab333902b560b9455dbb3c450ebe",
+      "source": "harness/distribution/vendor/superpowers/skills/subagent-driven-development/scripts/review-package"
+    },
+    {
+      "mode": "0755",
+      "path": "harness/distribution/vendor/superpowers/skills/subagent-driven-development/scripts/sdd-workspace",
+      "sha256": "95a09d9d3983ad1aafd093ca72b4587946dea885c6e302caa02a779a2f911c31",
+      "source": "harness/distribution/vendor/superpowers/skills/subagent-driven-development/scripts/sdd-workspace"
+    },
+    {
+      "mode": "0755",
+      "path": "harness/distribution/vendor/superpowers/skills/subagent-driven-development/scripts/task-brief",
+      "sha256": "d6954ef7841c7da3d77373e6ff5118b3f2f2e998606fd95d33e6527851bce044",
+      "source": "harness/distribution/vendor/superpowers/skills/subagent-driven-development/scripts/task-brief"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/skills/subagent-driven-development/task-reviewer-prompt.md",
+      "sha256": "55ccba99246322f92b7c4d8dd4ef87d2ecd7abdca28b0115f08fa346cbd9b63b",
+      "source": "harness/distribution/vendor/superpowers/skills/subagent-driven-development/task-reviewer-prompt.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/skills/systematic-debugging/CREATION-LOG.md",
+      "sha256": "c24733a5b1821bd6bed1fc950261f0b9f4e90097e0bbb96459d8179713730789",
+      "source": "harness/distribution/vendor/superpowers/skills/systematic-debugging/CREATION-LOG.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/skills/systematic-debugging/SKILL.md",
+      "sha256": "b41a75ebbea4856005d51c9bd310ccb7f224d386a077f8a2c9c3ac5ff672b352",
+      "source": "harness/distribution/vendor/superpowers/skills/systematic-debugging/SKILL.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/skills/systematic-debugging/condition-based-waiting-example.ts",
+      "sha256": "40ae5ebe497fdf310200e43fe986552546d0a22837c0d39e855db1cfd33eb88e",
+      "source": "harness/distribution/vendor/superpowers/skills/systematic-debugging/condition-based-waiting-example.ts"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/skills/systematic-debugging/condition-based-waiting.md",
+      "sha256": "e89fec8400d6cd50f43407cec9fab50976ba4d55d0ec2eb51c0bd68036b54c26",
+      "source": "harness/distribution/vendor/superpowers/skills/systematic-debugging/condition-based-waiting.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/skills/systematic-debugging/defense-in-depth.md",
+      "sha256": "1e175fb86fc357e58c6aebf5441e481e1b7868b4380c0456b63a17eefbd18ba7",
+      "source": "harness/distribution/vendor/superpowers/skills/systematic-debugging/defense-in-depth.md"
+    },
+    {
+      "mode": "0755",
+      "path": "harness/distribution/vendor/superpowers/skills/systematic-debugging/find-polluter.sh",
+      "sha256": "dd7b8f13c4cc2a24b33ff87b18da9248f3e1c80a085c3316224f69ff0fa5c43c",
+      "source": "harness/distribution/vendor/superpowers/skills/systematic-debugging/find-polluter.sh"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/skills/systematic-debugging/root-cause-tracing.md",
+      "sha256": "6b0622269e098ca1399e123e553fd385f0b6412d88ef0e9c4f5a8ea9cf1cec7b",
+      "source": "harness/distribution/vendor/superpowers/skills/systematic-debugging/root-cause-tracing.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/skills/systematic-debugging/test-academic.md",
+      "sha256": "fe2ba480d78ac0d686dc025f41c2a32a43d642bf533f91b0c6053a04d35d6486",
+      "source": "harness/distribution/vendor/superpowers/skills/systematic-debugging/test-academic.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/skills/systematic-debugging/test-pressure-1.md",
+      "sha256": "0b6a915db0054577819834c79be9eb614e97bddba10d73768e1fbe91cfed048a",
+      "source": "harness/distribution/vendor/superpowers/skills/systematic-debugging/test-pressure-1.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/skills/systematic-debugging/test-pressure-2.md",
+      "sha256": "b2030aeffba07050e8ad573ddf87486457c4a016a786bb326235bebd856f2016",
+      "source": "harness/distribution/vendor/superpowers/skills/systematic-debugging/test-pressure-2.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/skills/systematic-debugging/test-pressure-3.md",
+      "sha256": "96b50a52e2c7989c9cf20fb752c47c1e9a3a70dc362f8f7989f8f5b64dac7708",
+      "source": "harness/distribution/vendor/superpowers/skills/systematic-debugging/test-pressure-3.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/skills/test-driven-development/SKILL.md",
+      "sha256": "106fa24e566d42bf88e06d0ef240b240a4eccbfae80543f5585d5f35446ae75e",
+      "source": "harness/distribution/vendor/superpowers/skills/test-driven-development/SKILL.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/skills/test-driven-development/writing-good-tests.md",
+      "sha256": "51471c853306ff92ca8bb41dcaea05f31c0e46b03651f8f3c99754b7172f4ae1",
+      "source": "harness/distribution/vendor/superpowers/skills/test-driven-development/writing-good-tests.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/skills/using-git-worktrees/SKILL.md",
+      "sha256": "86b96493e9e2701ae3b3df79c89deb3211380afa5f48c055613077fbc39b9086",
+      "source": "harness/distribution/vendor/superpowers/skills/using-git-worktrees/SKILL.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/skills/using-superpowers/SKILL.md",
+      "sha256": "ff13afb08e78ab006a99563d4db62458cee4ad5cfcab1d60e14ed67f2d1301ff",
+      "source": "harness/distribution/vendor/superpowers/skills/using-superpowers/SKILL.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/skills/using-superpowers/references/antigravity-tools.md",
+      "sha256": "4880f6de3da4e32f9659ebe7a72b9e0ebfff04e028c2ed96173f86d0387a04c0",
+      "source": "harness/distribution/vendor/superpowers/skills/using-superpowers/references/antigravity-tools.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/skills/using-superpowers/references/codex-tools.md",
+      "sha256": "d83e0e52f52bd8be43ee7a55ce7eae68b9064f5471a20268a4dc03b1da41933e",
+      "source": "harness/distribution/vendor/superpowers/skills/using-superpowers/references/codex-tools.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/skills/using-superpowers/references/gemini-tools.md",
+      "sha256": "62b9157bcb0ee3c6784e3d0da0798ddfa5872f9e0c34bea48f3079dabea71965",
+      "source": "harness/distribution/vendor/superpowers/skills/using-superpowers/references/gemini-tools.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/skills/using-superpowers/references/hermes-tools.md",
+      "sha256": "e2185c976a3c87503910e05e2aea58cc89bc8e569bb624b93df9958ac47a9190",
+      "source": "harness/distribution/vendor/superpowers/skills/using-superpowers/references/hermes-tools.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/skills/using-superpowers/references/pi-tools.md",
+      "sha256": "703dbc83d23ecab9c6f388460c38abc482e9dee2fe6772a8c7a255152ad3a4d5",
+      "source": "harness/distribution/vendor/superpowers/skills/using-superpowers/references/pi-tools.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/skills/verification-before-completion/SKILL.md",
+      "sha256": "28e31f11373447887736daa6fa2208e1de3863ec96e5974a73e7f3083c666655",
+      "source": "harness/distribution/vendor/superpowers/skills/verification-before-completion/SKILL.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/skills/writing-plans/SKILL.md",
+      "sha256": "1f52398df34bd3f50654431e24e07910cf7bd0e681ac5d08d62a9a7eea658a34",
+      "source": "harness/distribution/vendor/superpowers/skills/writing-plans/SKILL.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/skills/writing-plans/plan-document-reviewer-prompt.md",
+      "sha256": "aa728b96aad603c8be28875a4305637f6c984aa81ffcadcb13e743202fa2a0c7",
+      "source": "harness/distribution/vendor/superpowers/skills/writing-plans/plan-document-reviewer-prompt.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/skills/writing-skills/SKILL.md",
+      "sha256": "3e4dfbce8c366e0420b97955efd2091cb134f5b45efe243c3c2f9b9498559ff0",
+      "source": "harness/distribution/vendor/superpowers/skills/writing-skills/SKILL.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/skills/writing-skills/anthropic-best-practices.md",
+      "sha256": "217629b356c09c9bd11017c9788e8fc654ca1b32c92d4a51cd490e16dd65e59a",
+      "source": "harness/distribution/vendor/superpowers/skills/writing-skills/anthropic-best-practices.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/skills/writing-skills/examples/CLAUDE_MD_TESTING.md",
+      "sha256": "0b379a3415e185d3c434b3ad283d8aa132f3022c2a4f210f168865b5986bcef0",
+      "source": "harness/distribution/vendor/superpowers/skills/writing-skills/examples/CLAUDE_MD_TESTING.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/skills/writing-skills/graphviz-conventions.dot",
+      "sha256": "e2890a593c91370e384b42f2f67b1a6232c9e69dddea7891a0c1c46d7b20b694",
+      "source": "harness/distribution/vendor/superpowers/skills/writing-skills/graphviz-conventions.dot"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/skills/writing-skills/persuasion-principles.md",
+      "sha256": "a51bc9bf75189ea73a27b3fb504a2fdfdb966fb1f7f1cdf03203230a216ccc03",
+      "source": "harness/distribution/vendor/superpowers/skills/writing-skills/persuasion-principles.md"
+    },
+    {
+      "mode": "0755",
+      "path": "harness/distribution/vendor/superpowers/skills/writing-skills/render-graphs.js",
+      "sha256": "c7f412cc629461c4d10287e668731874c0497707023e3e3f74a5355eb2cee196",
+      "source": "harness/distribution/vendor/superpowers/skills/writing-skills/render-graphs.js"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/distribution/vendor/superpowers/skills/writing-skills/testing-skills-with-subagents.md",
+      "sha256": "6298a96e9f280c6fd5e01224b82c382bcdb138072f6fec889a30f162f7dc1daa",
+      "source": "harness/distribution/vendor/superpowers/skills/writing-skills/testing-skills-with-subagents.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/claude/skills/technical-premortem/SKILL.md",
+      "sha256": "9c5792d3b09889157c5904043b317051bc2d7aaf6ae012babf59deb02e5b4ab7",
+      "source": "harness/private/private/claude/skills/technical-premortem/SKILL.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/agents/QUALITY_PACK.md",
+      "sha256": "b569c376d93d16e7f99c97f6520d35db72c546e41f2ecb7f85fdf93999b7b8ff",
+      "source": "harness/private/private/codex/agents/QUALITY_PACK.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/agents/accessibility-tester.toml",
+      "sha256": "06190adcc69bcefef0a4f10215eef561c08b450527055b1071c85270cdccc864",
+      "source": "harness/private/private/codex/agents/accessibility-tester.toml"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/agents/ai-engineer.toml",
+      "sha256": "ec336eacd25cec508b7286a78af1b4ce3f0f746799d1f61808f15a8ed7cf1eb6",
+      "source": "harness/private/private/codex/agents/ai-engineer.toml"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/agents/api-designer.toml",
+      "sha256": "50f390352dc23b7b252c95c10eefb65fd0a0ae922168be7aec9a4e8e0d924245",
+      "source": "harness/private/private/codex/agents/api-designer.toml"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/agents/architect-reviewer.toml",
+      "sha256": "41faf516816a51b34c830b8d53f902a30f20e761699a9e3ca9e61f623cb3ac31",
+      "source": "harness/private/private/codex/agents/architect-reviewer.toml"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/agents/asset-vetter.toml",
+      "sha256": "dbce2f57a23febef5d39cac5f159d6433c619f3780207d333d2e1568cec2f232",
+      "source": "harness/private/private/codex/agents/asset-vetter.toml"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/agents/backend-developer.toml",
+      "sha256": "0e999398736d37dc359a921b7d7943f5fac664ac0becb889b9c6b606ce548fda",
+      "source": "harness/private/private/codex/agents/backend-developer.toml"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/agents/build-engineer.toml",
+      "sha256": "642d1f98f9a696ca1abd16115302adb297c58609f386156199070b44b56ad593",
+      "source": "harness/private/private/codex/agents/build-engineer.toml"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/agents/cli-developer.toml",
+      "sha256": "1ea397c2286a45bbfc01b0396ce40d14e0db2111b92f299c81042a07028976ae",
+      "source": "harness/private/private/codex/agents/cli-developer.toml"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/agents/code-health-reviewer.toml",
+      "sha256": "344002b0529e6735ae56821110f5207a6a82b795f44b859a861e660a9e725575",
+      "source": "harness/private/private/codex/agents/code-health-reviewer.toml"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/agents/code-mapper.toml",
+      "sha256": "8831b9503ed35543115c7414feade9dff26b58a94916d5082a7aa6a216547f9b",
+      "source": "harness/private/private/codex/agents/code-mapper.toml"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/agents/correctness-reviewer.toml",
+      "sha256": "c7c4ac3517b968893158ccdecb1ad93627c98f5471fd7befdf7f7c2b813cd799",
+      "source": "harness/private/private/codex/agents/correctness-reviewer.toml"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/agents/database-optimizer.toml",
+      "sha256": "f34ff098829093f3e8ddff6c3cc8627a691fd63fcf82efa5884a7cd0848a9179",
+      "source": "harness/private/private/codex/agents/database-optimizer.toml"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/agents/db-migration-specialist.toml",
+      "sha256": "724acd6b2952fe11281413c89c6a00e54b3f500f4d3ef7b4ed27b09c8d96d77a",
+      "source": "harness/private/private/codex/agents/db-migration-specialist.toml"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/agents/debugger.toml",
+      "sha256": "6b504aae00863fdfe9cc4eeef73ead16cb5381642e8129ee78272b8b6ca1ef3e",
+      "source": "harness/private/private/codex/agents/debugger.toml"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/agents/dependency-manager.toml",
+      "sha256": "5d97e834f890a4b3e9df82db5eb45c000d92bfed927b590d00822d9f4ef19cb0",
+      "source": "harness/private/private/codex/agents/dependency-manager.toml"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/agents/deploy-specialist.toml",
+      "sha256": "f4d878f4c6feb7292eca496a4a41e6d764af495971041ec9ab2fb700777447c1",
+      "source": "harness/private/private/codex/agents/deploy-specialist.toml"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/agents/deployment-engineer.toml",
+      "sha256": "c9b2229283411e50c1f5b5523fc5279500ddf0f34d4b7908ec02896c7a3d8119",
+      "source": "harness/private/private/codex/agents/deployment-engineer.toml"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/agents/devops-engineer.toml",
+      "sha256": "96f98fee7395d92aad8016e99ae622424bb7ecd686b7893158d99f384234abe1",
+      "source": "harness/private/private/codex/agents/devops-engineer.toml"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/agents/docs-researcher.toml",
+      "sha256": "f5b0231796a240b5385a823f47500389b5f8b31410bdaa7d5ff29d83f8a6f11a",
+      "source": "harness/private/private/codex/agents/docs-researcher.toml"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/agents/docs-reviewer.toml",
+      "sha256": "1a73925cc9db0f1f043bec1f5d2a8bdfe9181d853280dc76b6f72fbf876eed48",
+      "source": "harness/private/private/codex/agents/docs-reviewer.toml"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/agents/documentation-engineer.toml",
+      "sha256": "3dfe0a117e7afa0a8755ce5f157af2bfcf8989e3a1c297683f03704f0203abf1",
+      "source": "harness/private/private/codex/agents/documentation-engineer.toml"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/agents/dx-optimizer.toml",
+      "sha256": "d1b483a22fb66adb7bf3f5296b0e7fa49273de6c1c3eb7eddba5455b90fca53b",
+      "source": "harness/private/private/codex/agents/dx-optimizer.toml"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/agents/error-detective.toml",
+      "sha256": "51942c3f386cf4ed5c5850ce01365ee518c1b6646c077e2e355d5c9457f182c9",
+      "source": "harness/private/private/codex/agents/error-detective.toml"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/agents/frontend-developer.toml",
+      "sha256": "c6b2adc681265ee752cfb24e31948e24395b85815203603b2e18573385deb14f",
+      "source": "harness/private/private/codex/agents/frontend-developer.toml"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/agents/frontend-specialist.toml",
+      "sha256": "b01518fe2d4687d63bdc065f05073a099eba3347d284b648aaf69468cb21fd5f",
+      "source": "harness/private/private/codex/agents/frontend-specialist.toml"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/agents/improvement-reviewer.toml",
+      "sha256": "2db1dbb5ec0fe43e764a3f8644ea8c6b2ab8633a775c179e4a5d4fafc9769b2b",
+      "source": "harness/private/private/codex/agents/improvement-reviewer.toml"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/agents/llm-architect.toml",
+      "sha256": "7abe75291854371581e7034030841ec6de970839ff1195165585568f3129c469",
+      "source": "harness/private/private/codex/agents/llm-architect.toml"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/agents/performance-engineer.toml",
+      "sha256": "c97a19b6d97dab95cdc5d627de61be072d07238ac7aaa44af65ff17b7a2b0779",
+      "source": "harness/private/private/codex/agents/performance-engineer.toml"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/agents/postgres-pro.toml",
+      "sha256": "a5507db9aadcdfbdc1e0054c3fbcfe7bd19e923aac8be3d41583d65607dcb420",
+      "source": "harness/private/private/codex/agents/postgres-pro.toml"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/agents/prompt-regression-tester.toml",
+      "sha256": "3ce1fe70cfed4562ac7b41e164c3cb988a3d078d82c2f7f9df91e51d2d07e687",
+      "source": "harness/private/private/codex/agents/prompt-regression-tester.toml"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/agents/python-pro.toml",
+      "sha256": "0f4803f6fc8b6efdaa7959b1247c822dbbbb489654dce597047f3d06f711049d",
+      "source": "harness/private/private/codex/agents/python-pro.toml"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/agents/qa-expert.toml",
+      "sha256": "71491b5cbddb0a9f7059997870b0856930562b1e9cbb84b318151f90d64a58ea",
+      "source": "harness/private/private/codex/agents/qa-expert.toml"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/agents/refactoring-specialist.toml",
+      "sha256": "1312670a89e510118a80cfc9e74ac39e9870f8cc2ed289d41344898992a0af7c",
+      "source": "harness/private/private/codex/agents/refactoring-specialist.toml"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/agents/responsible-ai-reviewer.toml",
+      "sha256": "852a877b4d9b5e61031793ca2a74bed690e41a70debf3a0b8e6a61d718332361",
+      "source": "harness/private/private/codex/agents/responsible-ai-reviewer.toml"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/agents/reviewer.toml",
+      "sha256": "3303feb97967a628d8c3434a2c85fc77066415b626240736032d38fd8712b6a2",
+      "source": "harness/private/private/codex/agents/reviewer.toml"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/agents/risk-manager.toml",
+      "sha256": "57f70e1f0150f4d3adada425730d860b2c64757e29506f6619c48898e912a37f",
+      "source": "harness/private/private/codex/agents/risk-manager.toml"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/agents/security-auditor.toml",
+      "sha256": "f1e372b0c0e7b83bb96df77091074b6d63abdf51733ff09dc6628b157e47a202",
+      "source": "harness/private/private/codex/agents/security-auditor.toml"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/agents/skill-scout.toml",
+      "sha256": "b64a17da95a3010b47deeec874f25e9981913db7cb3ae72a187977c4882ce258",
+      "source": "harness/private/private/codex/agents/skill-scout.toml"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/agents/tooling-engineer.toml",
+      "sha256": "7e23a21c4e9295e6b0093392f9a9b13f8da81b16dbbad2c3deed620b90da07dd",
+      "source": "harness/private/private/codex/agents/tooling-engineer.toml"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/agents/typescript-pro.toml",
+      "sha256": "951e2d4d94d057a8e0080b8a2976c7f693d97e0f4c0b21ce41909fdb0f946743",
+      "source": "harness/private/private/codex/agents/typescript-pro.toml"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/agents/ui-fixer.toml",
+      "sha256": "f6b17ab21c8b3caf4d18281daab8f5be4345e124ae3bd690d146aa7181b320f8",
+      "source": "harness/private/private/codex/agents/ui-fixer.toml"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/agents/ui-ux-tester.toml",
+      "sha256": "b3a6abad004fae91c924cba5ebf85cf42c4c63fb710b8ad14d4c0f7daba88b73",
+      "source": "harness/private/private/codex/agents/ui-ux-tester.toml"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/global/AGENTS.md",
+      "sha256": "84a02fcfaab4d4d8f488e0eb049c11a6c8897d68038fae6849e35de1684d6282",
+      "source": "harness/private/private/codex/global/AGENTS.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/policy/semantic-rule-ownership.json",
+      "sha256": "5eeb576091ee0de12b460ff18558226b27f7640ce25fed17a2fa3a9394c74908",
+      "source": "harness/private/private/codex/policy/semantic-rule-ownership.json"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/skills/cleanup-audit/SKILL.md",
+      "sha256": "c8fb3738a53e995028611bd41ec57bd0097ee852b43381b7db9ba8a02a77da2a",
+      "source": "harness/private/private/codex/skills/cleanup-audit/SKILL.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/skills/graphify-project/SKILL.md",
+      "sha256": "21b5e49fd4e552e607f41ed4748c7183486a827c4a81f0e804759df63b3079c8",
+      "source": "harness/private/private/codex/skills/graphify-project/SKILL.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/skills/graphify-project/references/installation.md",
+      "sha256": "b35fae2d43541fdac728bcda079290e2b001c694e34073653b742b7bbb258d25",
+      "source": "harness/private/private/codex/skills/graphify-project/references/installation.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/skills/graphify-project/references/legacy-and-semantic.md",
+      "sha256": "f3310e9b24b4495fa4ee32f9bce7b2dc9a6c63c4c2e7acba745a83200e61f082",
+      "source": "harness/private/private/codex/skills/graphify-project/references/legacy-and-semantic.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/skills/orchestration-closeout/SKILL.md",
+      "sha256": "841ded73f36da3886d4252cc6555bb8bc04b9d92e737782d733680a120156eea",
+      "source": "harness/private/private/codex/skills/orchestration-closeout/SKILL.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/skills/orchestration-setup/SKILL.md",
+      "sha256": "1386bbfd4beb487f5fb6ec62df934559c2966a32e5d2aa673a110df877e6bf84",
+      "source": "harness/private/private/codex/skills/orchestration-setup/SKILL.md"
+    },
+    {
+      "mode": "0755",
+      "path": "harness/private/private/codex/skills/orchestration-setup/support/audit_repo.py",
+      "sha256": "ee164ef0994755683fcbca99222f052a03682b658e60b95d9246899129743392",
+      "source": "harness/private/private/codex/skills/orchestration-setup/support/audit_repo.py"
+    },
+    {
+      "mode": "0755",
+      "path": "harness/private/private/codex/skills/orchestration-setup/support/audit_token_efficiency.py",
+      "sha256": "a4aaec184f304c576395f315b823a3bd0d158eea4991e70ea10232cecea83b55",
+      "source": "harness/private/private/codex/skills/orchestration-setup/support/audit_token_efficiency.py"
+    },
+    {
+      "mode": "0755",
+      "path": "harness/private/private/codex/skills/orchestration-setup/support/measure_token_efficiency.py",
+      "sha256": "b7d34b234d382d258c39f958bc6c99806e330c3510861e2f9c73d2f82eaf8e25",
+      "source": "harness/private/private/codex/skills/orchestration-setup/support/measure_token_efficiency.py"
+    },
+    {
+      "mode": "0755",
+      "path": "harness/private/private/codex/skills/orchestration-setup/support/quick_validate.py",
+      "sha256": "b5ae15c189202b347cd21e13356126cd24aac78d738636b08f3a0da72bb4fb9e",
+      "source": "harness/private/private/codex/skills/orchestration-setup/support/quick_validate.py"
+    },
+    {
+      "mode": "0755",
+      "path": "harness/private/private/codex/skills/orchestration-setup/support/sync_support_files.py",
+      "sha256": "861cbd83f33d5aa8414bba4946968d6a2048edee8a2bbc3d96b752905cbda00e",
+      "source": "harness/private/private/codex/skills/orchestration-setup/support/sync_support_files.py"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/skills/orchestration-setup/templates/baseline.toml",
+      "sha256": "42131860b9b57fa3230ee62eb1104493c58a66a2b43d16bd03beb83d5677e141",
+      "source": "harness/private/private/codex/skills/orchestration-setup/templates/baseline.toml"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/skills/orchestration-setup/templates/manual-agent-prompt-template.md",
+      "sha256": "4dcd7955e5d6e9d7b3e34f36438b12d5acb0498562f593dc7f81652108d77d04",
+      "source": "harness/private/private/codex/skills/orchestration-setup/templates/manual-agent-prompt-template.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/skills/orchestration-setup/templates/project-agents-managed-block.md",
+      "sha256": "dcbb82a96818019bb68760ac1c680c36dd375ee99dd806653572c3cc05676898",
+      "source": "harness/private/private/codex/skills/orchestration-setup/templates/project-agents-managed-block.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/skills/orchestration-setup/templates/scope-criterion-snapshot-template.json",
+      "sha256": "31c83df190a7721267d3855f5ea86bddef851cd6b4379f0461af5749cd829b58",
+      "source": "harness/private/private/codex/skills/orchestration-setup/templates/scope-criterion-snapshot-template.json"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/skills/orchestration-setup/templates/scope-preservation-ledger-template.json",
+      "sha256": "361a567e64143051c4da3a38be49f87a0f2f9f5353619410f7f9fdbc2b4e3e8d",
+      "source": "harness/private/private/codex/skills/orchestration-setup/templates/scope-preservation-ledger-template.json"
+    },
+    {
+      "mode": "0755",
+      "path": "harness/private/private/codex/skills/orchestration-setup/templates/scripts/check_stage_ready.py",
+      "sha256": "96ecf2bcea6f08a86f013b0a28c0b62e6c905d8636bc90b8be611c5da2c137c1",
+      "source": "harness/private/private/codex/skills/orchestration-setup/templates/scripts/check_stage_ready.py"
+    },
+    {
+      "mode": "0755",
+      "path": "harness/private/private/codex/skills/orchestration-setup/templates/scripts/cleanup_stage_workspace.py",
+      "sha256": "8d8d7d621a4c45e26b3bf685abf8ef63dc7380f45c1a417ec0ef907b84bd1914",
+      "source": "harness/private/private/codex/skills/orchestration-setup/templates/scripts/cleanup_stage_workspace.py"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/skills/orchestration-setup/templates/scripts/lint_stage_sizing.py",
+      "sha256": "89dc6ce00a80fbafc0b4de4f8e37c672b7823e13d7fd65849c602ea13a5f443f",
+      "source": "harness/private/private/codex/skills/orchestration-setup/templates/scripts/lint_stage_sizing.py"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/skills/orchestration-setup/templates/scripts/record_stage_telemetry.py",
+      "sha256": "c77b1e5d4893c10aa03c8fa4e1b38f3355dd24cf8d899e8a0c889909455b5b82",
+      "source": "harness/private/private/codex/skills/orchestration-setup/templates/scripts/record_stage_telemetry.py"
+    },
+    {
+      "mode": "0755",
+      "path": "harness/private/private/codex/skills/orchestration-setup/templates/scripts/report_child_completion.py",
+      "sha256": "1f05f8bf0f24bf0a31a346e1b81c101a875da55404ea615eb45965e5b7cd6207",
+      "source": "harness/private/private/codex/skills/orchestration-setup/templates/scripts/report_child_completion.py"
+    },
+    {
+      "mode": "0755",
+      "path": "harness/private/private/codex/skills/orchestration-setup/templates/scripts/review_completion_inbox.py",
+      "sha256": "afe3be9ddbf110915b8b76917bd0d1765617edbc4a35c030f74ce1587fbc35b8",
+      "source": "harness/private/private/codex/skills/orchestration-setup/templates/scripts/review_completion_inbox.py"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/skills/orchestration-setup/templates/scripts/run_bounded_node_tests.py",
+      "sha256": "9881ad2a14a9c99c5240bea2c62157f8509430347f8f1998bc6765eb5afb64f2",
+      "source": "harness/private/private/codex/skills/orchestration-setup/templates/scripts/run_bounded_node_tests.py"
+    },
+    {
+      "mode": "0755",
+      "path": "harness/private/private/codex/skills/orchestration-setup/templates/scripts/run_process_verification.sh",
+      "sha256": "4d65101ab0dfcb4c733e59bf46556546adc96035644cea1d3f904558a4cc6841",
+      "source": "harness/private/private/codex/skills/orchestration-setup/templates/scripts/run_process_verification.sh"
+    },
+    {
+      "mode": "0755",
+      "path": "harness/private/private/codex/skills/orchestration-setup/templates/scripts/run_stage_closeout.py",
+      "sha256": "57a0a550b098c9baa906eabd681b0fdcaa75e3f45c670fdf448bbaca854fb3ee",
+      "source": "harness/private/private/codex/skills/orchestration-setup/templates/scripts/run_stage_closeout.py"
+    },
+    {
+      "mode": "0755",
+      "path": "harness/private/private/codex/skills/orchestration-setup/templates/scripts/validate_artifact.py",
+      "sha256": "a42bf3e6f0948b57ccc171a075dc0a50e2574b171e51d93343e45e20fe426ff5",
+      "source": "harness/private/private/codex/skills/orchestration-setup/templates/scripts/validate_artifact.py"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/skills/orchestration-setup/templates/scripts/verification_evidence.py",
+      "sha256": "e2ac4d21e3b8804dc4b2d17bce83d3eaf3c36a91acb217304125675da04732fd",
+      "source": "harness/private/private/codex/skills/orchestration-setup/templates/scripts/verification_evidence.py"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/skills/orchestration-setup/templates/stage-artifact-template.md",
+      "sha256": "d7176d226377e0be1b077b1a6c0f0ebcdda04921fb38ada041dce9d60ebab491",
+      "source": "harness/private/private/codex/skills/orchestration-setup/templates/stage-artifact-template.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/skills/orchestration-setup/templates/stage-manifest-template.json",
+      "sha256": "18c5961bfd4129397b7139a4f357835c6f8e4dce16e2e0dd2f8560a5ad1ceebb",
+      "source": "harness/private/private/codex/skills/orchestration-setup/templates/stage-manifest-template.json"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/skills/orchestration-setup/templates/subagent-spawn-template.md",
+      "sha256": "e9b1a281dfa7a0a8a206184e5d0f9cfeb3732efb93244416e514d92a44525d45",
+      "source": "harness/private/private/codex/skills/orchestration-setup/templates/subagent-spawn-template.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/skills/orchestration-setup/templates/subagent-task-contract.md",
+      "sha256": "3caa14a8252188ec705c2fd7960cade0be3db31712ca9b25958e190d44ec38ce",
+      "source": "harness/private/private/codex/skills/orchestration-setup/templates/subagent-task-contract.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/skills/orchestration-setup/templates/verification-manifest-template.json",
+      "sha256": "a85c1947fe95dd0144f9cb4e45bc0c3c337939f1e88b664e1e9f0fd20b271a94",
+      "source": "harness/private/private/codex/skills/orchestration-setup/templates/verification-manifest-template.json"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/skills/orchestrator-stage/SKILL.md",
+      "sha256": "b977aa1495e41491ac6f03786cfa463b907306a1505a4f7e25913d74aaa6e024",
+      "source": "harness/private/private/codex/skills/orchestrator-stage/SKILL.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/skills/orchestrator-stage/references/acceptance-evidence.md",
+      "sha256": "9fce5f06f9880b2cb331c5fcbd6ee6830edcdb21b2b381c91b500190926693c4",
+      "source": "harness/private/private/codex/skills/orchestrator-stage/references/acceptance-evidence.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/skills/orchestrator-stage/references/autonomy-and-approvals.md",
+      "sha256": "ae3d2311cbc71d5866a75abb3842185173e7d22e16b59a071f2bb0c7b7204e22",
+      "source": "harness/private/private/codex/skills/orchestrator-stage/references/autonomy-and-approvals.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/skills/orchestrator-stage/references/closeout-and-delivery.md",
+      "sha256": "1d10f0faf5c391a8e4460e4d8c6b576b7a259f571fa570f0f6eb3e2309cba7d4",
+      "source": "harness/private/private/codex/skills/orchestrator-stage/references/closeout-and-delivery.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/skills/orchestrator-stage/references/delegation-and-isolation.md",
+      "sha256": "0eaf5ea34edf31743fb8639ac45add374e3288a4673735304d4ae6cc393e41f6",
+      "source": "harness/private/private/codex/skills/orchestrator-stage/references/delegation-and-isolation.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/skills/orchestrator-stage/references/docs-and-graphify.md",
+      "sha256": "c647999c2b90d57fba488402c604aab4f0e815369397b6595f12d8224de46477",
+      "source": "harness/private/private/codex/skills/orchestrator-stage/references/docs-and-graphify.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/skills/orchestrator-stage/references/scope-and-beads.md",
+      "sha256": "5fea557bfd1afe079fd138bef79799dec5cfabd1533440a29737ddb9aedd3659",
+      "source": "harness/private/private/codex/skills/orchestrator-stage/references/scope-and-beads.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/skills/orchestrator-stage/references/stage-lifecycle-and-sizing.md",
+      "sha256": "8c53bfaa522d1515b4e15f8675cde127bed416de48bd2c467e3250bd89064c83",
+      "source": "harness/private/private/codex/skills/orchestrator-stage/references/stage-lifecycle-and-sizing.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/skills/orchestrator-stage/references/verification-routing.md",
+      "sha256": "e5bf8269faeb6e71402c52577b568d919ed2c9285b0f4d39c52434ba1d825e12",
+      "source": "harness/private/private/codex/skills/orchestrator-stage/references/verification-routing.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/skills/prompt-authoring/SKILL.md",
+      "sha256": "05046a4fa51f4db879d0c119718f4526a4ebf10cbca18c93fa2d9ffcfc656342",
+      "source": "harness/private/private/codex/skills/prompt-authoring/SKILL.md"
+    },
+    {
+      "mode": "0755",
+      "path": "harness/private/private/codex/skills/system-stability-check/SKILL.md",
+      "sha256": "e85718799d8c5385205cfbc9d197c35d68f0925f84645b415b844708c08fca9a",
+      "source": "harness/private/private/codex/skills/system-stability-check/SKILL.md"
+    },
+    {
+      "mode": "0755",
+      "path": "harness/private/private/codex/skills/system-stability-check/agents/openai.yaml",
+      "sha256": "d57186e94d9bde3d33a34c77063bb0825dd6cd4a004fa8e3c9f20d3d2822edc1",
+      "source": "harness/private/private/codex/skills/system-stability-check/agents/openai.yaml"
+    },
+    {
+      "mode": "0755",
+      "path": "harness/private/private/codex/skills/system-stability-check/scripts/check_system_stability.py",
+      "sha256": "d872238b0c162d92c338961f4a71bf0fd607a84eb329540680e75e35423bd5e4",
+      "source": "harness/private/private/codex/skills/system-stability-check/scripts/check_system_stability.py"
+    },
+    {
+      "mode": "0755",
+      "path": "harness/private/private/codex/skills/system-stability-check/tests/test_checker.py",
+      "sha256": "4bd1cf6573b9509ed118516eef2b846fecc7e071006f15a4ecf4853eee5e84fa",
+      "source": "harness/private/private/codex/skills/system-stability-check/tests/test_checker.py"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/skills/task-router/SKILL.md",
+      "sha256": "c9a2a1d794240878536653b5e68ca345687e24295b906a610310c58da7fc371a",
+      "source": "harness/private/private/codex/skills/task-router/SKILL.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/skills/technical-premortem/SKILL.md",
+      "sha256": "9c5792d3b09889157c5904043b317051bc2d7aaf6ae012babf59deb02e5b4ab7",
+      "source": "harness/private/private/codex/skills/technical-premortem/SKILL.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/skills/technical-premortem/agents/openai.yaml",
+      "sha256": "e540238b3f79ea3b8a2d7768a96b076c0f0b2f62023c3e963d109915dc8d2249",
+      "source": "harness/private/private/codex/skills/technical-premortem/agents/openai.yaml"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/codex/skills/test-pass/SKILL.md",
+      "sha256": "ec1af5a2c2fcd5be6f614b8b7690bd0577d3c8ea21a7061e98f0dc396be9c9e9",
+      "source": "harness/private/private/codex/skills/test-pass/SKILL.md"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/private/superpowers/bounded-tdd.patch",
+      "sha256": "bce16b43a3d43d356bd87165afb318779bc65c48528f8b4debb2917261883239",
+      "source": "harness/private/private/superpowers/bounded-tdd.patch"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/scripts/install_codex_global.py",
+      "sha256": "6ca41a9c6942f42304942dd6e32b73dc393524fd21b0e13400cc779dbc339426",
+      "source": "harness/private/scripts/install_codex_global.py"
+    },
+    {
+      "mode": "0644",
+      "path": "harness/private/scripts/update_superpowers_overlay.py",
+      "sha256": "bbb74e78475c0d85c6fb9633b96faa1cb269f8d69d250c9bec919fc3fa97dcc7",
+      "source": "harness/private/scripts/update_superpowers_overlay.py"
+    },
+    {
+      "mode": "0644",
+      "path": "package-lock.json",
+      "sha256": "152d81ff8c3038bb36fc4b34ba7353e9315e7e0902939935e8346d65ee5e2afa",
+      "source": "package-lock.json"
+    },
+    {
+      "mode": "0644",
+      "path": "package.json",
+      "sha256": "874807e761cef011470b92fe01798a5e678b9f413881a40f28b1a50faca38694",
+      "source": "package.json"
+    },
+    {
+      "mode": "0644",
+      "path": "policy/runtime-kernel-v1.md",
+      "sha256": "e91f0e00702e15c776c3a39044e845c2377861b4a717233537906e60212785d1",
+      "source": "policy/runtime-kernel-v1.md"
+    },
+    {
+      "mode": "0644",
+      "path": "policy/semantic-rule-ownership.json",
+      "sha256": "efacff43365bdea686e84944a9b4900d14834fe96785df2b9cad105b8885c7a6",
+      "source": "policy/semantic-rule-ownership.json"
+    },
+    {
+      "mode": "0644",
+      "path": "postcss.config.js",
+      "sha256": "5b0bc4c78be977cd81f947fb5563aaa7cc6d451e6f1c53a3260b7656a7144d20",
+      "source": "postcss.config.js"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/catalog-sync.md",
+      "sha256": "dbdd7023a3853ff43e197162cbfacd4df1244f75027399b13393cf9650336c91",
+      "source": "prompts/catalog-sync.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/claude-aitmpl-agent-pack.md",
+      "sha256": "819e07ded642ca009048926df97b991d26b2b52a4a4e3999aeac50dda29a2412",
+      "source": "prompts/claude-aitmpl-agent-pack.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/claude-closeout.md",
+      "sha256": "4ff284e84cb82f9c37b5e57ef2e082990a0fc20f0a74444878e6cb9bf9baf02c",
+      "source": "prompts/claude-closeout.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/claude-continue-stage.md",
+      "sha256": "f0cc66eab7211ca486b16e8fe94b21d3aeb99c3d65bd730980a7554f433d73b7",
+      "source": "prompts/claude-continue-stage.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/claude-cross-model-audit.md",
+      "sha256": "e8e5c3758b7322c3562c4a0586010845adc013866679e4bc803c8609b3fed964",
+      "source": "prompts/claude-cross-model-audit.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/claude-delegate-worker.md",
+      "sha256": "91f018e1ce853fcf41083135a24599cb25386e9f4960ded1b81e3a99f7dcebbb",
+      "source": "prompts/claude-delegate-worker.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/claude-design-impeccable.md",
+      "sha256": "4a4576998515a23386af314e056c23b8828dd2d22e892c1bc7dbf7fab7ccd21e",
+      "source": "prompts/claude-design-impeccable.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/claude-docs-update.md",
+      "sha256": "500b4fa677e563a193dc8d606d3a4ddc9e12c6aa5b8eaba501c2b69213fda58d",
+      "source": "prompts/claude-docs-update.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/claude-docs-upgrade.md",
+      "sha256": "dab3fea86e2886fccd8afd07aafede1cb4aa9e4a2b6b5ace41122c52e52281a4",
+      "source": "prompts/claude-docs-upgrade.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/claude-github-issue-intake.md",
+      "sha256": "f24c80cc8731b983b36d28554734f1047cd62dced52ce83121d794c09acdc820",
+      "source": "prompts/claude-github-issue-intake.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/claude-graphify.md",
+      "sha256": "08a429b18da6a54c7fa2119714ee9ad867bb533b24dba414e1b4cace800861ed",
+      "source": "prompts/claude-graphify.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/claude-prepare-codex-goal.md",
+      "sha256": "523bed9d78db4117985b82b7096e5f69d55268cd308b5bb9ce236faff7003f02",
+      "source": "prompts/claude-prepare-codex-goal.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/claude-prompt-authoring.md",
+      "sha256": "ce229d3749bcafe27e2cb3571b5557e8f247c5ecc7760948186fa4888b9b4c27",
+      "source": "prompts/claude-prompt-authoring.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/claude-repo-setup.md",
+      "sha256": "ca8ff43e92e1a821e8df4c00ff8c41476863ab75fd7c3813b2f0ea7d7bf73c3c",
+      "source": "prompts/claude-repo-setup.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/claude-review-fix.md",
+      "sha256": "8e7beb40ebaa09b5f574fcd3db69b67130fb5b108428ba008594eb891b14ed6d",
+      "source": "prompts/claude-review-fix.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/claude-start-stage.md",
+      "sha256": "1651429b1c2a74cb64df8a252829da956d53478ce05e92650e8a6393129b3553",
+      "source": "prompts/claude-start-stage.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/claude-system-stability.md",
+      "sha256": "8d5f43d05a3b5bf9581dd233de4b077749d571c343987027cbd9376f2b85c7a1",
+      "source": "prompts/claude-system-stability.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/claude-test-pass.md",
+      "sha256": "6623ca518e4a28864ffe4d5186ebcdac37bd547cc98c0bee5e1e72dbf24fc07d",
+      "source": "prompts/claude-test-pass.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/cleanup-audit.md",
+      "sha256": "e7a0972b2b9d002660fdd9b709b0deefa540107d3684ff11bba3d1d9f981615e",
+      "source": "prompts/cleanup-audit.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/closeout.md",
+      "sha256": "085a4815d23543abc06d966a62d7b7114fdad30fc3b5be4f69657dc29edc733e",
+      "source": "prompts/closeout.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/continue-stage.md",
+      "sha256": "118d65a34dfe738482d67eb51ebc79958fea3413a471e29a3cdf5a13aaf5c339",
+      "source": "prompts/continue-stage.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/cross-model-audit.md",
+      "sha256": "3c434c603b11e5d6b6478328306498d12170b4eb301abc55c4e4cc68f337536b",
+      "source": "prompts/cross-model-audit.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/delegate-worker.md",
+      "sha256": "91f018e1ce853fcf41083135a24599cb25386e9f4960ded1b81e3a99f7dcebbb",
+      "source": "prompts/delegate-worker.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/dependency-docs-upgrade.md",
+      "sha256": "b0920cc1ec88e9c707536f5c8fd4f297daafcf2030fc041994f560319d619eeb",
+      "source": "prompts/dependency-docs-upgrade.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/design-impeccable.md",
+      "sha256": "41add7bce7bbb2cc4bc23d51b65f6f4562f31eb099b14e9dc173438e9c602905",
+      "source": "prompts/design-impeccable.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/docs-update.md",
+      "sha256": "1986b6862f2efbda7c42ad2165925d6430e6854757c0274fe455a5d54946fb44",
+      "source": "prompts/docs-update.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/fragments/docs-trigger-matrix.md",
+      "sha256": "92f6d0ff3774ec988f6563234e2079e6933c4843159e368d08da03f99c3059c6",
+      "source": "prompts/fragments/docs-trigger-matrix.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/fragments/docs-update-rules-verification.md",
+      "sha256": "7f93241b6040a1206285de0c63cc409748c8a8e65ca480aac46754d517364389",
+      "source": "prompts/fragments/docs-update-rules-verification.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/fragments/docs-update-stop-output.md",
+      "sha256": "6b9de42de265c831f0f63c77ffc3979f29c819a59e0a6c6197bd76edd4cc9f60",
+      "source": "prompts/fragments/docs-update-stop-output.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/fragments/docs-upgrade-tail.md",
+      "sha256": "e053dcdcd231c843e45656f457e3e132c64bff6bb0f43b0d8f1b662885b55373",
+      "source": "prompts/fragments/docs-upgrade-tail.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/fragments/docs-upgrade-workflow-steps.md",
+      "sha256": "d10eb8bbfd0067accd76d6d2375940aa28010b2d5783cc28ffef6b4e1f76c50f",
+      "source": "prompts/fragments/docs-upgrade-workflow-steps.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/fragments/graphify-hygiene.md",
+      "sha256": "d922338bba4396b301268567b2bca0ea47097df393da4749f0c911f3b65a8972",
+      "source": "prompts/fragments/graphify-hygiene.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/fragments/prepare-codex-goal-core.md",
+      "sha256": "c60cf5f1f52c37ecafd40e0148bc19e050a308482513003abee8215764ba40fa",
+      "source": "prompts/fragments/prepare-codex-goal-core.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/fragments/review-quality-core.md",
+      "sha256": "8ebddd33c9f0664d4b4787f7e4c82849e69b944b2085a55d97c6798cbfe01e64",
+      "source": "prompts/fragments/review-quality-core.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/github-issue-intake.md",
+      "sha256": "76772b7eac1495e46ada7c59a7de7aa7defff381fb47fe03b2fde4647212cdf4",
+      "source": "prompts/github-issue-intake.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/goal-authoring.md",
+      "sha256": "c2250f0f7375f5cf618d4377dead505724a46c00e3aeb82d4c81111ed4cf9b4b",
+      "source": "prompts/goal-authoring.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/graphify.md",
+      "sha256": "4f718d69a8f93b509307a2cd930eef4093976a273b506d060e0581863794f5c2",
+      "source": "prompts/graphify.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/launchers/catalog-sync.md",
+      "sha256": "66a40b5056245f57785a8f2b45c26dbeecee4098e45b989fdf15c02819097eb0",
+      "source": "prompts/launchers/catalog-sync.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/launchers/claude-aitmpl-agent-pack.md",
+      "sha256": "4f5183f3e71037de5670b3009640274d5b40c55b7cc830c81cb105995ce48281",
+      "source": "prompts/launchers/claude-aitmpl-agent-pack.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/launchers/claude-closeout.md",
+      "sha256": "4ff284e84cb82f9c37b5e57ef2e082990a0fc20f0a74444878e6cb9bf9baf02c",
+      "source": "prompts/launchers/claude-closeout.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/launchers/claude-continue-stage.md",
+      "sha256": "f0cc66eab7211ca486b16e8fe94b21d3aeb99c3d65bd730980a7554f433d73b7",
+      "source": "prompts/launchers/claude-continue-stage.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/launchers/claude-cross-model-audit.md",
+      "sha256": "f9b54ce65fc73014c606d63e7ba3fca2a9a48ca25fee3e9059ec6f5a647cb896",
+      "source": "prompts/launchers/claude-cross-model-audit.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/launchers/claude-delegate-worker.md",
+      "sha256": "e3daa43c8e36836792c46e0ff8adae9eb055c4e22f3332a9135e4f65b41f7ea8",
+      "source": "prompts/launchers/claude-delegate-worker.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/launchers/claude-design-impeccable.md",
+      "sha256": "4149cdfbbb826780115de607021db604d99f7df7c8940178794ea0d4ff33d65f",
+      "source": "prompts/launchers/claude-design-impeccable.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/launchers/claude-docs-update.md",
+      "sha256": "cba25eefa9f5380a9cc6b1b7e133305974d70c101f18edb01f475e1e38cc6734",
+      "source": "prompts/launchers/claude-docs-update.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/launchers/claude-docs-upgrade.md",
+      "sha256": "df7b22b302508774dfc12d8384ea998f4693103158becb2475078392cd00d079",
+      "source": "prompts/launchers/claude-docs-upgrade.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/launchers/claude-github-issue-intake.md",
+      "sha256": "f24c80cc8731b983b36d28554734f1047cd62dced52ce83121d794c09acdc820",
+      "source": "prompts/launchers/claude-github-issue-intake.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/launchers/claude-graphify.md",
+      "sha256": "ea35d5100c88abc5979ab59baa6c17c372094f53b39153cff6da3958ad94660f",
+      "source": "prompts/launchers/claude-graphify.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/launchers/claude-prepare-codex-goal.md",
+      "sha256": "53a84bed7a961b3ca31e5c5f14ddcbd8adab07eb2248946c2ed64c474a188d6d",
+      "source": "prompts/launchers/claude-prepare-codex-goal.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/launchers/claude-prompt-authoring.md",
+      "sha256": "ce229d3749bcafe27e2cb3571b5557e8f247c5ecc7760948186fa4888b9b4c27",
+      "source": "prompts/launchers/claude-prompt-authoring.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/launchers/claude-repo-setup.md",
+      "sha256": "c0298ab5478007b08089da3429a573f0d6f2857251d2442adde0db98152973ad",
+      "source": "prompts/launchers/claude-repo-setup.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/launchers/claude-review-fix.md",
+      "sha256": "bbba40e79a6c79770636795d9109100326774c835abe1d7090cca2bc3b19f0b2",
+      "source": "prompts/launchers/claude-review-fix.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/launchers/claude-start-stage.md",
+      "sha256": "1651429b1c2a74cb64df8a252829da956d53478ce05e92650e8a6393129b3553",
+      "source": "prompts/launchers/claude-start-stage.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/launchers/claude-system-stability.md",
+      "sha256": "2bb9fbbfcfb668c0a83985a7cee14add383057ad5724e046abe53baea362faef",
+      "source": "prompts/launchers/claude-system-stability.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/launchers/claude-test-pass.md",
+      "sha256": "4337f292e35dc788ad4578a4e9e485012b3f5337b3160d377f503cd4bb65e53d",
+      "source": "prompts/launchers/claude-test-pass.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/launchers/cleanup-audit.md",
+      "sha256": "e165440584f3dd56a3f4d0137dec59c5200a559ccc5269da0a58b4b857007547",
+      "source": "prompts/launchers/cleanup-audit.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/launchers/closeout.md",
+      "sha256": "085a4815d23543abc06d966a62d7b7114fdad30fc3b5be4f69657dc29edc733e",
+      "source": "prompts/launchers/closeout.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/launchers/continue-stage.md",
+      "sha256": "118d65a34dfe738482d67eb51ebc79958fea3413a471e29a3cdf5a13aaf5c339",
+      "source": "prompts/launchers/continue-stage.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/launchers/cross-model-audit.md",
+      "sha256": "ba2347b90fdb84993862f358658150ffb8dc38dfae7051361603c473ccf7e670",
+      "source": "prompts/launchers/cross-model-audit.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/launchers/delegate-worker.md",
+      "sha256": "27e435fc0c851a9d97ae7122efad03053fe7788fa0c6ecf7b5b2b252e5a459dd",
+      "source": "prompts/launchers/delegate-worker.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/launchers/dependency-docs-upgrade.md",
+      "sha256": "2a733c96cbc90dbf9e8ea0f6b60031640495d85753253d3c9fe08175b365fe00",
+      "source": "prompts/launchers/dependency-docs-upgrade.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/launchers/design-impeccable.md",
+      "sha256": "79a168fef026587762db50e474fa4b75341df3110e31d54209bca099fffd3526",
+      "source": "prompts/launchers/design-impeccable.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/launchers/docs-update.md",
+      "sha256": "c7978c088ca0f44f7ee0ed2b637b5e6a24257fee88496ced23a325e956b4b09c",
+      "source": "prompts/launchers/docs-update.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/launchers/github-issue-intake.md",
+      "sha256": "76772b7eac1495e46ada7c59a7de7aa7defff381fb47fe03b2fde4647212cdf4",
+      "source": "prompts/launchers/github-issue-intake.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/launchers/goal-authoring.md",
+      "sha256": "c2250f0f7375f5cf618d4377dead505724a46c00e3aeb82d4c81111ed4cf9b4b",
+      "source": "prompts/launchers/goal-authoring.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/launchers/graphify.md",
+      "sha256": "de6b5082e0b7b4f2e8c0622ed95660eaedc992015bda4f20a577d9364d83b4ac",
+      "source": "prompts/launchers/graphify.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/launchers/legacy-code-audit.md",
+      "sha256": "26d5875c8860a96dc76870d1b93806b969b5d9ff4b894904f81542be6601d13d",
+      "source": "prompts/launchers/legacy-code-audit.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/launchers/prepare-codex-goal.md",
+      "sha256": "4aca94412446cae54aa1287f19b97e1fc2e9ddd7a3d083be5bdfb96833e5b5b2",
+      "source": "prompts/launchers/prepare-codex-goal.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/launchers/prompt-authoring.md",
+      "sha256": "171577c741fd3530d279dad43ad3fb0e11b14a8739550249e93a11df801bb7e1",
+      "source": "prompts/launchers/prompt-authoring.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/launchers/repo-setup.md",
+      "sha256": "727947c581f8cb7f2333b74e6c7caad56f4e2009ff41203e4799bae7827e6827",
+      "source": "prompts/launchers/repo-setup.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/launchers/review-fix.md",
+      "sha256": "d2a35aa561480b4646166d9eb4b35ac508c4c2e5c3b1ce83074f4ca054340753",
+      "source": "prompts/launchers/review-fix.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/launchers/start-stage.md",
+      "sha256": "0da9f4ea2fe0f48b0f4a63447d9a37415dec7525a306057061f2e52447b9f148",
+      "source": "prompts/launchers/start-stage.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/launchers/system-stability.md",
+      "sha256": "93c78b15bec2d7694459717f5add2a38878b7c666993b0bbc4bbe623c02ff82e",
+      "source": "prompts/launchers/system-stability.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/launchers/test-pass.md",
+      "sha256": "a4754d03e71c7825be2a18aa64fd1455e8ab649ae75d91ac45f047b17a887a11",
+      "source": "prompts/launchers/test-pass.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/legacy-code-audit.md",
+      "sha256": "405dd3c3d6e3f4288b5ca8129006a50ae85da462335651354308e789ee29ed0d",
+      "source": "prompts/legacy-code-audit.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/manifest.json",
+      "sha256": "b08b8add19f98fd1dc6cc5b11c8a8cdf68ff1ad60ed26a3a808aa61561c39f28",
+      "source": "prompts/manifest.json"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/policies/codex-routing.md",
+      "sha256": "b9d423e1bd9e3f642187d43786203088ec01f03b84fb04899151dbeaecd0e4c0",
+      "source": "prompts/policies/codex-routing.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/prepare-codex-goal.md",
+      "sha256": "68ea14ea0a60808f17475348031f1467ba9b88eb38a8999f823ecf054beca97e",
+      "source": "prompts/prepare-codex-goal.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/profiles/claude-fable.md",
+      "sha256": "dec0a9016528d2e101d413dab9906e7080db21610a513ae858c910a5e3487edb",
+      "source": "prompts/profiles/claude-fable.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/profiles/claude-opus-5.md",
+      "sha256": "779918fe78b8fd27fb51990bcb5a388161cbc13ec18652c665d187911a80724e",
+      "source": "prompts/profiles/claude-opus-5.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/profiles/codex-gpt-6-astra.md",
+      "sha256": "fdd3c7bef741badc3fa8025c4928d19657fceeef82fb39c70a089ed3032eedb3",
+      "source": "prompts/profiles/codex-gpt-6-astra.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/prompt-authoring.md",
+      "sha256": "171577c741fd3530d279dad43ad3fb0e11b14a8739550249e93a11df801bb7e1",
+      "source": "prompts/prompt-authoring.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/repo-setup.md",
+      "sha256": "b34a70091e7818f16aab2a602fd5c12d536768bde45bb0de0eea4ecab67c2557",
+      "source": "prompts/repo-setup.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/review-fix.md",
+      "sha256": "048d7a916ca0f814f2aff5bc5226022cc234e942086cf0df98b1390bec7e65ce",
+      "source": "prompts/review-fix.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/start-stage.md",
+      "sha256": "0da9f4ea2fe0f48b0f4a63447d9a37415dec7525a306057061f2e52447b9f148",
+      "source": "prompts/start-stage.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/system-stability.md",
+      "sha256": "35f9121e65119a4e37d27f0ecb426cc045596426cd860464db9cbebe1562c3da",
+      "source": "prompts/system-stability.md"
+    },
+    {
+      "mode": "0644",
+      "path": "prompts/test-pass.md",
+      "sha256": "1e49ffa286ba6af5bd1b34e2ebc61db490969bd508ddcc5281edf1c2299146f1",
+      "source": "prompts/test-pass.md"
+    },
+    {
+      "mode": "0644",
+      "path": "pyproject.toml",
+      "sha256": "094d228019c8fd0d6a6730af0166585980bb6356469c70c3df397ad50ae3bdf2",
+      "source": "pyproject.toml"
+    },
+    {
+      "mode": "0644",
+      "path": "scripts/check-design-tokens.mjs",
+      "sha256": "e19dd5803fa5b0c9d4c69090f8403d5aa98a3fdea5fdc9982d97aa786f5fbbe5",
+      "source": "scripts/check-design-tokens.mjs"
+    },
+    {
+      "mode": "0644",
+      "path": "scripts/check-file-sizes.mjs",
+      "sha256": "8c9823e975d04a68e5feae69ece2e4604db82dd880ecb786c310afc28c955cc3",
+      "source": "scripts/check-file-sizes.mjs"
+    },
+    {
+      "mode": "0644",
+      "path": "scripts/check-px-text.mjs",
+      "sha256": "ebb48414a56f6b110222178176d1a7a45fb350b3d2c24e07d2a1a417ffa11e4f",
+      "source": "scripts/check-px-text.mjs"
+    },
+    {
+      "mode": "0755",
+      "path": "scripts/github_sync.py",
+      "sha256": "ca77b25b4a2561a21151ddf23a00d20fd09f7367d8363a0688062f2016442ae4",
+      "source": "scripts/github_sync.py"
+    },
+    {
+      "mode": "0755",
+      "path": "scripts/github_sync.sh",
+      "sha256": "747b2bb00837c82f5a1a2598a13c921bdcea944a619bd4a90077d73637cd7227",
+      "source": "scripts/github_sync.sh"
+    },
+    {
+      "mode": "0755",
+      "path": "scripts/node_mcp_env.sh",
+      "sha256": "1baac69d1276a80219eacb99576719fae3d150ca8654135e260a44e84eac1c85",
+      "source": "scripts/node_mcp_env.sh"
+    },
+    {
+      "mode": "0644",
+      "path": "scripts/orch_panel/__init__.py",
+      "sha256": "0f537e1502e9a1e32e52afa33c29ce0437788430f4f4e6e0eb240ff707ce216c",
+      "source": "scripts/orch_panel/__init__.py"
+    },
+    {
+      "mode": "0644",
+      "path": "scripts/orch_panel/asgi_app.py",
+      "sha256": "e600a275bdafb8b100749bcfae22e628d015e0bd729916fb60a2201daba430d1",
+      "source": "scripts/orch_panel/asgi_app.py"
+    },
+    {
+      "mode": "0644",
+      "path": "scripts/orch_panel/beads.py",
+      "sha256": "e68fb0893e9fc1c3629a97ff1ec7e2f6136aa9341391ca0022daf5a1105a815b",
+      "source": "scripts/orch_panel/beads.py"
+    },
+    {
+      "mode": "0644",
+      "path": "scripts/orch_panel/cli.py",
+      "sha256": "c4235fa7008a68af7984087c709400035a0176eb044be9f9132f0c0bb20580aa",
+      "source": "scripts/orch_panel/cli.py"
+    },
+    {
+      "mode": "0644",
+      "path": "scripts/orch_panel/context_policy.py",
+      "sha256": "f1b529d2878d21e6d34da2162680104c9dbcf4dfa9d88323c1f9d4a8e0fe3421",
+      "source": "scripts/orch_panel/context_policy.py"
+    },
+    {
+      "mode": "0644",
+      "path": "scripts/orch_panel/coordination/__init__.py",
+      "sha256": "ea3a7ad55e4f2077a12baf02feb70757e6e1bf7a0031c2f8eb223c98e13ca094",
+      "source": "scripts/orch_panel/coordination/__init__.py"
+    },
+    {
+      "mode": "0644",
+      "path": "scripts/orch_panel/coordination/a2a_gateway.py",
+      "sha256": "5bc0b409554fc8da426193ce466f14a9a14bc2264315118b414d463706a7272b",
+      "source": "scripts/orch_panel/coordination/a2a_gateway.py"
+    },
+    {
+      "mode": "0644",
+      "path": "scripts/orch_panel/coordination/adapters/__init__.py",
+      "sha256": "6687823877781b20bc1756263b84b12f6266845d6613d9c8096aec2896dbbe6c",
+      "source": "scripts/orch_panel/coordination/adapters/__init__.py"
+    },
+    {
+      "mode": "0644",
+      "path": "scripts/orch_panel/coordination/adapters/claude.py",
+      "sha256": "e4dec80d24329f4667dbeb243f2605600237774d7439d46779f31cd4edcad516",
+      "source": "scripts/orch_panel/coordination/adapters/claude.py"
+    },
+    {
+      "mode": "0644",
+      "path": "scripts/orch_panel/coordination/adapters/codex.py",
+      "sha256": "accf4efcd6654a8f1e6b7b4efeca8905e0eccc57d31f6ac2a79845eb3aa28648",
+      "source": "scripts/orch_panel/coordination/adapters/codex.py"
+    },
+    {
+      "mode": "0644",
+      "path": "scripts/orch_panel/coordination/broker.py",
+      "sha256": "5fef413f9bdf27e57be5bb80ec5535a0b8b19eb48dcc8caa4c17f7e4565d9364",
+      "source": "scripts/orch_panel/coordination/broker.py"
+    },
+    {
+      "mode": "0644",
+      "path": "scripts/orch_panel/coordination/contracts.py",
+      "sha256": "56ca6157867055efbfc4bf6754692dfb3cb21651be92f290082f98f13d44d70c",
+      "source": "scripts/orch_panel/coordination/contracts.py"
+    },
+    {
+      "mode": "0644",
+      "path": "scripts/orch_panel/coordination/models.py",
+      "sha256": "dd6fb79906339232e2a56a338e98f2727afcb756eae78ed7f5cd3f20812fb942",
+      "source": "scripts/orch_panel/coordination/models.py"
+    },
+    {
+      "mode": "0644",
+      "path": "scripts/orch_panel/coordination/panel_api.py",
+      "sha256": "26ecac7985a2dcba957346ee0949151bf1ed5df6b7c328b47caf01cbf4847c5c",
+      "source": "scripts/orch_panel/coordination/panel_api.py"
+    },
+    {
+      "mode": "0644",
+      "path": "scripts/orch_panel/coordination/review.py",
+      "sha256": "692cf4162f65ac66479034a22e091bc987fd0185b317e37d446421e966e23d5d",
+      "source": "scripts/orch_panel/coordination/review.py"
+    },
+    {
+      "mode": "0644",
+      "path": "scripts/orch_panel/coordination/safety.py",
+      "sha256": "dfa7f9de6cfe5a6db964dd4cf0a29ee11723de0ddd14feb838576ec38c37f942",
+      "source": "scripts/orch_panel/coordination/safety.py"
+    },
+    {
+      "mode": "0644",
+      "path": "scripts/orch_panel/coordination/store.py",
+      "sha256": "614e3196d0d10f85a81be8f999a76687fc9227564dd059d48a1787a8e1d2ddc5",
+      "source": "scripts/orch_panel/coordination/store.py"
+    },
+    {
+      "mode": "0644",
+      "path": "scripts/orch_panel/coordination/workflow.py",
+      "sha256": "53dadc8f92a407c01e0497e0adbe4c90d1e6d033c00d670805eab506f3eb67fe",
+      "source": "scripts/orch_panel/coordination/workflow.py"
+    },
+    {
+      "mode": "0644",
+      "path": "scripts/orch_panel/docs_context.py",
+      "sha256": "37d6981c8bbd0f7b24cec1dea6e30875c1ce7e97850db71a0a3d3f63cc9a4732",
+      "source": "scripts/orch_panel/docs_context.py"
+    },
+    {
+      "mode": "0644",
+      "path": "scripts/orch_panel/github.py",
+      "sha256": "4701ccbdedd528c68d59756d10d67f265497ac8f55391b5c51ccc3fdb1e1409c",
+      "source": "scripts/orch_panel/github.py"
+    },
+    {
+      "mode": "0644",
+      "path": "scripts/orch_panel/prompts_sync.py",
+      "sha256": "aa6fc87dc6c54a500cf3b9d9d23f7b12435ac70f9050d155fbbf26891adaaae7",
+      "source": "scripts/orch_panel/prompts_sync.py"
+    },
+    {
+      "mode": "0644",
+      "path": "scripts/orch_panel/radar.py",
+      "sha256": "ca33889e447c8eb7d55fa928ac279f6fe1052c6ae98c3f6597c5ad978d62a081",
+      "source": "scripts/orch_panel/radar.py"
+    },
+    {
+      "mode": "0644",
+      "path": "scripts/orch_panel/telemetry.py",
+      "sha256": "066a7552b468772d7814c9e4ec29aaa18577e2c3bef5345655814f33296fd2f7",
+      "source": "scripts/orch_panel/telemetry.py"
+    },
+    {
+      "mode": "0644",
+      "path": "scripts/orch_panel/throughput.py",
+      "sha256": "9f1eaa921191889e4561f554b25e68ec854fd74dc108005f3d34b07c9ce74ca7",
+      "source": "scripts/orch_panel/throughput.py"
+    },
+    {
+      "mode": "0644",
+      "path": "scripts/orch_panel/tools.py",
+      "sha256": "7c95aeda59d99731ae65ea08f26ae1589d5769df9219b839918e46a685096fc4",
+      "source": "scripts/orch_panel/tools.py"
+    },
+    {
+      "mode": "0755",
+      "path": "scripts/orchestration/check_stage_ready.py",
+      "sha256": "96ecf2bcea6f08a86f013b0a28c0b62e6c905d8636bc90b8be611c5da2c137c1",
+      "source": "scripts/orchestration/check_stage_ready.py"
+    },
+    {
+      "mode": "0755",
+      "path": "scripts/orchestration/cleanup_stage_workspace.py",
+      "sha256": "8d8d7d621a4c45e26b3bf685abf8ef63dc7380f45c1a417ec0ef907b84bd1914",
+      "source": "scripts/orchestration/cleanup_stage_workspace.py"
+    },
+    {
+      "mode": "0755",
+      "path": "scripts/orchestration/lint_stage_sizing.py",
+      "sha256": "89dc6ce00a80fbafc0b4de4f8e37c672b7823e13d7fd65849c602ea13a5f443f",
+      "source": "scripts/orchestration/lint_stage_sizing.py"
+    },
+    {
+      "mode": "0755",
+      "path": "scripts/orchestration/record_stage_telemetry.py",
+      "sha256": "c77b1e5d4893c10aa03c8fa4e1b38f3355dd24cf8d899e8a0c889909455b5b82",
+      "source": "scripts/orchestration/record_stage_telemetry.py"
+    },
+    {
+      "mode": "0755",
+      "path": "scripts/orchestration/report_child_completion.py",
+      "sha256": "1f05f8bf0f24bf0a31a346e1b81c101a875da55404ea615eb45965e5b7cd6207",
+      "source": "scripts/orchestration/report_child_completion.py"
+    },
+    {
+      "mode": "0755",
+      "path": "scripts/orchestration/review_completion_inbox.py",
+      "sha256": "afe3be9ddbf110915b8b76917bd0d1765617edbc4a35c030f74ce1587fbc35b8",
+      "source": "scripts/orchestration/review_completion_inbox.py"
+    },
+    {
+      "mode": "0755",
+      "path": "scripts/orchestration/run_bounded_node_tests.py",
+      "sha256": "9881ad2a14a9c99c5240bea2c62157f8509430347f8f1998bc6765eb5afb64f2",
+      "source": "scripts/orchestration/run_bounded_node_tests.py"
+    },
+    {
+      "mode": "0755",
+      "path": "scripts/orchestration/run_process_verification.sh",
+      "sha256": "4d65101ab0dfcb4c733e59bf46556546adc96035644cea1d3f904558a4cc6841",
+      "source": "scripts/orchestration/run_process_verification.sh"
+    },
+    {
+      "mode": "0755",
+      "path": "scripts/orchestration/run_stage_closeout.py",
+      "sha256": "57a0a550b098c9baa906eabd681b0fdcaa75e3f45c670fdf448bbaca854fb3ee",
+      "source": "scripts/orchestration/run_stage_closeout.py"
+    },
+    {
+      "mode": "0755",
+      "path": "scripts/orchestration/validate_artifact.py",
+      "sha256": "a42bf3e6f0948b57ccc171a075dc0a50e2574b171e51d93343e45e20fe426ff5",
+      "source": "scripts/orchestration/validate_artifact.py"
+    },
+    {
+      "mode": "0755",
+      "path": "scripts/orchestration/verification_evidence.py",
+      "sha256": "e2ac4d21e3b8804dc4b2d17bce83d3eaf3c36a91acb217304125675da04732fd",
+      "source": "scripts/orchestration/verification_evidence.py"
+    },
+    {
+      "mode": "0644",
+      "path": "scripts/orchestration_panel.py",
+      "sha256": "0503a4eb44d4d5ebbb1ecfff6120308d27dd1355947aa86e69fa24d2a45dbc39",
+      "source": "scripts/orchestration_panel.py"
+    },
+    {
+      "mode": "0644",
+      "path": "scripts/simulate_proportional_orchestration.py",
+      "sha256": "58d68547c8674b7ee91ca95e5f30686f0068b2ac2264157695d4254955671372",
+      "source": "scripts/simulate_proportional_orchestration.py"
+    },
+    {
+      "mode": "0755",
+      "path": "scripts/smoke_launcher.py",
+      "sha256": "2449cf3c5f03e97778d3ac5531d8579005e890c1981bbce7151689092a449587",
+      "source": "scripts/smoke_launcher.py"
+    },
+    {
+      "mode": "0755",
+      "path": "scripts/start_console.sh",
+      "sha256": "d8ce9e7fd53b4cda99b1f246d9ed09c357a8826ddb495c358da8740cca17908f",
+      "source": "scripts/start_console.sh"
+    },
+    {
+      "mode": "0755",
+      "path": "scripts/validate_console.py",
+      "sha256": "5a6d25e95161dce0071aa326a80027197443505158c97775faa0f4ed7d29120b",
+      "source": "scripts/validate_console.py"
+    },
+    {
+      "mode": "0644",
+      "path": "tailwind.config.js",
+      "sha256": "b5954c5476953ec779520a100f2fb0fc9a86391697fd50b7674fd5f8110b894c",
+      "source": "tailwind.config.js"
+    },
+    {
+      "mode": "0644",
+      "path": "tsconfig.json",
+      "sha256": "1bae80f9f6e913d0c09743b8c5ca582da60e0960ed24c5e3911bdfeba0858a0d",
+      "source": "tsconfig.json"
+    },
+    {
+      "mode": "0644",
+      "path": "tsconfig.node.json",
+      "sha256": "9564219d8cb3f9971a86dd9295fe2fe98a5364629188f3415330c10dbce8992e",
+      "source": "tsconfig.node.json"
+    },
+    {
+      "mode": "0644",
+      "path": "uv.lock",
+      "sha256": "9b33b68f50d083a8f0f4bc9333fb1a74ee957a605eef46fb1ccd9a161eef1145",
+      "source": "uv.lock"
+    },
+    {
+      "mode": "0644",
+      "path": "vite.config.ts",
+      "sha256": "4dcef01d5017535f3bd16a71d79aa65e3b4998e40d4332a537ce05c081ec429b",
+      "source": "vite.config.ts"
+    },
+    {
+      "mode": "0644",
+      "path": "web/index.html",
+      "sha256": "9998adcdb2a7e9ed331d1a7ed5b77da13a51e10f41fac56eb2a8f1c4476da0b6",
+      "source": "web/index.html"
+    },
+    {
+      "mode": "0644",
+      "path": "web/public/favicon.svg",
+      "sha256": "420721b8adf98bb8628ff206db68a19a5642ca76c9cc8c5ad3f26f8459cd88c3",
+      "source": "web/public/favicon.svg"
+    },
+    {
+      "mode": "0644",
+      "path": "web/public/logo.svg",
+      "sha256": "5c089d0343ef6a7ad81f090e890498cc0ffd1013e8ea1d8cc80d164dd5c99415",
+      "source": "web/public/logo.svg"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/app/components/app-shell.tsx",
+      "sha256": "a8a9320a109207d31742ff0b97cd1b97273f68f5bb03763ab38e4b62dad16acc",
+      "source": "web/src/app/components/app-shell.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/app/components/screen-frame.tsx",
+      "sha256": "0c5642d41716f52e8bfb88d6fd915ef2a36e62eb9f61c5f756ffa72220c40081",
+      "source": "web/src/app/components/screen-frame.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/app/navigation.ts",
+      "sha256": "ac349342843ab32a67cc4cde9e8e27bc250fe8986e942ccf5400fd13d4034a3b",
+      "source": "web/src/app/navigation.ts"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/app/routeTree.gen.ts",
+      "sha256": "1a2c87aa3f85404a75e030becb1e6e1bc51bee67aee52798b623d0a5c14466f7",
+      "source": "web/src/app/routeTree.gen.ts"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/app/router.tsx",
+      "sha256": "6850cf9b998315bc1ce179c11bc0eef659a79580ab3d1dcff262c705850c9ac7",
+      "source": "web/src/app/router.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/app/routes/__root.tsx",
+      "sha256": "30c9266854f3106fc7e1bcbb69159bf42f1cb51f523c795f54c7b9e76fae683a",
+      "source": "web/src/app/routes/__root.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/app/routes/beads.tsx",
+      "sha256": "ebdefa4557042264d451c1ed28e0c38fa6e8675c1e423a367db10ea2f284c875",
+      "source": "web/src/app/routes/beads.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/app/routes/catalog.tsx",
+      "sha256": "4ccb52b5d02ca6e1496537b2e11344a10ab0a73d64e763781e78774f7d097f2e",
+      "source": "web/src/app/routes/catalog.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/app/routes/claude-agents.tsx",
+      "sha256": "346f92169b5095848349dfc3e55b8bb0af414500fed9509a136cc79f9e339e31",
+      "source": "web/src/app/routes/claude-agents.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/app/routes/docs-context.tsx",
+      "sha256": "c912f92562bafedd00f9eb4ec77da072c81fc4fcdbca625606bd018154da9c0d",
+      "source": "web/src/app/routes/docs-context.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/app/routes/environment.tsx",
+      "sha256": "25bd859e2572b6c750d2e6b4f3d214b834f626dc0c7d2b234c12154b8bbfd96d",
+      "source": "web/src/app/routes/environment.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/app/routes/help.tsx",
+      "sha256": "6b57537430b64e21c3e18137879b9f1fdeb6d77edcd9753ef5e4d435d3abd76a",
+      "source": "web/src/app/routes/help.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/app/routes/index.tsx",
+      "sha256": "c9e2b44e63d2755d136b2628513b0c09b8dd70518007a3c428391c0f672318ae",
+      "source": "web/src/app/routes/index.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/app/routes/notes.tsx",
+      "sha256": "f396bf625f1ead50e0c36ec51c7018e69bc8dce365defc682b1faef98a826744",
+      "source": "web/src/app/routes/notes.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/app/routes/prompts.tsx",
+      "sha256": "82d808e3c731ccf3e8c39425d778993c250a0ae16805962c7085e9d52e8673e5",
+      "source": "web/src/app/routes/prompts.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/app/routes/runtime.tsx",
+      "sha256": "20919849b84b18e4cddc19feaaa4645ab35ec3b3c57dfc893ca633d39b420992",
+      "source": "web/src/app/routes/runtime.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/app/routes/tails.tsx",
+      "sha256": "97c919564994c9b0bef86b4c203a83ded34cc4b0a65ea98bf8586583b2df6ccf",
+      "source": "web/src/app/routes/tails.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/app/routes/telemetry.tsx",
+      "sha256": "0129ac8c4ee9d53cd119b687e40178e0549c48a3900160fb4d63d7ad767af09b",
+      "source": "web/src/app/routes/telemetry.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/app/routes/throughput.tsx",
+      "sha256": "fb6ecc31550f0c0c140d3a298fa2a47b41e06f7fc52f805bb6b6ae71a4db3ced",
+      "source": "web/src/app/routes/throughput.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/app/routes/workspace.$epicId.tsx",
+      "sha256": "d932e399c8568ef719fdff18dc8c99f61368bb72f6b252eec4ba6b02012c5605",
+      "source": "web/src/app/routes/workspace.$epicId.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/app/routes/workspace.index.tsx",
+      "sha256": "e3d80a5fd7a6993fff5620340b55acf7f18ac80a33618edd4bffc9fb6c8f121b",
+      "source": "web/src/app/routes/workspace.index.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/app/routes/workspace.tsx",
+      "sha256": "55510666386518e82df30f6d63fa67fd0dd9d4dfbbc8fce80bbcbf8489aa7804",
+      "source": "web/src/app/routes/workspace.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/beads/beads-board.tsx",
+      "sha256": "2e6e460465a807fb0a31e7e0236e22b06b705f9c84922da4043570d92d12c5f5",
+      "source": "web/src/features/beads/beads-board.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/beads/beads-repo.tsx",
+      "sha256": "1a22db9ddeba6418dd1d3932f9be9d0c0a22dfed92eaf60f638ccdb454652047",
+      "source": "web/src/features/beads/beads-repo.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/beads/beads-screen.tsx",
+      "sha256": "d6d12aa190716a96c9d600a1a66bdd85260c8c3652889867988a937269b25524",
+      "source": "web/src/features/beads/beads-screen.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/beads/sync-status.test.mjs",
+      "sha256": "4c9b0c83904f28d7efa4a96834772fca90321fbcef121a793a6e527e76b0fc77",
+      "source": "web/src/features/beads/sync-status.test.mjs"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/beads/sync-status.ts",
+      "sha256": "5fb8cc46c2958ccceea2c381ad829adaa8e943af0a2f899283df21a9a7b215d2",
+      "source": "web/src/features/beads/sync-status.ts"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/beads/types.ts",
+      "sha256": "3b442709975da7a620a6e0276194bb7fb4e0f6b27ccca225fc6a8f662259ee64",
+      "source": "web/src/features/beads/types.ts"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/catalog/catalog-screen.tsx",
+      "sha256": "af100ae5dc7ac899ce681e4189d5b70c549ea126593feb58bc9067b9a2337bf1",
+      "source": "web/src/features/catalog/catalog-screen.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/claude-agents/agent-card.tsx",
+      "sha256": "c1f61f611f8fdeed72bb284066e15bba264babd2845d4521dc011a45a7887bcf",
+      "source": "web/src/features/claude-agents/agent-card.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/claude-agents/claude-agents-screen.tsx",
+      "sha256": "99f98cb0e98c9b134746167eb57480952a176de625c1354b27d581e8573939be",
+      "source": "web/src/features/claude-agents/claude-agents-screen.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/claude-agents/install-confirmation.tsx",
+      "sha256": "a69b965a95d1b9854253ec10e75200309934ab6dcffdb706141d54f9fe6f53ff",
+      "source": "web/src/features/claude-agents/install-confirmation.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/claude-agents/install-result.tsx",
+      "sha256": "e490a439009dafd3dc12d34da464470a27dd0e1633ec47bfc5eebf6498b39bba",
+      "source": "web/src/features/claude-agents/install-result.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/claude-agents/types.ts",
+      "sha256": "ea7a1b544c90c8f8f1f71932ba6897c1dcb37b3a782a4d865304fc230507e8e9",
+      "source": "web/src/features/claude-agents/types.ts"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/docs-context/docs-context-screen.tsx",
+      "sha256": "071c54889fc5ea279a5abe736e23154c95888944bb1e1a3aba5818fd34fb34c9",
+      "source": "web/src/features/docs-context/docs-context-screen.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/docs-context/docs-dependencies.tsx",
+      "sha256": "6a2391a2ba087e4b54fd6ae7ff8db36d2fdda823b44fa727ed7fc684a896b4d3",
+      "source": "web/src/features/docs-context/docs-dependencies.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/docs-context/docs-sync-plan.tsx",
+      "sha256": "b54e3ae5f5192decc7385671d9f9c34df1b9927943fd3a038a373e5f047bb48f",
+      "source": "web/src/features/docs-context/docs-sync-plan.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/docs-context/types.ts",
+      "sha256": "30f9890f34ed4e1a5922d72b676473039bb0f5d724f6faa292353557a1606277",
+      "source": "web/src/features/docs-context/types.ts"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/environment/environment-screen.tsx",
+      "sha256": "87c471e36c1cb8f35d610db01f03a679789df8ec00ad492e84a64a37d36c49f4",
+      "source": "web/src/features/environment/environment-screen.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/help/help-screen.tsx",
+      "sha256": "6f7a88797391d71e236ca7f99d225fd244b877f1a81703f22829ddb6d6a66a04",
+      "source": "web/src/features/help/help-screen.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/notes/notes-screen.tsx",
+      "sha256": "e5114312d25a65e52bb94042741a59b38794a556c55e493583bdd0d1b472870f",
+      "source": "web/src/features/notes/notes-screen.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/overview/overview-state.tsx",
+      "sha256": "0451bacdf6a2a66dd83273dde2d12c34c78b4f3f463c2e435ca48417c2a4bc70",
+      "source": "web/src/features/overview/overview-state.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/overview/refresh-overview-button.tsx",
+      "sha256": "26f9bfb52599166f0d9c404069eb710741ee442f2496a1b82c57493669b86869",
+      "source": "web/src/features/overview/refresh-overview-button.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/prompts/prompts-screen.tsx",
+      "sha256": "b64d037e8435353a898dc114b8a6c2c8ad36fb4b056094d58e3291499dab672e",
+      "source": "web/src/features/prompts/prompts-screen.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/runtime/runtime-detail.tsx",
+      "sha256": "3744aee4aeeea95e7512632f40f50aa2adfdb4ab46d17c21a5410331365546d5",
+      "source": "web/src/features/runtime/runtime-detail.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/runtime/runtime-screen.tsx",
+      "sha256": "2bc1f243a7fbfb8b1b82671d5ac9c2bd457514c884722ff93af0fd86c10711e9",
+      "source": "web/src/features/runtime/runtime-screen.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/runtime/runtime-stat.tsx",
+      "sha256": "8e10837bb5a6ffe8f161b1bfbedb3c86d3fb0f3f7951b001469a987f55f00499",
+      "source": "web/src/features/runtime/runtime-stat.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/runtime/types.ts",
+      "sha256": "0e2cac541d95a28d1524d11b1f5558550d067939a3167475bcdd2621ed80e110",
+      "source": "web/src/features/runtime/types.ts"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/tails/radar.tsx",
+      "sha256": "618793c9ff05c3101b1c8fac1d2464520e72e18306ed77555fec2f845efd4c63",
+      "source": "web/src/features/tails/radar.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/tails/tail-branch.tsx",
+      "sha256": "35b1099f267a9768e43c151a4a2056206ee15eab62a08aad05742125014cff6c",
+      "source": "web/src/features/tails/tail-branch.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/tails/tail-group.tsx",
+      "sha256": "85355e6f9e3feb678fae3c63608a7c24d0456c5603ecaac5fa9fbe81f2d5d201",
+      "source": "web/src/features/tails/tail-group.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/tails/tails-lib.ts",
+      "sha256": "7b7bcafaa3a52423bf1dba695bee0dacbd88eca2d9cec770d09bd6b739418c5a",
+      "source": "web/src/features/tails/tails-lib.ts"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/tails/tails-screen.tsx",
+      "sha256": "7913605bfac5f985be479c20fee7778e4bb8ea0490d07d73a1487c9676a43ced",
+      "source": "web/src/features/tails/tails-screen.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/tails/types.ts",
+      "sha256": "1d6bf2dd8e2b3d2688a2e6ad37cab279c7a1ab90f19647764d41b3926f018fd7",
+      "source": "web/src/features/tails/types.ts"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/telemetry/format.ts",
+      "sha256": "0389a01f18974f882e7867c9f4917eaf0ed27d4ca5da7405b4337caf6e1f1993",
+      "source": "web/src/features/telemetry/format.ts"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/telemetry/telemetry-screen.tsx",
+      "sha256": "1dfc92e164aaa65e5b4595987e7097f742c60cb3e67c7e24e51e6bd090b6cb6b",
+      "source": "web/src/features/telemetry/telemetry-screen.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/telemetry/telemetry-stage.tsx",
+      "sha256": "65bd9dbd9727286f78b835be757fbe321afbe6ae472066c85f1b5ca14d44fe2a",
+      "source": "web/src/features/telemetry/telemetry-stage.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/telemetry/telemetry-ui.tsx",
+      "sha256": "4a555a1c87d1929ce862f2b1367d3c0fc03a45ae83656ac4d44196785b0d78db",
+      "source": "web/src/features/telemetry/telemetry-ui.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/telemetry/types.ts",
+      "sha256": "9d93d8f3dd743097fad865fd31c7627fb880148821068fe75211a4f1154819a6",
+      "source": "web/src/features/telemetry/types.ts"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/throughput/throughput-repo.tsx",
+      "sha256": "8522a162234edf2cdb61de5cd714cdde8ad797cd8a0a0c15369a10d48fd73c47",
+      "source": "web/src/features/throughput/throughput-repo.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/throughput/throughput-screen.tsx",
+      "sha256": "76f1867814a59198207369ba0b674cb9c42140db6aa0e163549ef07b9f608dfe",
+      "source": "web/src/features/throughput/throughput-screen.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/throughput/types.ts",
+      "sha256": "509cdfe20afde5110109b4ae5eedebee2be2ca9d9cf0b862b018cb393a6b0bc3",
+      "source": "web/src/features/throughput/types.ts"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/workspace/artifacts/artifact-rows.test.mjs",
+      "sha256": "dd4d2df188f6b614a3c9645bb24d303129a07d167a888e36944a790a4e91be6f",
+      "source": "web/src/features/workspace/artifacts/artifact-rows.test.mjs"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/workspace/artifacts/artifact-rows.ts",
+      "sha256": "d8676d8f840dad9bae20df8b9d586c4f47fa1f4660a3d3ae32ab5b9a3524d3c7",
+      "source": "web/src/features/workspace/artifacts/artifact-rows.ts"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/workspace/artifacts/artifacts-panel.tsx",
+      "sha256": "e541169e71fc3ac36c8d93f8323a8b6cafee4ef1543016e6f4dc61cb66a3bdf3",
+      "source": "web/src/features/workspace/artifacts/artifacts-panel.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/workspace/board/sortable-board-card.tsx",
+      "sha256": "3d209c8765faed1c3db0b3ef21de8862d5b54afb71e2ba6f8a09d44a1f0dca1c",
+      "source": "web/src/features/workspace/board/sortable-board-card.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/workspace/board/transition.test.mjs",
+      "sha256": "7aafff4035e6c4e87f50280218b2e5abe7d3e92b55ec813157d2470113c7d764",
+      "source": "web/src/features/workspace/board/transition.test.mjs"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/workspace/board/transition.ts",
+      "sha256": "17a9e5aaf22e795f6662e4658a8254e2211300e569e7fef17cc39a08148d0541",
+      "source": "web/src/features/workspace/board/transition.ts"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/workspace/board/workspace-board.tsx",
+      "sha256": "245d6825cd6faeb4977a1b9514724a2ed2c137a50a3983479c66d18ef2b52b70",
+      "source": "web/src/features/workspace/board/workspace-board.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/workspace/create/github-intake-dialog.tsx",
+      "sha256": "511a8a7eaa5c7063f04afd73c7c2096d894ed7d90646361369e13a3d09a5b072",
+      "source": "web/src/features/workspace/create/github-intake-dialog.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/workspace/create/workspace-create-dialog.tsx",
+      "sha256": "560872e1478124cacc2559b4a3cd87649a8aff38b15a308b2f48fb80a4cc7ac0",
+      "source": "web/src/features/workspace/create/workspace-create-dialog.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/workspace/lib/formatTimelineMessages.test.mjs",
+      "sha256": "a064f0eeaff2c3a0e3bf9dd328122fc9185200a228dc12fdbdb9b4d1a444cd48",
+      "source": "web/src/features/workspace/lib/formatTimelineMessages.test.mjs"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/workspace/lib/formatTimelineMessages.ts",
+      "sha256": "078dfd00487bbf0acd871480de6ce7826bb45380429c0d455443508da02a28dd",
+      "source": "web/src/features/workspace/lib/formatTimelineMessages.ts"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/workspace/lib/useAnchoredScroll.test.mjs",
+      "sha256": "a5eb49c9613b3af34e3017e62518789737436e5b71be8b7c58ef05b1aab674c9",
+      "source": "web/src/features/workspace/lib/useAnchoredScroll.test.mjs"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/workspace/lib/useAnchoredScroll.ts",
+      "sha256": "2be76e3bcc0850e34b96f0f31d8255b3db7d98aa466b72a5d52bffb29e3840e3",
+      "source": "web/src/features/workspace/lib/useAnchoredScroll.ts"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/workspace/lib/useEventStream.ts",
+      "sha256": "dd54a26f771f1f0d60d9d7c8c9d557c2e7202b0c95761671b64aa8ad4bbe29b0",
+      "source": "web/src/features/workspace/lib/useEventStream.ts"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/workspace/lib/workspaceMetaNote.test.mjs",
+      "sha256": "8d6dde3a604ab8ba445e2002274c26a1fa8d3028c2ad963e094e1729dbe1ffb4",
+      "source": "web/src/features/workspace/lib/workspaceMetaNote.test.mjs"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/workspace/lib/workspaceMetaNote.ts",
+      "sha256": "016fb89ac4d48942cf74f43e7c56f74d24379365adc26a78aa1932bf10ebcea8",
+      "source": "web/src/features/workspace/lib/workspaceMetaNote.ts"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/workspace/planning/planning-copy.test.mjs",
+      "sha256": "44af2b6c8b4f89f738e239628ba453d29dd7ce8d388e6149b5fcf724207d5f05",
+      "source": "web/src/features/workspace/planning/planning-copy.test.mjs"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/workspace/planning/planning-copy.ts",
+      "sha256": "6fb8b988734347d636ad77dae9af3bd2e95c89e3bdf79b32822c60bfa63373d1",
+      "source": "web/src/features/workspace/planning/planning-copy.ts"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/workspace/planning/planning-panel.tsx",
+      "sha256": "4f091c52bf50ae22e3fcf3e7635622710013bc4d04813ba4578f56d62c795736",
+      "source": "web/src/features/workspace/planning/planning-panel.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/workspace/review/review-gate.ts",
+      "sha256": "97ee9972fd857215b7d5496ffec8801b3e8b5da260f3e95a097cfa8c59ae9ea7",
+      "source": "web/src/features/workspace/review/review-gate.ts"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/workspace/review/review-panel-gate.tsx",
+      "sha256": "b9e24481f5e4ac107bed833d7ccc10ae4a952992ea0ee22d64399bc58e03f1a9",
+      "source": "web/src/features/workspace/review/review-panel-gate.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/workspace/review/review-panel.tsx",
+      "sha256": "38a2a5bbcb9f32a2fa9623620a8d4983004f9055e61be358a33e06098f917607",
+      "source": "web/src/features/workspace/review/review-panel.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/workspace/review/review-round.tsx",
+      "sha256": "379a2473960a21270ad8814ff1e73c15ab799e5a4a089ed83427dfe338a34339",
+      "source": "web/src/features/workspace/review/review-round.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/workspace/runs/run-card.tsx",
+      "sha256": "7c27041ca06cd64a2ce0e46e9832acd5ab1e16158545fbfc8fde2440de6a7211",
+      "source": "web/src/features/workspace/runs/run-card.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/workspace/runs/runs-panel.tsx",
+      "sha256": "6b070da7e7e6186f83f18bc653aef6343933fc6e248018d4ff38380d25909ba2",
+      "source": "web/src/features/workspace/runs/runs-panel.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/workspace/start-sheet/start-sheet.tsx",
+      "sha256": "617ddbb66c57d6bfdcd31968bf57951197abe47e5746e1063c84fb3ac2f55c30",
+      "source": "web/src/features/workspace/start-sheet/start-sheet.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/workspace/timeline/composer.tsx",
+      "sha256": "348efc8a7ecccb70acfd10bed376ff0e25b25975d89bbd6e6c1b3c8510dbfa11",
+      "source": "web/src/features/workspace/timeline/composer.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/workspace/timeline/day-separator.tsx",
+      "sha256": "47f8b30de88772c12a97f7e2a1e664d003fa6720a2a3c614a737c3ba3a19ce63",
+      "source": "web/src/features/workspace/timeline/day-separator.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/workspace/timeline/executor-confirmation.tsx",
+      "sha256": "13a8626a6c3551880bffd19bb12a7a30bf54f19155eee702d82256bf8b6d8496",
+      "source": "web/src/features/workspace/timeline/executor-confirmation.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/workspace/timeline/timeline-group.tsx",
+      "sha256": "4a5575d4786d4fc3122cdda0fcf9d804f1068c39b2b6b91ee67b8ea34a988fe1",
+      "source": "web/src/features/workspace/timeline/timeline-group.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/workspace/timeline/timeline-list.tsx",
+      "sha256": "60c49a86c21af6948902a706ca2415780f9ac7ae8005aec7e78ad352c31eeb0b",
+      "source": "web/src/features/workspace/timeline/timeline-list.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/workspace/timeline/timeline-row.tsx",
+      "sha256": "b070bd3d204b6f49a1112b2bb99b526ca618fde5b75ed02d10b8de4528bdf314",
+      "source": "web/src/features/workspace/timeline/timeline-row.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/workspace/timeline/unread-divider.tsx",
+      "sha256": "3bcdddcbde6cd91fee5aeff88c78829a9be9dc06d2de469fdf4cd69162ecda47",
+      "source": "web/src/features/workspace/timeline/unread-divider.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/workspace/workspace-screen.tsx",
+      "sha256": "76f40b600d65cfea8bae8bb336fa08a74816883de1a4a5bb79c7cc6d61bac6d2",
+      "source": "web/src/features/workspace/workspace-screen.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/features/workspace/workspace-tabs.tsx",
+      "sha256": "0b5888acc74e88c4dabed8c1af67241bcca0f21ae5bd810bbcb3850b2fdd76c4",
+      "source": "web/src/features/workspace/workspace-tabs.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/main.tsx",
+      "sha256": "050eddb56bdcf769b7809acc92a3b8015ce31002adaa7d4ee1892e7db90e66af",
+      "source": "web/src/main.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/shared/api/client.ts",
+      "sha256": "92eed88bc693bd825dce96ab8a9e724bf6475134991aa92a071d63de81c61875",
+      "source": "web/src/shared/api/client.ts"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/shared/api/projection.ts",
+      "sha256": "1011d30337bea49e493761cee18003ab27254ecd192ea852f45ebaeab571bdc2",
+      "source": "web/src/shared/api/projection.ts"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/shared/api/queries.ts",
+      "sha256": "3bf49789a3ae3e02c37a559a7bfc6909a72d32a9cb6adde27ee80fdfd7fa80e8",
+      "source": "web/src/shared/api/queries.ts"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/shared/api/query-client.ts",
+      "sha256": "92432ba2b1ae8b2a9bc432b0597bed4e3ab3934020f969b89843a4e84d018146",
+      "source": "web/src/shared/api/query-client.ts"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/shared/api/types.ts",
+      "sha256": "adac8066212123236500427fc3418f721e880a88fe4a13de00c180213a01b96a",
+      "source": "web/src/shared/api/types.ts"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/shared/lib/cn.ts",
+      "sha256": "02a523d3492e97440de9c080a59f3aa9366ca92bb6914078a75ae8a6f3e90a7f",
+      "source": "web/src/shared/lib/cn.ts"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/shared/lib/freshness.test.mjs",
+      "sha256": "52432aa6d203971ffa94ff007ce7f008875c1e1a138e8c5062b506bf8cb14955",
+      "source": "web/src/shared/lib/freshness.test.mjs"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/shared/lib/freshness.ts",
+      "sha256": "ac8c5da7675da0d50aa92e75ebbbbae2dfccf7645d49ddadb5df26c5e7ed7179",
+      "source": "web/src/shared/lib/freshness.ts"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/shared/styles/globals.css",
+      "sha256": "35ccbc2a6570f882d8c807547d01b1a586884c8de7c9eb0c83fb4797d948bf34",
+      "source": "web/src/shared/styles/globals.css"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/shared/theme/appearance-provider.tsx",
+      "sha256": "ccd7506f251f290c125b9c99f48e89b297ca3701a23491dc1e86ae18056441b5",
+      "source": "web/src/shared/theme/appearance-provider.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/shared/ui/TimelineSkeleton.tsx",
+      "sha256": "d337a881c11da54d0796916c3ab23724b8cf73f3950c287fa4330f86fd694893",
+      "source": "web/src/shared/ui/TimelineSkeleton.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/shared/ui/UnreadPill.tsx",
+      "sha256": "f3c619c2eff87d94ee13b768d5b280109777cdeef8e63ef52d4cef356e0572b4",
+      "source": "web/src/shared/ui/UnreadPill.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/shared/ui/VirtualizedList.tsx",
+      "sha256": "503ca4c444c285f108283eda0ea32e41fabf4f64aa26d9f469387d708549d47a",
+      "source": "web/src/shared/ui/VirtualizedList.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/shared/ui/badge.tsx",
+      "sha256": "a1d50c086a8157482d0f113533088564d93afde6292eea2ddf69a3c0f755368c",
+      "source": "web/src/shared/ui/badge.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/shared/ui/button.tsx",
+      "sha256": "985ac235084ff79511bdb248ce3b2040e939ada4dce5e2d9814cf8b3816a5848",
+      "source": "web/src/shared/ui/button.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/shared/ui/card.tsx",
+      "sha256": "2a92bd85aee51f01205d5f917efc298c4e99467c9746f61958c887eb5ce922b3",
+      "source": "web/src/shared/ui/card.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/shared/ui/checkbox.tsx",
+      "sha256": "43da22baa9dd1ffec4958243fe9e762a39759fe2fb6753e17a08a8d4068ea791",
+      "source": "web/src/shared/ui/checkbox.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/shared/ui/data-inspector.tsx",
+      "sha256": "7ece562abc7db6eb34fb36e7f74ba9ebbf3e380616f95a597858f270b81573ec",
+      "source": "web/src/shared/ui/data-inspector.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/shared/ui/dialog.tsx",
+      "sha256": "87c6a6c0129d33492710433f43650353ee1b9bf131fb07d400e09d3adf59b373",
+      "source": "web/src/shared/ui/dialog.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/shared/ui/freshness.tsx",
+      "sha256": "6f6f6eb004060bcc6d0e61d9b5590a727c2252d79e0aef0991655acf8b294ae5",
+      "source": "web/src/shared/ui/freshness.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/shared/ui/highlighter.ts",
+      "sha256": "1284889d9f5d0281f74d9ddc15740271e083c0a7e772a02856cc3433c67aeb42",
+      "source": "web/src/shared/ui/highlighter.ts"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/shared/ui/input.tsx",
+      "sha256": "23495e8f11dd26f9dfb5d33aafd892332d0efc57bba60a326efb63fd6a8e18e1",
+      "source": "web/src/shared/ui/input.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/shared/ui/markdown.tsx",
+      "sha256": "bfe3ec95ee77b3617da2113d719f61d5295aac6d16ec18df60bbe39b1e8af7c3",
+      "source": "web/src/shared/ui/markdown.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/shared/ui/projection.tsx",
+      "sha256": "ca8e830db66476994695c624cdfa9048d98c0ed5b719adbf1e7237ed682407ed",
+      "source": "web/src/shared/ui/projection.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/shared/ui/raw-inspector.tsx",
+      "sha256": "22c61dfb65c18d151bf4f252584d3ec0376bd1616c715edd0ba4490f46866277",
+      "source": "web/src/shared/ui/raw-inspector.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/shared/ui/select.tsx",
+      "sha256": "526297d3512c6d5f46665f9b78fecf54f4b2dfd01c498420158d8e2db757c8a5",
+      "source": "web/src/shared/ui/select.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/shared/ui/separator.tsx",
+      "sha256": "7bc9f7c609f0b016ce0d34ff65cdf84dead3dcae3e97fd30804e1bca38e316b4",
+      "source": "web/src/shared/ui/separator.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/shared/ui/sheet.tsx",
+      "sha256": "2e3ae557d9766cb46971f1cf873116300b214b3228512234970f7f831ee1f4ea",
+      "source": "web/src/shared/ui/sheet.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/shared/ui/skeleton.tsx",
+      "sha256": "e6d17fe89a2bc6a2f8d292d86c8d061af4b8cab95cd9aa115bd3bc2e00ab5e6d",
+      "source": "web/src/shared/ui/skeleton.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/shared/ui/sonner.tsx",
+      "sha256": "b38f9a1f6e3e3fa7803cdc0a40b333769e7f36fb51309c44795f23f2adb5cf13",
+      "source": "web/src/shared/ui/sonner.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/shared/ui/tabs.tsx",
+      "sha256": "89fa3312824578dcc65581bfb154fd926d0f250a64a2891e7dd3e658edd3b462",
+      "source": "web/src/shared/ui/tabs.tsx"
+    },
+    {
+      "mode": "0644",
+      "path": "web/src/shared/ui/textarea.tsx",
+      "sha256": "4a8ccdc3307cc91cd5f2cff99c1f234a6df0ee170d884432bd5d91510c6d6093",
+      "source": "web/src/shared/ui/textarea.tsx"
+    }
+  ],
+  "schema_version": "release-manifest/v1",
+  "version": "0.2.0-rc.3"
+}

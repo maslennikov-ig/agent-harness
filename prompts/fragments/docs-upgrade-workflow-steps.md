@@ -1,0 +1,3 @@
+2. For each changed dependency, derive the lockfile-routed docs target as `ecosystem/name@exact-version` and the comparison track as `major.minor`.
+3. Run Docs Resolver first: `orch-prompts docs-resolve --cwd <repo> --package <name> --topic '<domain API keywords>'`. Pass `--version <exact-version>` only when the lockfile version is outside the current repo root or the resolver cannot infer it.
+4. Treat resolver `l1-hit` as the authoritative local `@neuledge/context` path. The selected L1 docs package must be the same version as, or newer than, the highest target dependency version in that major.minor track.

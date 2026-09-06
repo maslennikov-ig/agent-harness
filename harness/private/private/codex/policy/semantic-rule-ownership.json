@@ -1,0 +1,72 @@
+{
+    "ledger_version": "semantic-rule-ownership/v1",
+    "kernel_id": "shared-orchestration/v1",
+    "governed_policy_sources": [],
+    "rules": [
+        {
+            "id": "model.codex.code-mode-batching",
+            "source_path": "private/codex/global/AGENTS.md",
+            "source_span": "Code Mode bullet",
+            "rule_text": "In Code Mode, batch independent `functions.exec` calls per bounded stage in one call:",
+            "normalized_hash": "a0a6e8f068cda208340892f0ddfce6e47f77ae22e7b609214724488876026b38",
+            "disposition": "kernel",
+            "owner": "canonical Codex global guidance",
+            "enforcement": "always-on Codex developer instruction",
+            "trigger": "triggered",
+            "burden": "latitude",
+            "trigger_condition": "Codex runs in Code Mode",
+            "regression_scenario": "multiple independent inspections"
+        },
+        {
+            "id": "stage.cohesive-sizing",
+            "source_path": "private/codex/skills/orchestrator-stage/references/stage-lifecycle-and-sizing.md",
+            "source_span": "stage boundary",
+            "rule_text": "Keep one active implementation stage",
+            "normalized_hash": "ccda6d075746ca4c869d027de98c41c88e06fd02e620530276f0e8a29530077e",
+            "disposition": "deterministic",
+            "owner": "repository process verifier",
+            "enforcement": "reference plus repository stage verifier",
+            "trigger": "triggered",
+            "burden": "obligation",
+            "trigger_condition": "a stage manifest exists for the current stage",
+            "regression_scenario": "six work areas in one vertical stage",
+            "allowed_mirrors": [
+                "private/codex/skills/orchestrator-stage/SKILL.md"
+            ]
+        },
+        {
+            "id": "workflow.selective-orchestration-reference",
+            "source_path": "private/codex/skills/orchestrator-stage/SKILL.md",
+            "source_span": "reference routing table",
+            "rule_text": "Load only the next relevant reference:",
+            "normalized_hash": "a8cd0cd90d7519e7d4f1ed1bee2667c7eccab53f91e1fa88d38b8f7495cb14ad",
+            "disposition": "skill",
+            "owner": "orchestrator-stage router",
+            "enforcement": "triggered skill loading",
+            "trigger": "triggered",
+            "burden": "latitude",
+            "trigger_condition": "an orchestration reference is actually triggered",
+            "regression_scenario": "simple, medium, and complex routing"
+        },
+        {
+            "id": "acceptance.root-owned-explicit-executor",
+            "source_path": "private/codex/skills/orchestration-setup/templates/scripts/run_stage_closeout.py",
+            "source_span": "select_acceptance_commands",
+            "rule_text": "Select exact root-owned commands without risk/surface inference.",
+            "normalized_hash": "14326a18989e8cadab94a27f91aa1d9467ebf8ebba171bed41a573e176345ccd",
+            "disposition": "deterministic",
+            "owner": "repository closeout executor",
+            "enforcement": "explicit CLI commands plus release-command rejection and receipt reuse",
+            "trigger": "triggered",
+            "burden": "obligation",
+            "trigger_condition": "the root runs its one final acceptance set",
+            "regression_scenario": "delegated UI slice with retry and state-transition metadata"
+        }
+    ],
+    "kernel_parity": {
+        "mechanism": "file containment",
+        "canonical": "orchestration-console policy/runtime-kernel-v1.md",
+        "runtime": "private/codex/global/AGENTS.md",
+        "note": "shared kernel bullets are verified verbatim against the canonical kernel file, not duplicated as ledger records"
+    }
+}

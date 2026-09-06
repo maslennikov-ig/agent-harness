@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Resolve symlinks portably on Linux and macOS, then find either the public
+# release root (bin/harness) or this monorepo's source layout.
+SCRIPT_PATH="$(python3 -c 'from pathlib import Path; import sys; print(Path(sys.argv[1]).resolve())' "$0")"
+SCRIPT_DIR="$(cd "$(dirname "$SCRIPT_PATH")" && pwd)"
+PUBLIC_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
+SOURCE_ROOT="$(cd "${SCRIPT_DIR}/../../.." && pwd)"
+if [ -f "${PUBLIC_ROOT}/release-manifest.json" ]; then
+  RELEASE_ROOT="${PUBLIC_ROOT}"
+elif [ -f "${SOURCE_ROOT}/release-manifest.json" ]; then
+  RELEASE_ROOT="${SOURCE_ROOT}"
+else
+  echo "harness: release-manifest.json was not found beside the installer" >&2
+  exit 2
+fi
+
+exec python3 "${RELEASE_ROOT}/harness/distribution/installer.py" --root "${RELEASE_ROOT}" "$@"

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Technical Premortem"
+  short_description: "Stress-test risky plans before implementation"
+  default_prompt: "Use $technical-premortem to investigate how this planned change could fail before implementation."

@@ -1,0 +1,17 @@
+[project]
+baseline = "agent-harness"
+
+[delivery]
+mode = "manual"
+pr_required = false
+
+[orchestration_levels]
+default = "slice_acceptance"
+
+[verification_policy]
+mode = "explicit"
+default_level = "slice_acceptance"
+reuse_acceptance_receipt = true
+
+[knowledge_graph]
+enabled = false

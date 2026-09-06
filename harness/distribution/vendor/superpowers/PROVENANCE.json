@@ -1,0 +1,8 @@
+{
+  "commit": "b36e0829c6d0140e93cfef2ca599b1b07d4a7797",
+  "distribution": "skills and supporting files, plugin metadata, LICENSE; no hooks or git history",
+  "patch": "harness/private/private/superpowers/bounded-tdd.patch",
+  "patch_sha256": "bce16b43a3d43d356bd87165afb318779bc65c48528f8b4debb2917261883239",
+  "upstream": "https://github.com/obra/superpowers.git",
+  "version": "6.3.0"
+}

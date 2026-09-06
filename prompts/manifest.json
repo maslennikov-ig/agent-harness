@@ -1,0 +1,1181 @@
+{
+  "profiles": [
+        {
+            "id": "fable-5.1",
+            "label": "Fable 5.1",
+            "runtime": "claude",
+            "description": "Fable 5.1 координирует работу, Opus 5 выполняет подзадачи. Глубина размышлений — по сложности; критические решения остаются у оркестратора.",
+            "overlays": [
+                "profiles/claude-fable.md"
+            ],
+      "source": "anthropic-fable-5-1",
+      "default": true,
+      "priority": 0
+    },
+    {
+            "id": "opus-5",
+            "label": "Opus 5",
+            "runtime": "claude",
+            "description": "Claude Opus 5 profile: concise execution, effort calibration, coverage-first review, and no routine verifier ceremony.",
+            "overlays": [
+                "profiles/claude-opus-5.md"
+            ],
+            "source": "anthropic-opus-5",
+            "priority": 10
+    },
+    {
+      "id": "gpt-6-astra",
+      "label": "GPT-6 Astra",
+      "runtime": "codex",
+            "description": "Astra координирует работу: Sol — сложные задачи, Terra — попроще, Luna — простые. Самые критические задачи Astra может выполнить сам.",
+            "overlays": [
+                "profiles/codex-gpt-6-astra.md"
+            ],
+      "source": "openai-gpt-6-astra",
+      "default": true,
+      "priority": 0
+    }
+  ],
+  "prompts": [
+    {
+      "id": "start-stage",
+      "library_visibility": "system",
+      "title": "Новый этап разработки",
+      "category": "Start",
+      "description": "Старт нового medium/complex этапа с маршрутизацией, Beads, Graphify и видимыми subagents.",
+      "launcher_file": "launchers/start-stage.md",
+      "file": "start-stage.md",
+      "tags": [
+        "orchestrator",
+        "subagents",
+        "beads"
+      ],
+      "runtimes": [
+        "codex"
+      ],
+      "source": "curated-file",
+      "priority": 10,
+      "situations": {
+        "tier": "complex",
+        "use": [
+          "Новый этап разработки: несколько файлов или потоков, нужна декомпозиция и видимые субагенты",
+          "Крупная функциональность или рефакторинг с ревью и верификацией",
+          "Первый заход в работу, где будет handoff между сессиями или рантаймами"
+        ],
+        "instead": [
+          "Ограниченная правка до ~5 файлов — medium fast path (/stage или напрямую orchestrator-stage)",
+          "Продолжение незакрытого этапа — «Продолжить разработку»",
+          "Репозиторий без оркестрационного контракта — «Инициализировать проект»"
+        ],
+        "beads": "Заводит или выбирает задачу этапа до первых правок; закрытие — через closeout."
+      }
+    },
+    {
+      "id": "goal-authoring",
+      "library_visibility": "manual",
+      "title": "Formulate a Goal",
+      "category": "Start",
+      "description": "Turn one durable Codex task into a compact, verifiable Goal Mode contract.",
+      "launcher_file": "launchers/goal-authoring.md",
+      "file": "goal-authoring.md",
+      "tags": [
+        "codex",
+        "goal",
+        "long-running",
+        "prompt"
+      ],
+      "runtimes": [
+        "codex"
+      ],
+      "source": "curated-file",
+      "priority": 9,
+      "situations": {
+        "tier": "varies",
+        "use": [
+          "Formulate one long-running Codex objective with a verifiable stopping condition",
+          "Decide whether a task belongs in Goal Mode before starting it"
+        ],
+        "instead": [
+          "Use an ordinary task for work that fits one turn",
+          "Split an open backlog or unrelated outcomes before creating a goal"
+        ],
+        "beads": "Not required for formulation; the generated goal names the existing durable task record when cross-session state needs one."
+      }
+    },
+    {
+      "id": "prepare-codex-goal",
+      "library_visibility": "manual",
+      "title": "Подготовить запуск в Codex",
+      "category": "Start",
+      "description": "Сохранить согласованную задачу как Goal Mode prompt для Astra в .codex/next-goal.md.",
+      "launcher_file": "launchers/prepare-codex-goal.md",
+      "file": "prepare-codex-goal.md",
+      "tags": [
+        "codex",
+        "goal",
+        "handoff",
+        "orchestration"
+      ],
+      "runtimes": [
+        "codex"
+      ],
+      "source": "curated-file",
+      "priority": 8,
+      "situations": {
+        "tier": "varies",
+        "use": [
+          "Завершить текущее обсуждение готовым prompt для нового запуска Codex Goal Mode",
+          "Передать в Astra согласованные решения и источники без повторного описания задачи"
+        ],
+        "instead": [
+          "Сформулировать отдельную задачу с новым вводом — «Formulate a Goal»",
+          "Начать выполнение в текущем разговоре — использовать обычную задачу или этап"
+        ],
+        "beads": "Artifact-only: карточка пишет только .codex/next-goal.md и не меняет задачи; принимающий Codex создаёт или переиспользует lineage только при необходимости."
+      }
+    },
+    {
+      "id": "claude-prepare-codex-goal",
+      "library_visibility": "manual",
+      "title": "Подготовить запуск в Codex",
+      "category": "Claude",
+      "description": "Сохранить согласованную в Claude задачу как Goal Mode prompt для Astra в .codex/next-goal.md.",
+      "launcher_file": "launchers/claude-prepare-codex-goal.md",
+      "file": "claude-prepare-codex-goal.md",
+      "tags": [
+        "claude",
+        "codex",
+        "goal",
+        "handoff"
+      ],
+      "runtimes": [
+        "claude"
+      ],
+      "source": "curated-file",
+      "priority": 8,
+      "situations": {
+        "tier": "varies",
+        "use": [
+          "Завершить текущее обсуждение готовым prompt для нового запуска Codex Goal Mode",
+          "Передать в Astra согласованные решения и источники без повторного описания задачи"
+        ],
+        "instead": [
+          "Сформулировать отдельную задачу с новым вводом — «Formulate a Goal»",
+          "Начать выполнение в текущем разговоре — использовать обычную задачу или этап"
+        ],
+        "beads": "Artifact-only: карточка пишет только .codex/next-goal.md и не меняет задачи; принимающий Codex создаёт или переиспользует lineage только при необходимости."
+      }
+    },
+    {
+      "id": "claude-start-stage",
+      "library_visibility": "system",
+      "title": "Новый этап разработки",
+      "category": "Claude",
+      "description": "Старт medium/complex задачи в Claude Code CLI через VS Code/WSL с plugin skills, subagents, Beads и Docs L1/L2.",
+      "launcher_file": "launchers/claude-start-stage.md",
+      "file": "claude-start-stage.md",
+      "tags": [
+        "claude",
+        "orchestrator",
+        "vscode",
+        "wsl"
+      ],
+      "runtimes": [
+        "claude"
+      ],
+      "source": "curated-file",
+      "priority": 11,
+      "situations": {
+        "tier": "complex",
+        "use": [
+          "Новый этап разработки: несколько файлов или потоков, нужна декомпозиция и видимые субагенты",
+          "Крупная функциональность или рефакторинг с ревью и верификацией",
+          "Первый заход в работу, где будет handoff между сессиями или рантаймами"
+        ],
+        "instead": [
+          "Ограниченная правка до ~5 файлов — medium fast path (/stage или напрямую orchestrator-stage)",
+          "Продолжение незакрытого этапа — «Продолжить разработку»",
+          "Репозиторий без оркестрационного контракта — «Инициализировать проект»"
+        ],
+        "beads": "Заводит или выбирает задачу этапа до первых правок; закрытие — через closeout."
+      }
+    },
+    {
+      "id": "design-impeccable",
+      "library_visibility": "system",
+      "title": "Дизайн / Impeccable",
+      "category": "Design",
+      "description": "Основной Codex-промпт для создания, редизайна, критики и полировки UI, сайтов и визуального HTML-to-PDF через Impeccable.",
+      "launcher_file": "launchers/design-impeccable.md",
+      "file": "design-impeccable.md",
+      "tags": [
+        "design",
+        "impeccable",
+        "frontend",
+        "ui",
+        "pdf"
+      ],
+      "runtimes": [
+        "codex"
+      ],
+      "source": "curated-file",
+      "priority": 14,
+      "situations": {
+        "tier": "varies",
+        "use": [
+          "Создать, переработать, критиковать или отполировать сайт, продуктовый интерфейс либо frontend-поверхность",
+          "Сделать визуально спроектированный HTML/CSS, включая красивый HTML-to-PDF с отдельной PDF-проверкой",
+          "Реализовать принятые изменения после Lazyweb-исследования или доработать явный Stitch-артефакт"
+        ],
+        "instead": [
+          "Нужны только реальные референсы, A/B evidence или conversion research — использовать Lazyweb",
+          "Нужно получить или изменить существующий Stitch-проект — использовать Stitch",
+          "Нужны извлечение, OCR, merge или иная обычная PDF-операция — использовать PDF workflow"
+        ],
+        "beads": "Создаёт или выбирает задачу только для file-changing, длительной или handoff-prone дизайн-работы; простой локальный дизайн остаётся без церемонии."
+      }
+    },
+    {
+      "id": "claude-design-impeccable",
+      "library_visibility": "system",
+      "title": "Дизайн / Impeccable",
+      "category": "Claude",
+      "description": "Основной Claude-промпт для создания, редизайна, критики и полировки UI, сайтов и визуального HTML-to-PDF через marketplace Impeccable.",
+      "launcher_file": "launchers/claude-design-impeccable.md",
+      "file": "claude-design-impeccable.md",
+      "tags": [
+        "claude",
+        "design",
+        "impeccable",
+        "frontend",
+        "ui",
+        "pdf"
+      ],
+      "runtimes": [
+        "claude"
+      ],
+      "source": "curated-file",
+      "priority": 15,
+      "situations": {
+        "tier": "varies",
+        "use": [
+          "Создать, переработать, критиковать или отполировать сайт, продуктовый интерфейс либо frontend-поверхность",
+          "Сделать визуально спроектированный HTML/CSS, включая красивый HTML-to-PDF с отдельной PDF-проверкой",
+          "Реализовать принятые изменения после Lazyweb-исследования или доработать явный Stitch-артефакт"
+        ],
+        "instead": [
+          "Нужны только реальные референсы, A/B evidence или conversion research — использовать Lazyweb",
+          "Нужно получить или изменить существующий Stitch-проект — использовать Stitch",
+          "Нужны извлечение, OCR, merge или иная обычная PDF-операция — использовать PDF workflow"
+        ],
+        "beads": "Создаёт или выбирает задачу только для file-changing, длительной или handoff-prone дизайн-работы; простой локальный дизайн остаётся без церемонии."
+      }
+    },
+    {
+      "id": "github-issue-intake",
+      "library_visibility": "manual",
+      "title": "Взять работу из GitHub Issues",
+      "category": "Start",
+      "description": "Автономно просмотреть GitHub issues, выбрать связанный work cluster и превратить его в простую локальную работу или новый orchestrated stage.",
+      "launcher_file": "launchers/github-issue-intake.md",
+      "file": "github-issue-intake.md",
+      "tags": [
+        "github",
+        "issues",
+        "intake",
+        "orchestrator",
+        "subagents"
+      ],
+      "runtimes": [
+        "codex"
+      ],
+      "source": "curated-file",
+      "priority": 12,
+      "situations": {
+        "tier": "varies",
+        "use": [
+          "Разобрать бэклог GitHub Issues, выбрать кластер и запустить работу",
+          "Превратить issues в план с маршрутизацией и приоритетами"
+        ],
+        "instead": [
+          "Конкретная задача уже известна — «Новый этап разработки»"
+        ],
+        "beads": "Создаёт задачи из выбранных issues с зависимостями."
+      }
+    },
+    {
+      "id": "claude-github-issue-intake",
+      "library_visibility": "manual",
+      "title": "Взять работу из GitHub Issues",
+      "category": "Claude",
+      "description": "Claude-native intake: просмотреть GitHub issues через gh, выбрать связанный work cluster и запустить локальную или staged работу.",
+      "launcher_file": "launchers/claude-github-issue-intake.md",
+      "file": "claude-github-issue-intake.md",
+      "tags": [
+        "claude",
+        "github",
+        "issues",
+        "intake",
+        "subagents"
+      ],
+      "runtimes": [
+        "claude"
+      ],
+      "source": "curated-file",
+      "priority": 13,
+      "situations": {
+        "tier": "varies",
+        "use": [
+          "Разобрать бэклог GitHub Issues, выбрать кластер и запустить работу",
+          "Превратить issues в план с маршрутизацией и приоритетами"
+        ],
+        "instead": [
+          "Конкретная задача уже известна — «Новый этап разработки»"
+        ],
+        "beads": "Создаёт задачи из выбранных issues с зависимостями."
+      }
+    },
+    {
+      "id": "continue-stage",
+      "library_visibility": "system",
+      "title": "Продолжить разработку",
+      "category": "Continue",
+      "description": "Переориентироваться и продолжить этап после паузы, compression или сомнений в контексте.",
+      "launcher_file": "launchers/continue-stage.md",
+      "file": "continue-stage.md",
+      "tags": [
+        "handoff",
+        "context",
+        "stage"
+      ],
+      "runtimes": [
+        "codex"
+      ],
+      "source": "curated-file",
+      "priority": 20,
+      "situations": {
+        "tier": "varies",
+        "use": [
+          "Продолжить незакрытый этап в новой сессии, после компакции или паузы",
+          "Подхватить handoff от другого агента или рантайма"
+        ],
+        "instead": [
+          "Этап закрыт, работа новая — «Новый этап разработки»"
+        ],
+        "beads": "Возобновляет задачу in_progress; состояние сверяет по bd ready/show."
+      }
+    },
+    {
+      "id": "claude-continue-stage",
+      "library_visibility": "system",
+      "title": "Продолжить разработку",
+      "category": "Claude",
+      "description": "Переориентироваться после паузы в Claude Code CLI: AGENTS/CLAUDE, Beads, Graphify, worktrees и следующий безопасный шаг.",
+      "launcher_file": "launchers/claude-continue-stage.md",
+      "file": "claude-continue-stage.md",
+      "tags": [
+        "claude",
+        "handoff",
+        "context",
+        "stage"
+      ],
+      "runtimes": [
+        "claude"
+      ],
+      "source": "curated-file",
+      "priority": 21,
+      "situations": {
+        "tier": "varies",
+        "use": [
+          "Продолжить незакрытый этап в новой сессии, после компакции или паузы",
+          "Подхватить handoff от другого агента или рантайма"
+        ],
+        "instead": [
+          "Этап закрыт, работа новая — «Новый этап разработки»"
+        ],
+        "beads": "Возобновляет задачу in_progress; состояние сверяет по bd ready/show."
+      }
+    },
+    {
+      "id": "review-fix",
+      "library_visibility": "manual",
+      "title": "Проверить и улучшить работу",
+      "category": "Review",
+      "description": "Один объединённый разбор качества, затем исправление подтверждённых находок с переиспользованием подходящей приёмки.",
+      "launcher_file": "launchers/review-fix.md",
+      "file": "review-fix.md",
+      "tags": [
+        "review",
+        "quality",
+        "fix"
+      ],
+      "runtimes": [
+        "codex"
+      ],
+      "source": "curated-file",
+      "priority": 30,
+      "situations": {
+        "tier": "medium",
+        "use": [
+          "Проверить свежие изменения на баги, регрессии и пропущенные тесты — и починить",
+          "Провести один объединённый correctness + improvement разбор диффа перед закрытием"
+        ],
+        "instead": [
+          "Аудит старого/чужого кода целиком — «Legacy/dead-code аудит»",
+          "Релизная верификация всего репо — «Полное тестирование / E2E»"
+        ],
+        "beads": "Работает в текущей задаче; крупные находки — отдельными задачами."
+      }
+    },
+    {
+      "id": "claude-review-fix",
+      "library_visibility": "manual",
+      "title": "Проверить и улучшить работу",
+      "category": "Claude",
+      "description": "Один объединённый разбор качества, затем исправление подтверждённых находок с переиспользованием подходящей приёмки.",
+      "launcher_file": "launchers/claude-review-fix.md",
+      "file": "claude-review-fix.md",
+      "tags": [
+        "claude",
+        "review",
+        "quality",
+        "fix"
+      ],
+      "runtimes": [
+        "claude"
+      ],
+      "source": "curated-file",
+      "priority": 31,
+      "situations": {
+        "tier": "medium",
+        "use": [
+          "Проверить свежие изменения на баги, регрессии и пропущенные тесты — и починить",
+          "Провести один объединённый correctness + improvement разбор диффа перед закрытием"
+        ],
+        "instead": [
+          "Аудит старого/чужого кода целиком — «Legacy/dead-code аудит»",
+          "Релизная верификация всего репо — «Полное тестирование / E2E»"
+        ],
+        "beads": "Работает в текущей задаче; крупные находки — отдельными задачами."
+      }
+    },
+    {
+      "id": "cross-model-audit",
+      "library_visibility": "manual",
+      "title": "Кросс-модельный аудит работы",
+      "category": "Review",
+      "description": "Единый глубокий стандарт качества: read-only до отчёта, затем выбор — исправить здесь или подготовить возвратный промпт для исходной модели.",
+      "launcher_file": "launchers/cross-model-audit.md",
+      "file": "cross-model-audit.md",
+      "tags": [
+        "audit",
+        "cross-model",
+        "handoff",
+        "opus-5",
+        "gpt-6-astra"
+      ],
+      "runtimes": [
+        "codex"
+      ],
+      "source": "curated-file",
+      "priority": 32,
+      "situations": {
+        "tier": "medium",
+        "use": [
+          "Независимо проверить работу в другом модельном семействе",
+          "Передать другому модельному семейству начальную задачу, список выполненного и доказательства для read-only аудита"
+        ],
+        "instead": [
+          "Проверить и сразу исправить текущий дифф в той же модели — «Проверить и улучшить работу»",
+          "Прогнать релизную верификацию всего репозитория — «Полное тестирование / E2E»"
+        ],
+        "beads": "Отдельная задача не требуется для read-only аудита; подтверждённые крупные находки оформляются отдельно."
+      }
+    },
+    {
+      "id": "claude-cross-model-audit",
+      "library_visibility": "manual",
+      "title": "Кросс-модельный аудит работы",
+      "category": "Claude",
+      "description": "Единый глубокий стандарт качества: read-only до отчёта, затем выбор — исправить здесь или подготовить возвратный промпт для исходной модели.",
+      "launcher_file": "launchers/claude-cross-model-audit.md",
+      "file": "claude-cross-model-audit.md",
+      "tags": [
+        "claude",
+        "audit",
+        "cross-model",
+        "handoff",
+        "opus-5",
+        "gpt-6-astra"
+      ],
+      "runtimes": [
+        "claude"
+      ],
+      "source": "curated-file",
+      "priority": 33,
+      "situations": {
+        "tier": "medium",
+        "use": [
+          "Независимо проверить работу в другом модельном семействе",
+          "Передать другому модельному семейству начальную задачу, список выполненного и доказательства для read-only аудита"
+        ],
+        "instead": [
+          "Проверить и сразу исправить текущий дифф в той же модели — «Проверить и улучшить работу»",
+          "Прогнать релизную верификацию всего репозитория — «Полное тестирование / E2E»"
+        ],
+        "beads": "Отдельная задача не требуется для read-only аудита; подтверждённые крупные находки оформляются отдельно."
+      }
+    },
+    {
+      "id": "delegate-worker",
+      "library_visibility": "system",
+      "title": "Промт для делегирования",
+      "category": "Delegate",
+      "description": "Компактный шаблон видимого Codex subagent: цель, зона записи, локальная проверка и остановка.",
+      "launcher_file": "launchers/delegate-worker.md",
+      "file": "delegate-worker.md",
+      "tags": [
+        "subagent",
+        "routing",
+        "verification"
+      ],
+      "runtimes": [
+        "codex"
+      ],
+      "source": "curated-file",
+      "priority": 40,
+      "situations": {
+        "tier": "varies",
+        "use": [
+          "Выделить ограниченный поток работы отдельному worker-агенту",
+          "Запустить параллельные потоки с непересекающимися write-зонами"
+        ],
+        "instead": [
+          "Работа неделима или завязана на общий контекст — оставить у оркестратора"
+        ],
+        "beads": "Каждому потоку — своя задача с write-зоной и планом верификации."
+      }
+    },
+    {
+      "id": "claude-delegate-worker",
+      "library_visibility": "system",
+      "title": "Промт для делегирования",
+      "category": "Claude",
+      "description": "Компактный шаблон Claude Agent: цель, зона записи, локальная проверка и остановка.",
+      "launcher_file": "launchers/claude-delegate-worker.md",
+      "file": "claude-delegate-worker.md",
+      "tags": [
+        "claude",
+        "subagent",
+        "worker"
+      ],
+      "runtimes": [
+        "claude"
+      ],
+      "source": "curated-file",
+      "priority": 41,
+      "situations": {
+        "tier": "varies",
+        "use": [
+          "Выделить ограниченный поток работы отдельному worker-агенту",
+          "Запустить параллельные потоки с непересекающимися write-зонами"
+        ],
+        "instead": [
+          "Работа неделима или завязана на общий контекст — оставить у оркестратора"
+        ],
+        "beads": "Каждому потоку — своя задача с write-зоной и планом верификации."
+      }
+    },
+    {
+      "id": "claude-aitmpl-agent-pack",
+      "library_visibility": "system",
+      "title": "Подобрать Claude agents из aitmpl",
+      "category": "Claude",
+      "description": "Безопасный подбор Claude-native agents из installed/plugin/project scopes и aitmpl candidates с dry-run/vetting.",
+      "launcher_file": "launchers/claude-aitmpl-agent-pack.md",
+      "file": "claude-aitmpl-agent-pack.md",
+      "tags": [
+        "claude",
+        "agents",
+        "aitmpl",
+        "vetting"
+      ],
+      "runtimes": [
+        "claude"
+      ],
+      "source": "curated-file",
+      "priority": 42,
+      "situations": {
+        "tier": "simple",
+        "use": [
+          "Подобрать Claude-агента из внешнего каталога aitmpl, когда установленные не подходят"
+        ],
+        "instead": [
+          "Установленный агент подходит — Agent routing в orchestrator-stage без внешнего каталога"
+        ],
+        "beads": "Не требуется: подбор read-only; установка — только после явного одобрения."
+      }
+    },
+    {
+      "id": "prompt-authoring",
+      "library_visibility": "system",
+      "title": "Сформировать промпт для агента",
+      "category": "Delegate",
+      "description": "Собрать компактный outcome-first prompt для Codex agent/subagent с prompt-check guardrail.",
+      "launcher_file": "launchers/prompt-authoring.md",
+      "file": "prompt-authoring.md",
+      "tags": [
+        "prompt",
+        "subagent",
+        "guardrail"
+      ],
+      "runtimes": [
+        "codex"
+      ],
+      "source": "curated-file",
+      "priority": 43,
+      "situations": {
+        "tier": "simple",
+        "use": [
+          "Составить или проверить промпт для любого агента, включая inline-субагента, фоновую сессию, другую систему или ручной handoff",
+          "Починить промпт, который стабильно плохо отрабатывает"
+        ],
+        "instead": [
+          "Обычный ответ пользователю, который не будет исполняться другим агентом"
+        ],
+        "beads": "Не требуется: работа с текстом промпта без файловых изменений в проекте."
+      }
+    },
+    {
+      "id": "claude-prompt-authoring",
+      "library_visibility": "system",
+      "title": "Сформировать промпт для агента",
+      "category": "Claude",
+      "description": "Собрать компактный Claude-native prompt для subagent/agent view с prompt-check guardrail.",
+      "launcher_file": "launchers/claude-prompt-authoring.md",
+      "file": "claude-prompt-authoring.md",
+      "tags": [
+        "claude",
+        "prompt",
+        "subagent",
+        "guardrail"
+      ],
+      "runtimes": [
+        "claude"
+      ],
+      "source": "curated-file",
+      "priority": 44,
+      "situations": {
+        "tier": "simple",
+        "use": [
+          "Составить или проверить промпт для любого агента, включая inline-субагента, фоновую сессию, другую систему или ручной handoff",
+          "Починить промпт, который стабильно плохо отрабатывает"
+        ],
+        "instead": [
+          "Обычный ответ пользователю, который не будет исполняться другим агентом"
+        ],
+        "beads": "Не требуется: работа с текстом промпта без файловых изменений в проекте."
+      }
+    },
+    {
+      "id": "test-pass",
+      "library_visibility": "system",
+      "title": "Полное тестирование / E2E",
+      "category": "Testing",
+      "description": "Спроектировать и провести risk-based тест-проход: unit/integration/build, E2E/browser сценарии, evidence, дефекты и go/no-go.",
+      "launcher_file": "launchers/test-pass.md",
+      "file": "test-pass.md",
+      "tags": [
+        "testing",
+        "e2e",
+        "playwright",
+        "qa"
+      ],
+      "runtimes": [
+        "codex"
+      ],
+      "source": "curated-file",
+      "priority": 45,
+      "situations": {
+        "tier": "complex",
+        "use": [
+          "Риск-ориентированный верификационный пас перед релизом или после большого этапа",
+          "Прогнать E2E/браузерные/смоук-проверки по всему репозиторию"
+        ],
+        "instead": [
+          "Проверка одного изменения — closeout-lite внутри текущей задачи",
+          "Ревью свежего диффа — «Проверить и улучшить работу»"
+        ],
+        "beads": "Задача на верификационный пас; каждый найденный дефект — отдельной задачей."
+      }
+    },
+    {
+      "id": "claude-test-pass",
+      "library_visibility": "system",
+      "title": "Полное тестирование / E2E",
+      "category": "Claude",
+      "description": "Risk-based testing pass в Claude Code CLI: repo checks, browser/E2E, evidence, defects, go/no-go.",
+      "launcher_file": "launchers/claude-test-pass.md",
+      "file": "claude-test-pass.md",
+      "tags": [
+        "claude",
+        "testing",
+        "e2e",
+        "qa"
+      ],
+      "runtimes": [
+        "claude"
+      ],
+      "source": "curated-file",
+      "priority": 46,
+      "situations": {
+        "tier": "complex",
+        "use": [
+          "Риск-ориентированный верификационный пас перед релизом или после большого этапа",
+          "Прогнать E2E/браузерные/смоук-проверки по всему репозиторию"
+        ],
+        "instead": [
+          "Проверка одного изменения — closeout-lite внутри текущей задачи",
+          "Ревью свежего диффа — «Проверить и улучшить работу»"
+        ],
+        "beads": "Задача на верификационный пас; каждый найденный дефект — отдельной задачей."
+      }
+    },
+    {
+      "id": "closeout",
+      "library_visibility": "system",
+      "title": "Закрыть этап",
+      "category": "Closeout",
+      "description": "Финальная проверка, docs-reviewed, graph-reviewed, Beads truth и cleanup перед ответом.",
+      "launcher_file": "launchers/closeout.md",
+      "file": "closeout.md",
+      "tags": [
+        "closeout",
+        "docs",
+        "graph"
+      ],
+      "runtimes": [
+        "codex"
+      ],
+      "source": "curated-file",
+      "priority": 50,
+      "situations": {
+        "tier": "medium",
+        "use": [
+          "Закрыть этап: свежая верификация, docs-reviewed/graph-reviewed, доставка, чистка",
+          "Оформить handoff перед передачей работы другому агенту или сессии"
+        ],
+        "instead": [
+          "Medium-задача — closeout-lite выполняется внутри orchestrator-stage без отдельной карточки"
+        ],
+        "beads": "Закрывает задачи этапа; явные деферы фиксирует новыми задачами."
+      }
+    },
+    {
+      "id": "system-stability",
+      "library_visibility": "system",
+      "title": "Проверить стабильность среды",
+      "category": "Diagnostics",
+      "description": "Полная диагностика Codex/Desktop: задержки команд, MCP-дубли, хуки, кэши, диск и тяжелые процессы без автоматических изменений.",
+      "launcher_file": "launchers/system-stability.md",
+      "file": "system-stability.md",
+      "tags": [
+        "stability",
+        "codex",
+        "mcp",
+        "hooks"
+      ],
+      "runtimes": [
+        "codex"
+      ],
+      "source": "curated-file",
+      "priority": 52,
+      "situations": {
+        "tier": "simple",
+        "use": [
+          "Диагностика сбоев среды: Claude/Codex CLI, VS Code/WSL, MCP, хуки, рантайм"
+        ],
+        "instead": [
+          "Баг в коде проекта — systematic-debugging в обычном потоке работы"
+        ],
+        "beads": "Не требуется: read-only диагностика без изменения конфигурации."
+      }
+    },
+    {
+      "id": "claude-system-stability",
+      "library_visibility": "system",
+      "title": "Проверить стабильность среды",
+      "category": "Claude",
+      "description": "Диагностика Claude Code CLI в VS Code/WSL: plugins, agents, MCP, hooks, PATH, latency, cache/disk.",
+      "launcher_file": "launchers/claude-system-stability.md",
+      "file": "claude-system-stability.md",
+      "tags": [
+        "claude",
+        "stability",
+        "mcp",
+        "vscode",
+        "wsl"
+      ],
+      "runtimes": [
+        "claude"
+      ],
+      "source": "curated-file",
+      "priority": 52,
+      "situations": {
+        "tier": "simple",
+        "use": [
+          "Диагностика сбоев среды: Claude/Codex CLI, VS Code/WSL, MCP, хуки, рантайм"
+        ],
+        "instead": [
+          "Баг в коде проекта — systematic-debugging в обычном потоке работы"
+        ],
+        "beads": "Не требуется: read-only диагностика без изменения конфигурации."
+      }
+    },
+    {
+      "id": "cleanup-audit",
+      "library_visibility": "system",
+      "title": "Аудит и чистка хвостов",
+      "category": "Cleanup",
+      "description": "Найти локальные/удалённые worktree, branch, PR, Beads, stage и runtime хвосты; удалить только после согласования.",
+      "launcher_file": "launchers/cleanup-audit.md",
+      "file": "cleanup-audit.md",
+      "tags": [
+        "cleanup",
+        "branches",
+        "worktrees",
+        "tails"
+      ],
+      "runtimes": [
+        "shared"
+      ],
+      "source": "curated-file",
+      "priority": 53,
+      "situations": {
+        "tier": "simple",
+        "use": [
+          "Read-only аудит хвостов перед чисткой: ветки, worktrees, сессии, процессы, кэши"
+        ],
+        "instead": [],
+        "beads": "Не требуется; сама чистка — после явного одобрения точных команд."
+      }
+    },
+    {
+      "id": "legacy-code-audit",
+      "library_visibility": "manual",
+      "title": "Аудит legacy/dead code",
+      "category": "Cleanup",
+      "description": "Оркестраторский read-only аудит устаревшего и неиспользуемого кода с static analysis, reachability, subagents и approval-gated deletion batches.",
+      "launcher_file": "launchers/legacy-code-audit.md",
+      "file": "legacy-code-audit.md",
+      "tags": [
+        "cleanup",
+        "legacy",
+        "dead-code",
+        "static-analysis",
+        "subagents"
+      ],
+      "runtimes": [
+        "shared"
+      ],
+      "source": "curated-file",
+      "priority": 54,
+      "situations": {
+        "tier": "complex",
+        "use": [
+          "Аудит легаси и мёртвого кода параллельными read-only потоками"
+        ],
+        "instead": [
+          "Ревью свежего диффа — «Проверить и улучшить работу»"
+        ],
+        "beads": "Находки — задачами с приоритетами и зависимостями."
+      }
+    },
+    {
+      "id": "docs-update",
+      "library_visibility": "system",
+      "title": "Проверить/обновить документацию",
+      "category": "Docs",
+      "description": "Сверить README/docs/ADR/project-index/handoff с текущим кодом, стадией и поведением.",
+      "launcher_file": "launchers/docs-update.md",
+      "file": "docs-update.md",
+      "tags": [
+        "docs",
+        "handoff",
+        "project-index"
+      ],
+      "runtimes": [
+        "codex"
+      ],
+      "source": "curated-file",
+      "priority": 55,
+      "situations": {
+        "tier": "medium",
+        "use": [
+          "Проверить и обновить документацию после изменения поведения системы",
+          "Регулярная сверка README/runbooks/инструкций с реальностью"
+        ],
+        "instead": [
+          "Docs в рамках закрытия этапа — closeout сам фиксирует docs-reviewed"
+        ],
+        "beads": "Задача при правках файлов документации."
+      }
+    },
+    {
+      "id": "claude-docs-update",
+      "library_visibility": "system",
+      "title": "Проверить/обновить документацию",
+      "category": "Claude",
+      "description": "Claude-native docs freshness pass: README/docs/CLAUDE/AGENTS, behavior, verification commands, Docs L1/L2.",
+      "launcher_file": "launchers/claude-docs-update.md",
+      "file": "claude-docs-update.md",
+      "tags": [
+        "claude",
+        "docs",
+        "memory"
+      ],
+      "runtimes": [
+        "claude"
+      ],
+      "source": "curated-file",
+      "priority": 55,
+      "situations": {
+        "tier": "medium",
+        "use": [
+          "Проверить и обновить документацию после изменения поведения системы",
+          "Регулярная сверка README/runbooks/инструкций с реальностью"
+        ],
+        "instead": [
+          "Docs в рамках закрытия этапа — closeout сам фиксирует docs-reviewed"
+        ],
+        "beads": "Задача при правках файлов документации."
+      }
+    },
+    {
+      "id": "dependency-docs-upgrade",
+      "library_visibility": "system",
+      "title": "Dependency + docs upgrade",
+      "category": "Docs",
+      "description": "Проверить dependency target/LTS bump и синхронизировать L1-документацию перед merge.",
+      "launcher_file": "launchers/dependency-docs-upgrade.md",
+      "file": "dependency-docs-upgrade.md",
+      "tags": [
+        "docs",
+        "dependencies",
+        "context"
+      ],
+      "runtimes": [
+        "codex"
+      ],
+      "source": "curated-file",
+      "priority": 56,
+      "situations": {
+        "tier": "medium",
+        "use": [
+          "Обновить зависимости и сверить изменения по Docs L1 (lockfile-маршрутизация)",
+          "Проверить breaking changes перед крупным апгрейдом"
+        ],
+        "instead": [],
+        "beads": "Задача на апгрейд с планом верификации и откатом."
+      }
+    },
+    {
+      "id": "claude-docs-upgrade",
+      "library_visibility": "system",
+      "title": "Dependency + docs upgrade",
+      "category": "Claude",
+      "description": "Claude-native проверка dependency upgrade и синхронизации @neuledge/context L1 с Context7 fallback.",
+      "launcher_file": "launchers/claude-docs-upgrade.md",
+      "file": "claude-docs-upgrade.md",
+      "tags": [
+        "claude",
+        "docs",
+        "dependencies"
+      ],
+      "runtimes": [
+        "claude"
+      ],
+      "source": "curated-file",
+      "priority": 57,
+      "situations": {
+        "tier": "medium",
+        "use": [
+          "Обновить зависимости и сверить изменения по Docs L1 (lockfile-маршрутизация)",
+          "Проверить breaking changes перед крупным апгрейдом"
+        ],
+        "instead": [],
+        "beads": "Задача на апгрейд с планом верификации и откатом."
+      }
+    },
+    {
+      "id": "claude-closeout",
+      "library_visibility": "system",
+      "title": "Закрыть этап",
+      "category": "Claude",
+      "description": "Claude-native closeout с verification, docs-reviewed, graph-reviewed и VS Code/CLI constraints.",
+      "launcher_file": "launchers/claude-closeout.md",
+      "file": "claude-closeout.md",
+      "tags": [
+        "claude",
+        "closeout",
+        "verification"
+      ],
+      "runtimes": [
+        "claude"
+      ],
+      "source": "curated-file",
+      "priority": 58,
+      "situations": {
+        "tier": "medium",
+        "use": [
+          "Закрыть этап: свежая верификация, docs-reviewed/graph-reviewed, доставка, чистка",
+          "Оформить handoff перед передачей работы другому агенту или сессии"
+        ],
+        "instead": [
+          "Medium-задача — closeout-lite выполняется внутри orchestrator-stage без отдельной карточки"
+        ],
+        "beads": "Закрывает задачи этапа; явные деферы фиксирует новыми задачами."
+      }
+    },
+    {
+      "id": "graphify",
+      "library_visibility": "system",
+      "title": "Graphify enable/refresh",
+      "category": "Graphify",
+      "description": "Запуск или обновление локального knowledge graph для репозитория.",
+      "launcher_file": "launchers/graphify.md",
+      "file": "graphify.md",
+      "tags": [
+        "graphify",
+        "knowledge graph"
+      ],
+      "runtimes": [
+        "codex"
+      ],
+      "source": "curated-file",
+      "priority": 60,
+      "situations": {
+        "tier": "simple",
+        "use": [
+          "Включить или освежить локальный граф знаний Graphify в репозитории"
+        ],
+        "instead": [],
+        "beads": "Не требуется для read-only использования графа; refresh — в рамках текущей задачи."
+      }
+    },
+    {
+      "id": "claude-graphify",
+      "library_visibility": "system",
+      "title": "Graphify enable/refresh",
+      "category": "Claude",
+      "description": "Claude-native Graphify audit/setup/refresh as local CLI knowledge graph, without default git hooks.",
+      "launcher_file": "launchers/claude-graphify.md",
+      "file": "claude-graphify.md",
+      "tags": [
+        "claude",
+        "graphify",
+        "knowledge graph"
+      ],
+      "runtimes": [
+        "claude"
+      ],
+      "source": "curated-file",
+      "priority": 61,
+      "situations": {
+        "tier": "simple",
+        "use": [
+          "Включить или освежить локальный граф знаний Graphify в репозитории"
+        ],
+        "instead": [],
+        "beads": "Не требуется для read-only использования графа; refresh — в рамках текущей задачи."
+      }
+    },
+    {
+      "id": "catalog-sync",
+      "library_visibility": "system",
+      "title": "Обновить catalog skills/agents",
+      "category": "Catalog",
+      "description": "Безопасно обновить staged assets и promoted assets в глобальном Codex catalog.",
+      "launcher_file": "launchers/catalog-sync.md",
+      "file": "catalog-sync.md",
+      "tags": [
+        "catalog",
+        "skills",
+        "agents"
+      ],
+      "runtimes": [
+        "codex"
+      ],
+      "source": "curated-file",
+      "priority": 70,
+      "situations": {
+        "tier": "simple",
+        "use": [
+          "Синхронизировать локальный каталог скиллов и агентов Codex"
+        ],
+        "instead": [],
+        "beads": "Не требуется."
+      }
+    },
+    {
+      "id": "repo-setup",
+      "library_visibility": "system",
+      "title": "Инициализировать проект для Codex",
+      "category": "Setup",
+      "description": "Настроить Codex AGENTS-first baseline: Beads, Superpowers, Docs L1/L2, visible subagents, closeout и handoff.",
+      "launcher_file": "launchers/repo-setup.md",
+      "file": "repo-setup.md",
+      "tags": [
+        "codex",
+        "setup",
+        "baseline",
+        "agents"
+      ],
+      "runtimes": [
+        "codex"
+      ],
+      "source": "curated-file",
+      "priority": 80,
+      "situations": {
+        "tier": "medium",
+        "use": [
+          "Инициализировать оркестрационный контракт в новом или неподключённом репозитории"
+        ],
+        "instead": [
+          "Контракт уже есть — «Новый этап разработки»"
+        ],
+        "beads": "Задача на setup; дальнейшая работа — через start-stage."
+      }
+    },
+    {
+      "id": "claude-repo-setup",
+      "library_visibility": "system",
+      "title": "Инициализировать проект для Claude Code",
+      "category": "Claude",
+      "description": "Настроить Claude Code project memory: CLAUDE.md/AGENTS adapter, orchestration-bridge, Docs L1/L2 и closeout.",
+      "launcher_file": "launchers/claude-repo-setup.md",
+      "file": "claude-repo-setup.md",
+      "tags": [
+        "claude",
+        "setup",
+        "memory",
+        "baseline"
+      ],
+      "runtimes": [
+        "claude"
+      ],
+      "source": "curated-file",
+      "priority": 81,
+      "situations": {
+        "tier": "medium",
+        "use": [
+          "Инициализировать оркестрационный контракт в новом или неподключённом репозитории"
+        ],
+        "instead": [
+          "Контракт уже есть — «Новый этап разработки»"
+        ],
+        "beads": "Задача на setup; дальнейшая работа — через start-stage."
+      }
+    }
+  ]
+}
