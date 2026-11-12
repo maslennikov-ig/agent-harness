@@ -1,6 +1,6 @@
 ---
 name: harness-bootstrap
-description: Use when installing, updating, auditing, or repairing the portable agent harness across Codex, Claude, MCP, Beads, Graphify, and orchestration-console components.
+description: Use when installing, updating, auditing, or repairing the portable agent harness across Codex, Claude, MCP, Beads, and orchestration-console components.
 ---
 
 # Harness Bootstrap

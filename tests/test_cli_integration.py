@@ -226,6 +226,7 @@ class CliIntegrationTests(unittest.TestCase):
             self.assertEqual((repo / ".codex" / "orchestrator.toml").read_text(encoding="utf-8"), "[project]\n")
             self.assertFalse((root / ".codex").exists())
 
+
     def test_bootstrap_private_overlay_exposes_decrypted_secrets_only_during_run(self):
         from harness_core.secrets import SecretVault
 

@@ -1,7 +1,7 @@
 # Agent Harness
 
 Portable bootstrap for a Codex + Claude agent workflow: orchestration console,
-generic skills and agents, Docs L1/L2 routing, MCP templates, Beads, Graphify,
+generic skills and agents, Docs L1/L2 routing, MCP templates, Beads, retired code graph,
 and private encrypted overlays.
 
 The harness is split into two GitHub layers:
@@ -69,7 +69,7 @@ The default manifest manages:
 - `context`: the local Docs L1 MCP server from `@neuledge/context`.
 - `context7` and `playwright`: npx-backed MCP templates for fallback docs and
   browser automation.
-- `bd`, `graphify`, `age`, `node`, and `npx`: installed or checked as machine
+- `bd`, , `age`, `node`, and `npx`: installed or checked as machine
   prerequisites.
 
 Docs lookup is two-tiered: agents should use `orch-prompts docs-resolve` first,
@@ -150,7 +150,7 @@ harness init-project /path/to/repo
 ```
 
 This copies only project-local baseline files such as `AGENTS.md` and `.codex/`
-templates. It does not mutate global Codex, Claude, MCP, Beads, or Graphify
+templates. It does not mutate global Codex, Claude, MCP, Beads, or retired code graph
 state.
 
 ## Development

@@ -5,7 +5,7 @@ Copy this prompt into Codex or Claude on a new or stale machine.
 ```text
 Target: universal coding agent running in WSL, Linux, or macOS.
 Audience: executor agent with shell access.
-Goal: install or update the portable agent harness, then verify Codex/Claude, MCP, Docs L1/L2, Beads, Graphify, and the private overlay.
+Goal: install or update the portable agent harness, then verify Codex/Claude, MCP, Docs L1/L2, Beads, and the private overlay.
 
 Inputs:
 - Public core repo: https://github.com/maslennikov-ig/agent-harness.git
@@ -15,7 +15,7 @@ Inputs:
 Context:
 - This may be a fresh machine with no installed harness skills, so follow this prompt directly.
 - The harness has two layers: public installer/core plus optional private overlay.
-- Codex and Claude use different agent/plugin surfaces, but both should share the same Docs L1/L2, MCP, Beads, and Graphify workflow.
+- Codex and Claude use different agent/plugin surfaces, but both should share the same Docs L1/L2, MCP and Beads workflow.
 
 Success criteria:
 - Public repo is cloned or fast-forwarded at ~/.agent-harness-src.
@@ -27,7 +27,7 @@ Success criteria:
 - MCP templates include `context` (`@neuledge/context` L1), `context7` fallback, and `playwright`.
 - Codex and/or Claude MCP configs register `context`, `context7`, and `playwright` when those clients are installed.
 - Docs routing is L1/L2: use `orch-prompts docs-resolve` with lockfile-routed package/version over `@neuledge/context` first; use Context7 MCP or first-party docs only when L1 is missing, stale, or insufficient.
-- Beads (`bd`) and Graphify (`graphify`) are available on PATH.
+- Beads (`bd`) is available on PATH.
 - No plaintext secret file is left behind.
 
 Steps:
@@ -49,7 +49,6 @@ Steps:
    `~/.agent-harness-src/bin/harness doctor`
 7. Verify command surfaces:
    - `bd --version`
-   - `graphify --version`
    - `context --version`
    - `npx --version`
    - `orch-prompts status` if `orch-prompts` is on PATH
@@ -75,7 +74,6 @@ Constraints:
 - Do not commit or print plaintext secrets. Use `bin/harness secrets init|check` for encrypted overlay secrets.
 - Prefer fast-forward pulls. Stop and report if any repo is diverged.
 - Do not overwrite unmanaged user files outside harness-managed paths.
-- Do not install Graphify git hooks. Project-local Codex Graphify hooks are handled by the graphify-project skill when a project explicitly enables them.
 - Do not route dependency docs as Context7-first. The required order is Docs L1 via `@neuledge/context`, then Context7 or first-party fallback.
 
 Output:
@@ -84,7 +82,7 @@ Output:
 - Private overlay applied or skipped.
 - Doctor warnings, if any.
 - Lock snapshot path.
-- MCP/Docs L1/L2/Beads/Graphify verification results.
+- MCP/Docs L1/L2/Beads verification results.
 - Next action for missing GitHub SSH, missing client binaries, or missing OS prerequisites.
 
 Stop:

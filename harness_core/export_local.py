@@ -44,7 +44,6 @@ SKIP_DIR_NAMES = {
     ".pytest_cache",
     ".ruff_cache",
     "__pycache__",
-    "graphify-out",
     "node_modules",
     "venv",
     ".venv",

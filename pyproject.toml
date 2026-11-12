@@ -1,7 +1,7 @@
 [project]
 name = "agent-harness"
 version = "0.1.0"
-description = "Portable public bootstrap for Codex, Claude, orchestration-console, MCP, Beads, Graphify, and private encrypted overlays."
+description = "Portable public bootstrap for Codex, Claude, orchestration-console, MCP, Beads, and private encrypted overlays."
 requires-python = ">=3.11"
 dependencies = []
 
